@@ -1,0 +1,22 @@
+{
+  "name": "gastown-dilitrust-presentation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export --format pdf --output gastown-dilitrust-presentation.pdf",
+    "export:pptx": "slidev export --format pptx --output gastown-dilitrust-presentation.pptx",
+    "format": "slidev format slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.2.0",
+    "@slidev/theme-seriph": "^0.25.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.60.0"
+  },
+  "overrides": {
+    "dompurify": "^3.4.3"
+  }
+}
