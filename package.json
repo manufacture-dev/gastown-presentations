@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@slidev/cli": "^52.2.0",
-    "slidev-theme-the-unnamed": "^0.0.23"
+    "slidev-theme-the-unnamed": "git+https://github.com/jlrigau/slidev-theme-the-unnamed.git#fix-shiki-browser-editor"
   },
   "devDependencies": {
     "playwright-chromium": "^1.60.0"
