@@ -1998,7 +1998,7 @@
 
 .synthesis-head {
   display: grid;
-  grid-template-columns: 1.7rem minmax(0, 0.8fr) minmax(0, 1.05fr) minmax(0, 1.05fr);
+  grid-template-columns: 1.7rem minmax(0, 1.05fr) minmax(0, 1.45fr);
   gap: 0.52rem;
   margin-bottom: 0.16rem;
 }
@@ -2014,7 +2014,7 @@
 }
 
 .synthesis-head > div:last-child {
-  grid-column: 3 / 5;
+  grid-column: 3;
   border-left: 3px solid rgba(68, 255, 210, 0.6);
 }
 
@@ -2040,12 +2040,12 @@
 
 .synthesis-row {
   display: grid;
-  grid-template-columns: 1.7rem minmax(0, 0.8fr) minmax(0, 1.05fr) minmax(0, 1.05fr);
+  grid-template-columns: 1.7rem minmax(0, 1.05fr) minmax(0, 1.45fr);
   gap: 0.52rem;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.022);
-  padding: 0.42rem 0.55rem;
+  padding: 0.4rem 0.55rem;
 }
 
 .synthesis-row span {
@@ -2055,13 +2055,15 @@
   letter-spacing: 0.08em;
 }
 
-.synthesis-row strong {
+.synthesis-problem strong {
+  display: block;
+  margin-bottom: 0.08rem;
   color: var(--slidev-theme-text);
   font-size: 0.78rem;
   line-height: 1.12;
 }
 
-.synthesis-row p,
+.synthesis-problem p,
 .synthesis-row em {
   margin: 0;
   font-style: normal;
@@ -2069,7 +2071,7 @@
   line-height: 1.15;
 }
 
-.synthesis-row p {
+.synthesis-problem p {
   color: var(--gt-card-muted);
 }
 

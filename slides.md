@@ -787,32 +787,42 @@ The mol-idea-to-plan formula is the concrete example: vague idea to reviewed pla
 
   <div class="synthesis-row">
     <span>01</span>
-    <strong>Context saturation</strong>
-    <p>Important constraints disappear as the session grows.</p>
+    <div class="synthesis-problem">
+      <strong>Context saturation</strong>
+      <p>Important constraints disappear as the session grows.</p>
+    </div>
     <em>Structure work into beads, artifacts, and explicit handoffs.</em>
   </div>
   <div class="synthesis-row">
     <span>02</span>
-    <strong>Sequential execution</strong>
-    <p>Throughput is bounded by one worker loop.</p>
+    <div class="synthesis-problem">
+      <strong>Sequential execution</strong>
+      <p>Throughput is bounded by one worker loop.</p>
+    </div>
     <em>Use Polecats to execute independent work in parallel.</em>
   </div>
   <div class="synthesis-row">
     <span>03</span>
-    <strong>No coordination layer</strong>
-    <p>Dependencies and ownership stay implicit.</p>
+    <div class="synthesis-problem">
+      <strong>No coordination layer</strong>
+      <p>Dependencies and ownership stay implicit.</p>
+    </div>
     <em>Mayor, Crew and Convoys make ownership and progress visible.</em>
   </div>
   <div class="synthesis-row">
     <span>04</span>
-    <strong>Merge pressure</strong>
-    <p>Parallel changes become hard to integrate safely.</p>
+    <div class="synthesis-problem">
+      <strong>Merge pressure</strong>
+      <p>Parallel changes become hard to integrate safely.</p>
+    </div>
     <em>Refinery manages convergence instead of leaving integration to chance.</em>
   </div>
   <div class="synthesis-row">
     <span>05</span>
-    <strong>No operational supervision</strong>
-    <p>Stuck work is difficult to observe and recover.</p>
+    <div class="synthesis-problem">
+      <strong>No operational supervision</strong>
+      <p>Stuck work is difficult to observe and recover.</p>
+    </div>
     <em>Witness, Deacon and recovery loops keep execution observable.</em>
   </div>
 </div>
