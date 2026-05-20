@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .idea/
+/screenshots/
 *.pdf
 *.pptx
 .DS_Store

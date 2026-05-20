@@ -199,7 +199,7 @@ The story: Gas Town starts from vibe-coding chaos, then adds city-like operating
   </div>
   <div class="app-shot">
     <div class="app-window">
-      <img src="/screenshots/agreement-hub-initial.png" alt="Agreement Hub initial state" />
+      <img src="./public/images/screenshots/agreement-hub-initial.png" alt="Agreement Hub initial state" />
     </div>
   </div>
 </div>
