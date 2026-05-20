@@ -20,3 +20,28 @@ npm run export:pptx
 - `npm run build` creates the static website in `dist/`.
 - `npm run export` renders a PDF named `gastown-dilitrust-presentation.pdf`.
 - `npm run export:pptx` renders a PowerPoint file.
+
+## GitHub Pages
+
+The slides are published as a static Slidev site through GitHub Actions.
+
+Before the first deployment, configure the repository on GitHub:
+
+1. Open `Settings` > `Pages`.
+2. Set `Build and deployment` > `Source` to `GitHub Actions`.
+3. Push to `main` or run the `Deploy slides to GitHub Pages` workflow manually.
+
+The workflow builds Slidev with `/gastown-dilitrust-presentation/` as its base path for the organization Pages URL:
+
+```text
+https://manufacture-dev.github.io/gastown-dilitrust-presentation/
+```
+
+## Releases
+
+When a GitHub release is published, the `Attach release artifacts` workflow exports the slides as:
+
+- `gastown-dilitrust-presentation.pdf`
+- `gastown-dilitrust-presentation.pptx`
+
+The generated files are attached to the release assets.
