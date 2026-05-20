@@ -1,6 +1,26 @@
 # Gastown DiliTrust Presentation
 
-Presentation materials for Gastown tailored for DiliTrust.
+Presentation deck for the DiliTrust TechDay talk **Organizing AI-native software delivery with Gastown**.
+
+![Title slide preview](docs/images/title-slide.png)
+
+## About the Deck
+
+This deck introduces Gastown as an operating model for AI-native software delivery. It starts from the evolution of individual AI coding practices, then moves into the coordination problem that appears when many coding agents work on real repositories.
+
+The presentation covers:
+
+- why single-agent workflows break down when delivery becomes distributed;
+- how Gastown organizes work through towns, rigs, the Mayor, beads, convoys, Polecats, Witness and Refinery;
+- how supervision, recovery and verification make agent execution operational;
+- a live Agreement Hub demo used as a realistic software delivery target;
+- how formulas can turn orchestration patterns into repeatable delivery playbooks.
+
+The published slides are available at:
+
+```text
+https://manufacture.dev/gastown-dilitrust-presentation
+```
 
 ## Slidev
 
