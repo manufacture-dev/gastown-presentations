@@ -113,6 +113,7 @@ Use this as the bridge from personal AI practice to organizational orchestration
 <div class="creator-slide">
   <figure class="creator-photo">
     <img src="./public/images/steve-yegge.jpg" alt="Steve Yegge" />
+    <figcaption>Photo: Bram Cymet, CC BY-NC 2.0</figcaption>
   </figure>
   <div class="creator-copy">
     <span>From practice to organization</span>
@@ -134,6 +135,7 @@ Use this as the bridge from personal AI practice to organizational orchestration
   </div>
   <figure class="book-cover">
     <img src="./public/images/vibe-coding-cover.jpg" alt="Vibe Coding book cover" />
+    <figcaption>Cover source: IT Revolution / Simon &amp; Schuster</figcaption>
   </figure>
 </div>
 

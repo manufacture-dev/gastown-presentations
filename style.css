@@ -1398,10 +1398,15 @@
 }
 
 .book-cover img {
-  max-height: 22rem;
+  width: 100%;
   border: 0;
   background: transparent;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.book-cover {
+  justify-self: center;
+  width: min(100%, calc(22rem * 2 / 3));
 }
 
 .creator-slide figcaption {
