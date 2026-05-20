@@ -14,7 +14,8 @@
     "slidev-theme-the-unnamed": "git+https://github.com/jlrigau/slidev-theme-the-unnamed.git#fix-shiki-browser-editor"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.60.0"
+    "playwright-chromium": "^1.60.0",
+    "qrcode": "^1.5.4"
   },
   "overrides": {
     "dompurify": "^3.4.3"
