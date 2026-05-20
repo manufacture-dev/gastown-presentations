@@ -841,9 +841,9 @@ This closes the conceptual loop with the exact five problems introduced earlier.
 
 <div class="question-block">
   <span>Example questions</span>
-  <p>How did Agreement Hub actually change during the demo?</p>
-  <p>Where should humans stay in control of the workflow?</p>
-  <p>What did we learn about scaling AI-native software delivery?</p>
+  <p>What does it cost to deliver a feature with Gastown?</p>
+  <p>How much control do we have over the models?</p>
+  <p>When should we use the Crew instead of only the Mayor?</p>
 </div>
 
 <!--
