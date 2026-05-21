@@ -245,13 +245,13 @@ Contract: the deck explains, the terminal works, the app proves.
       </div>
       <div class="break-card">
         <span>02</span>
-        <strong>Sequential delivery</strong>
-        <p>Fix/features can't be worked on in parallel.</p>
+        <strong>Sequential execution</strong>
+        <p>Throughput is bounded by one worker loop.</p>
       </div>
       <div class="break-card">
         <span>03</span>
-        <strong>State lives in context</strong>
-        <p>Multiple single-agents coordination stays implicit.</p>
+        <strong>No coordination layer</strong>
+        <p>Dependencies and ownership stay implicit.</p>
       </div>
       <div class="break-card">
         <span>04</span>
