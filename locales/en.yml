@@ -1,16 +1,21 @@
 common:
+  locale: en-US
   why_it_matters: Why it matters
 
 title:
   heading: Organizing AI-native software delivery with Gastown
-  event: DiliTrust TechDay
   byline: Jean-Louis Rigau & Emmanuel Sciara
-  date: Thursday, May 21, 2026
   tags:
     ai_native: "#AI-native engineering"
     distributed: "#Distributed delivery"
     orchestration: "#Agent orchestration"
     supervised: "#Supervised execution"
+
+talks:
+  dilitrust_techday:
+    event: DiliTrust TechDay
+  dev_with_ai_live_4:
+    event: "Dev With AI Live #4"
 
 speakers:
   heading: Speakers

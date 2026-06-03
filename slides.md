@@ -2,7 +2,7 @@
 theme: the-unnamed
 addons:
   - slidev-addon-i18nb
-title: DiliTrust TechDay - Organizing AI-native software delivery with Gastown
+title: Gastown - Organizing AI-native software delivery
 titleTemplate: '%s'
 info: |
   Gastown organizes AI-native software delivery. Live implementation on Agreement Hub.
@@ -10,18 +10,19 @@ class: text-left
 drawings:
   persist: false
 presenter: true
+routerMode: hash
 transition: fade
 mdc: true
 ---
 
 # {{ $t("title.heading") }}
 
-<p class="lede">{{ $t("title.event") }}</p>
+<p class="lede">{{ $talk("event") }}</p>
 
 <div class="title-meta">
 <div class="byline">{{ $t("title.byline") }}</div>
 
-<div class="event-date">{{ $t("title.date") }}</div>
+<div class="event-date">{{ $talkDate() }}</div>
 </div>
 
 <div class="title-tags">
@@ -43,28 +44,28 @@ This is not "AI coding faster"; it is how delivery gets organized when AI worker
 <div class="speakers-slide">
   <article class="speaker-card">
     <figure class="speaker-photo speaker-photo--jean">
-      <img src="./public/images/speakers/jlrigau.jpg" alt="Jean-Louis Rigau" />
+      <img :src="'images/speakers/jlrigau.jpg'" alt="Jean-Louis Rigau" />
     </figure>
     <div>
       <span>{{ $t("speakers.role") }}</span>
       <h2>Jean-Louis Rigau</h2>
       <p>{{ $t("speakers.jlrigau.bio") }}</p>
       <div class="speaker-link">
-        <img src="./public/images/speakers/jlrigau-linkedin-qr.png" :alt="$t('speakers.jlrigau.qr_alt')" />
+        <img :src="'images/speakers/jlrigau-linkedin-qr.png'" :alt="$t('speakers.jlrigau.qr_alt')" />
         <a href="https://www.linkedin.com/in/jlrigau/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jlrigau</a>
       </div>
     </div>
   </article>
   <article class="speaker-card">
     <figure class="speaker-photo speaker-photo--emmanuel">
-      <img src="./public/images/speakers/emmanuelsciara.jpg" alt="Emmanuel Sciara" />
+      <img :src="'images/speakers/emmanuelsciara.jpg'" alt="Emmanuel Sciara" />
     </figure>
     <div>
       <span>{{ $t("speakers.role") }}</span>
       <h2>Emmanuel Sciara</h2>
       <p>{{ $t("speakers.emmanuelsciara.bio") }}</p>
       <div class="speaker-link">
-        <img src="./public/images/speakers/emmanuelsciara-linkedin-qr.png" :alt="$t('speakers.emmanuelsciara.qr_alt')" />
+        <img :src="'images/speakers/emmanuelsciara-linkedin-qr.png'" :alt="$t('speakers.emmanuelsciara.qr_alt')" />
         <a href="https://www.linkedin.com/in/emmanuelsciara/" target="_blank" rel="noopener noreferrer">linkedin.com/in/emmanuelsciara</a>
       </div>
     </div>
@@ -82,14 +83,14 @@ Keep the slide simple: names, photos, and the angle each speaker brings to the s
 
 <div class="evolution-slide">
   <div class="evolution-ladder">
-    <div><span>1</span><img src="./public/images/ai-evolution/stage-01.webp" alt="" /><p>{{ $t("evolution.stages.zero") }}</p></div>
-    <div><span>2</span><img src="./public/images/ai-evolution/stage-02.webp" alt="" /><p>{{ $t("evolution.stages.ide_assistant") }}</p></div>
-    <div><span>3</span><img src="./public/images/ai-evolution/stage-03.webp" alt="" /><p>{{ $t("evolution.stages.yolo") }}</p></div>
-    <div><span>4</span><img src="./public/images/ai-evolution/stage-04.webp" alt="" /><p>{{ $t("evolution.stages.wide_ide") }}</p></div>
-    <div><span>5</span><img src="./public/images/ai-evolution/stage-05.webp" alt="" /><p>{{ $t("evolution.stages.cli_agent") }}</p></div>
-    <div><span>6</span><img src="./public/images/ai-evolution/stage-06.webp" alt="" /><p>{{ $t("evolution.stages.multi_cli") }}</p></div>
-    <div><span>7</span><img src="./public/images/ai-evolution/stage-07.webp" alt="" /><p>{{ $t("evolution.stages.hand_managed") }}</p></div>
-    <div><span>8</span><img src="./public/images/ai-evolution/stage-08.webp" alt="" /><p>{{ $t("evolution.stages.orchestrator") }}</p></div>
+    <div><span>1</span><img :src="'images/ai-evolution/stage-01.webp'" alt="" /><p>{{ $t("evolution.stages.zero") }}</p></div>
+    <div><span>2</span><img :src="'images/ai-evolution/stage-02.webp'" alt="" /><p>{{ $t("evolution.stages.ide_assistant") }}</p></div>
+    <div><span>3</span><img :src="'images/ai-evolution/stage-03.webp'" alt="" /><p>{{ $t("evolution.stages.yolo") }}</p></div>
+    <div><span>4</span><img :src="'images/ai-evolution/stage-04.webp'" alt="" /><p>{{ $t("evolution.stages.wide_ide") }}</p></div>
+    <div><span>5</span><img :src="'images/ai-evolution/stage-05.webp'" alt="" /><p>{{ $t("evolution.stages.cli_agent") }}</p></div>
+    <div><span>6</span><img :src="'images/ai-evolution/stage-06.webp'" alt="" /><p>{{ $t("evolution.stages.multi_cli") }}</p></div>
+    <div><span>7</span><img :src="'images/ai-evolution/stage-07.webp'" alt="" /><p>{{ $t("evolution.stages.hand_managed") }}</p></div>
+    <div><span>8</span><img :src="'images/ai-evolution/stage-08.webp'" alt="" /><p>{{ $t("evolution.stages.orchestrator") }}</p></div>
   </div>
   <div class="evolution-copy">
     <span>{{ $t("evolution.copy_label") }}</span>
@@ -115,7 +116,7 @@ Use this as the bridge from personal AI practice to organizational orchestration
 
 <div class="creator-slide">
   <figure class="creator-photo">
-    <img src="./public/images/steve-yegge.jpg" alt="Steve Yegge" />
+    <img :src="'images/steve-yegge.jpg'" alt="Steve Yegge" />
     <figcaption>{{ $t("creator.photo_caption") }}</figcaption>
   </figure>
   <div class="creator-copy">
@@ -137,7 +138,7 @@ Use this as the bridge from personal AI practice to organizational orchestration
     </div>
   </div>
   <figure class="book-cover">
-    <img src="./public/images/vibe-coding-cover.jpg" alt="Vibe Coding book cover" />
+    <img :src="'images/vibe-coding-cover.jpg'" alt="Vibe Coding book cover" />
     <figcaption>{{ $t("creator.cover_caption") }}</figcaption>
   </figure>
 </div>
@@ -204,7 +205,7 @@ The story: Gas Town starts from vibe-coding chaos, then adds city-like operating
   </div>
   <div class="app-shot">
     <div class="app-window">
-      <img src="./public/images/screenshots/agreement-hub-initial.png" :alt="$t('demo.image_alt')" />
+      <img :src="'images/screenshots/agreement-hub-initial.png'" :alt="$t('demo.image_alt')" />
     </div>
   </div>
 </div>
