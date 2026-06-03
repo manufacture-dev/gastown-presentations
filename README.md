@@ -1,12 +1,21 @@
-# Gastown DiliTrust Presentation
+# Gastown Presentations
 
-Presentation deck for the DiliTrust TechDay talk **Organizing AI-native software delivery with Gastown**.
-
-![Title slide preview](docs/images/title-slide.png)
+Multi-talk Slidev deck for **Organizing AI-native software delivery with Gastown**.
 
 ## About the Deck
 
-This deck introduces Gastown as an operating model for AI-native software delivery. It starts from the evolution of individual AI coding practices, then moves into the coordination problem that appears when many coding agents work on real repositories.
+This repository contains one shared Slidev deck that can be rendered for several
+events, languages and dates. Each talk instance reuses the same `slides.md`
+content and injects event-specific metadata from `talks/*.json`.
+
+The generated website starts with a timeline index listing all configured talks:
+
+- published timeline: [manufacture.dev/gastown-dilitrust-presentation](https://manufacture.dev/gastown-dilitrust-presentation);
+- local timeline after build: `http://localhost:3000/` when serving `dist/`.
+
+The deck introduces Gastown as an operating model for AI-native software delivery.
+It starts from the evolution of individual AI coding practices, then moves into
+the coordination problem that appears when many coding agents work on real repositories.
 
 The presentation covers:
 
@@ -16,26 +25,91 @@ The presentation covers:
 - a live Agreement Hub demo used as a realistic software delivery target;
 - how formulas can turn orchestration patterns into repeatable delivery playbooks.
 
-View the published slides at [manufacture.dev/gastown-dilitrust-presentation](https://manufacture.dev/gastown-dilitrust-presentation).
-
 ## Slidev
 
-This repository is configured to build a Slidev presentation from `slides.md`.
+This repository is configured to build a bilingual Slidev presentation from `slides.md`.
+The deck can be reused for several talk instances configured in `talks/*.json`.
 
 Useful commands:
 
 ```bash
 npm install
 npm run dev
+npm run dev -- dilitrust-techday --port 3030
 npm run build
-npm run export
+npm run build:all
+npm run export:pdf
 npm run export:pptx
 ```
 
-- `npm run dev` starts the live presentation server.
-- `npm run build` creates the static website in `dist/`.
-- `npm run export` renders a PDF named `gastown-dilitrust-presentation.pdf`.
-- `npm run export:pptx` renders a PowerPoint file.
+- `npm run dev` starts the live presentation server for the default talk. The
+  default talk is the most recent one by `date` in `talks/*.json`.
+- `npm run dev -- <route>` starts a specific talk instance.
+- `npm run dev -- --port 3034` starts the default talk on a specific port.
+- `npm run dev -- <route> --port 3034` starts a specific talk on a specific port.
+- `npm run build` creates the default talk static website in `dist/`.
+- `npm run build -- <route>` creates a specific talk static website in `dist/`.
+- `npm run build:all` creates one route per configured talk in `dist/<route>/`
+  and downloadable PDF/PPTX files in `dist/downloads/`.
+- `npm run export:pdf` renders the default talk PDF in `exports/`.
+- `npm run export:pptx` renders the default talk PowerPoint file in `exports/`.
+- `npm run export:pdf -- <route>` renders a specific talk PDF in `exports/`.
+- `npm run export:pptx -- <route>` renders a specific talk PowerPoint file in `exports/`.
+
+## Talk Instances
+
+Talk-specific metadata lives in two places:
+
+- `talks/*.json` defines routing and defaults: `id`, `route`, `defaultLocale`,
+  `label`, and `date`.
+- `locales/fr.yml` and `locales/en.yml` define translated event text under `talks.<id>`.
+
+Example:
+
+```json
+{
+  "id": "dilitrust_techday",
+  "route": "dilitrust-techday",
+  "defaultLocale": "en",
+  "label": "DiliTrust TechDay",
+  "date": "2026-05-21"
+}
+```
+
+The title slide keeps its main title in the global locale keys and reads talk-specific
+context with `$talk("event")`. The date comes from the talk JSON and is formatted with
+`$talkDate()` according to the active locale.
+
+The `route` value becomes the URL segment in the generated site. For example,
+`dev-with-ai-live-4` is available at:
+
+```text
+https://manufacture.dev/gastown-dilitrust-presentation/dev-with-ai-live-4/#/1
+```
+
+Useful commands:
+
+```bash
+npm run talk:list
+npm run dev -- dilitrust-techday
+npm run build -- dilitrust-techday
+npm run build:all
+npx serve dist
+```
+
+After `npm run build:all`, `npx serve dist` lets you test the generated index,
+all talk routes, and downloadable PDF/PPTX files locally:
+
+```text
+http://localhost:3000/
+```
+
+The generated index is the canonical entry point. It shows talks ordered by date,
+keeps each talk language visible, and links to:
+
+- the web deck;
+- the generated PDF;
+- the generated PPTX.
 
 ## GitHub Pages
 
@@ -47,13 +121,6 @@ Before the first deployment, configure the repository on GitHub:
 2. Set `Build and deployment` > `Source` to `GitHub Actions`.
 3. Push to `main` or run the `Deploy slides to GitHub Pages` workflow manually.
 
-The workflow builds Slidev with `/gastown-dilitrust-presentation/` as its base path so assets resolve correctly under the published route.
-
-## Releases
-
-When a GitHub release is published, the `Attach release artifacts` workflow exports the slides as:
-
-- `gastown-dilitrust-presentation.pdf`
-- `gastown-dilitrust-presentation.pptx`
-
-The generated files are attached to the release assets.
+The workflow builds all configured talk instances with relative asset paths, so the same
+artifact works locally and under `/gastown-dilitrust-presentation/` on GitHub Pages. The
+generated index also links to the current PDF and PowerPoint exports for each talk.
