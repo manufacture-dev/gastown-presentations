@@ -1,4 +1,4 @@
-name: Deploy slides to GitHub Pages
+name: Build and publish talks
 
 on:
   pull_request:
@@ -34,7 +34,7 @@ jobs:
       - name: Install Chromium dependencies
         run: npx playwright install --with-deps chromium
 
-      - name: Build Slidev static site
+      - name: Build Slidev talks
         run: npm run build:all
 
       - name: Configure GitHub Pages
