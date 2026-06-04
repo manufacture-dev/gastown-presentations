@@ -108,6 +108,56 @@ keeps each talk language visible, and links to:
 - the generated PDF;
 - the generated PPTX.
 
+## Talk Variants
+
+A single `slides.md` can produce several **content variants** of the same deck
+(for example a full version and a shorter critical-path version). Variant
+selection happens at build time, so a slide that is not part of a variant is
+removed from the generated deck rather than rendered empty.
+
+Two variants are currently used:
+
+- `full` (default): the complete deck.
+- `short`: a reduced critical-path cut.
+
+### Selecting a variant for a talk
+
+Add an optional `variant` field to a talk definition. When omitted, the talk
+uses `full`.
+
+```json
+{
+  "id": "dev_with_ai_live_4",
+  "route": "dev-with-ai-live-4",
+  "variant": "short",
+  "defaultLocale": "fr",
+  "label": "Dev With AI Live #4",
+  "date": "2026-06-12"
+}
+```
+
+### Marking a slide for specific variants
+
+By default a slide belongs to every variant. To restrict a slide to one or more
+variants, add a `variants` list to that slide's frontmatter. The slide is kept
+only when the active variant is in the list.
+
+```markdown
+---
+variants: [full]
+---
+
+# This slide only appears in the full variant
+```
+
+Notes:
+
+- A slide without a `variants` list is part of every variant (the shared core).
+- `variant` selection is also exposed at runtime as `talkConfig.variant`, so
+  in-slide tweaks can use `v-if` when removing a whole slide is not desired.
+- Exports keep their `gastown-<route>.<locale>.<ext>` naming; because `route`
+  is unique per talk, the variant is already disambiguated.
+
 ## GitHub Pages
 
 The slides are published as a static Slidev site through GitHub Actions.

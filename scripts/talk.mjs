@@ -3,6 +3,9 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { mkdir } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { parseSync, stringify } from '@slidev/parser'
+
+const DEFAULT_VARIANT = 'full'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const talksDir = path.join(root, 'talks')
@@ -42,6 +45,10 @@ function findTalk(routeOrId) {
   return talk
 }
 
+function variantForTalk(talk) {
+  return talk.variant || DEFAULT_VARIANT
+}
+
 function envForTalk(talk) {
   return {
     ...process.env,
@@ -49,6 +56,7 @@ function envForTalk(talk) {
     VITE_TALK_ROUTE: talk.route,
     VITE_TALK_DATE: talk.date,
     VITE_DEFAULT_LOCALE: talk.defaultLocale,
+    VITE_TALK_VARIANT: variantForTalk(talk),
   }
 }
 
@@ -71,13 +79,33 @@ function documentTitleForTalk(talk) {
   return `${talk.label} - ${readLocalizedHeading(talk.defaultLocale)} (${talk.defaultLocale})`
 }
 
+function selectVariantSlides(source, variant) {
+  const parsed = parseSync(source, 'slides.md')
+
+  parsed.slides = parsed.slides.filter((slide, index) => {
+    // The first slide carries the deck headmatter and is always kept.
+    if (index === 0)
+      return true
+
+    const variants = slide.frontmatter?.variants
+    // A slide without an explicit variant list belongs to every variant.
+    return !variants || variants.includes(variant)
+  })
+
+  if (parsed.slides.length <= 1)
+    throw new Error(`Variant "${variant}" matched no content slides in slides.md`)
+
+  return stringify(parsed)
+}
+
 function generatedSlidesForTalk(talk) {
   const source = readFileSync(path.join(root, 'slides.md'), 'utf8')
+  const assembled = selectVariantSlides(source, variantForTalk(talk))
   const title = documentTitleForTalk(talk)
-  const generated = source.replace(/^title:\s*.*$/m, `title: ${yamlString(title)}`)
+  const generated = assembled.replace(/^title:\s*.*$/m, `title: ${yamlString(title)}`)
   const generatedPath = path.join(root, `.slides.generated.${talk.route}.md`)
 
-  if (generated === source)
+  if (generated === assembled)
     throw new Error('Unable to replace title in slides.md frontmatter')
 
   writeFileSync(generatedPath, generated, 'utf8')

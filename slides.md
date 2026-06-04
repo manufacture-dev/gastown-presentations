@@ -111,6 +111,8 @@ Use this as the bridge from personal AI practice to organizational orchestration
 -->
 
 ---
+variants: [full]
+---
 
 # Steve Yegge
 
@@ -405,6 +407,8 @@ The Mayor coordinates work. Polecats execute it.
 -->
 
 ---
+variants: [full]
+---
 
 # {{ $t("beads.heading") }}
 
@@ -479,6 +483,8 @@ The important point: work becomes executable and inspectable.
 -->
 
 ---
+variants: [full]
+---
 
 # {{ $t("convoys.heading") }}
 
@@ -545,6 +551,8 @@ They are the shared handle for distributed delivery.
 -->
 
 ---
+variants: [full]
+---
 
 # {{ $t("polecats.heading") }}
 
@@ -610,6 +618,8 @@ This is the "wow" moment, but keep it engineering-oriented.
 The claim is throughput through isolated execution.
 -->
 
+---
+variants: [full]
 ---
 
 # {{ $t("supervision.heading") }}
@@ -717,6 +727,8 @@ Switch to the browser and slow down.
 The audience must see that Agreement Hub changed because Gastown delivered code.
 -->
 
+---
+variants: [full]
 ---
 
 # {{ $t("formulas.heading") }}

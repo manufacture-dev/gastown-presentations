@@ -5,6 +5,7 @@ interface TalkConfig {
   route: string
   date: string
   defaultLocale: string
+  variant: string
 }
 
 interface AppI18n {
@@ -33,6 +34,7 @@ const talkConfig: TalkConfig = {
   route: import.meta.env.VITE_TALK_ROUTE || latestTalk.route,
   date: import.meta.env.VITE_TALK_DATE || latestTalk.date,
   defaultLocale: import.meta.env.VITE_DEFAULT_LOCALE || latestTalk.defaultLocale,
+  variant: import.meta.env.VITE_TALK_VARIANT || latestTalk.variant || 'full',
 }
 
 function capitalize(value: string) {
