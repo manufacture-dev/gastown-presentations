@@ -1,17 +1,14 @@
 # Gastown Presentations
 
-Multi-talk Slidev deck for **Organizing AI-native software delivery with Gastown**.
+Talks about **Gas Town** and AI-native software delivery.
+
+Published timeline: [manufacture.dev/gastown-presentations](https://manufacture.dev/gastown-presentations)
 
 ## About the Deck
 
 This repository contains one shared Slidev deck that can be rendered for several
 events, languages and dates. Each talk instance reuses the same `slides.md`
 content and injects event-specific metadata from `talks/*.json`.
-
-The generated website starts with a timeline index listing all configured talks:
-
-- published timeline: [manufacture.dev/gastown-dilitrust-presentation](https://manufacture.dev/gastown-dilitrust-presentation);
-- local timeline after build: `http://localhost:3000/` when serving `dist/`.
 
 The deck introduces Gastown as an operating model for AI-native software delivery.
 It starts from the evolution of individual AI coding practices, then moves into
@@ -84,7 +81,7 @@ The `route` value becomes the URL segment in the generated site. For example,
 `dev-with-ai-live-4` is available at:
 
 ```text
-https://manufacture.dev/gastown-dilitrust-presentation/dev-with-ai-live-4/#/1
+https://manufacture.dev/gastown-presentations/dev-with-ai-live-4/#/1
 ```
 
 Useful commands:
@@ -119,8 +116,8 @@ Before the first deployment, configure the repository on GitHub:
 
 1. Open `Settings` > `Pages`.
 2. Set `Build and deployment` > `Source` to `GitHub Actions`.
-3. Push to `main` or run the `Deploy slides to GitHub Pages` workflow manually.
+3. Push to `main` or run the `Build and publish talks` workflow manually.
 
 The workflow builds all configured talk instances with relative asset paths, so the same
-artifact works locally and under `/gastown-dilitrust-presentation/` on GitHub Pages. The
+artifact works locally and under `/gastown-presentations/` on GitHub Pages. The
 generated index also links to the current PDF and PowerPoint exports for each talk.
