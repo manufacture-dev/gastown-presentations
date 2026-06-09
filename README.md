@@ -161,13 +161,12 @@ Notes:
 ## Demo Prompts
 
 The demo slide has one copy button. Each talk chooses which plain-text prompt that
-button copies through the optional `prompt` field in `talks/*.json`.
+button copies through the required `prompt` field in `talks/*.json`.
 
 Available prompts:
 
+- `all-use-cases`: complete prompt for implementing all documented use cases.
 - `demo-30min`: prompt focused on shipping the demo critical path in 30 minutes.
-
-When `prompt` is omitted, the talk uses the default demo prompt.
 
 Example:
 
@@ -183,13 +182,7 @@ Example:
 }
 ```
 
-Prompt files live in `public/prompts`. The default prompt keeps the base filename:
-
-```text
-gastown-demo-prompt.<locale>.txt
-```
-
-Alternative prompts add the prompt name:
+Prompt files live in `public/prompts` and include the prompt name:
 
 ```text
 gastown-demo-prompt.<prompt>.<locale>.txt
@@ -198,8 +191,8 @@ gastown-demo-prompt.<prompt>.<locale>.txt
 For every prompt used by a talk, provide both English and French files:
 
 ```text
-public/prompts/gastown-demo-prompt.en.txt
-public/prompts/gastown-demo-prompt.fr.txt
+public/prompts/gastown-demo-prompt.all-use-cases.en.txt
+public/prompts/gastown-demo-prompt.all-use-cases.fr.txt
 public/prompts/gastown-demo-prompt.demo-30min.en.txt
 public/prompts/gastown-demo-prompt.demo-30min.fr.txt
 ```

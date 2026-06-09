@@ -7,9 +7,7 @@ const talkConfig = inject('talkConfig', {})
 
 async function copyDemoPrompt() {
   const lang = locale.value?.startsWith('fr') ? 'fr' : 'en'
-  const promptName = talkConfig.prompt
-    ? `gastown-demo-prompt.${talkConfig.prompt}.${lang}`
-    : `gastown-demo-prompt.${lang}`
+  const promptName = `gastown-demo-prompt.${talkConfig.prompt}.${lang}`
   const response = await fetch(`${import.meta.env.BASE_URL}prompts/${promptName}.txt`)
   if (!response.ok)
     throw new Error(`Prompt fetch failed: ${response.status}`)

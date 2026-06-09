@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { parseSync, stringify } from '@slidev/parser'
 
 const DEFAULT_VARIANT = 'full'
-const PROMPTS = new Set(['demo-30min'])
+const PROMPTS = new Set(['all-use-cases', 'demo-30min'])
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const talksDir = path.join(root, 'talks')
@@ -23,7 +23,9 @@ function readTalks() {
         if (!talk[field])
           throw new Error(`Missing "${field}" in talks/${file}`)
       }
-      if (talk.prompt && !PROMPTS.has(talk.prompt)) {
+      if (!talk.prompt)
+        throw new Error(`Missing "prompt" in talks/${file}`)
+      if (!PROMPTS.has(talk.prompt)) {
         const prompts = [...PROMPTS].join(', ')
         throw new Error(`Invalid "prompt" in talks/${file}: ${talk.prompt}. Expected one of: ${prompts}`)
       }
@@ -79,7 +81,7 @@ function renderTalkList(talks) {
       talk.date,
       talk.defaultLocale,
       variantForTalk(talk),
-      promptForTalk(talk) || 'default',
+      promptForTalk(talk),
       talk.route,
     ]),
   ])
@@ -94,9 +96,7 @@ function envForTalk(talk) {
     VITE_DEFAULT_LOCALE: talk.defaultLocale,
     VITE_TALK_VARIANT: variantForTalk(talk),
   }
-  const prompt = promptForTalk(talk)
-  if (prompt)
-    env.VITE_TALK_PROMPT = prompt
+  env.VITE_TALK_PROMPT = promptForTalk(talk)
   return env
 }
 
