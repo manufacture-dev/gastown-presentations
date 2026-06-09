@@ -165,7 +165,7 @@ button copies through the optional `prompt` field in `talks/*.json`.
 
 Available prompts:
 
-- `critical-path`: lightweight prompt focused on the demo critical path.
+- `demo-30min`: prompt focused on shipping the demo critical path in 30 minutes.
 
 When `prompt` is omitted, the talk uses the default demo prompt.
 
@@ -176,7 +176,7 @@ Example:
   "id": "dev_with_ai_live_4",
   "route": "dev-with-ai-live-4",
   "variant": "short",
-  "prompt": "critical-path",
+  "prompt": "demo-30min",
   "defaultLocale": "fr",
   "label": "Dev With AI Live #4",
   "date": "2026-06-12"
@@ -200,8 +200,8 @@ For every prompt used by a talk, provide both English and French files:
 ```text
 public/prompts/gastown-demo-prompt.en.txt
 public/prompts/gastown-demo-prompt.fr.txt
-public/prompts/gastown-demo-prompt.critical-path.en.txt
-public/prompts/gastown-demo-prompt.critical-path.fr.txt
+public/prompts/gastown-demo-prompt.demo-30min.en.txt
+public/prompts/gastown-demo-prompt.demo-30min.fr.txt
 ```
 
 Keep prompt files as plain text. The copy button writes the fetched `.txt` content

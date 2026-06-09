@@ -1,0 +1,82 @@
+Je veux implémenter de nouvelles fonctionnalités dans l'application agreement_hub. Le contexte partagé et les use cases sont dans le dossier docs.
+
+Objectif: livrer une démo fonctionnelle en moins de 30 minutes mur-clock.
+
+Limite strictement le scope au plus petit chemin critique démontrable de bout en bout. Ne cherche pas à livrer tous les use cases. Choisis toi-même le workflow le plus démontrable et le moins risqué, en t'appuyant sur les docs et l'état actuel de l'application.
+
+Contraintes de scope:
+- 1 seul workflow produit principal.
+- 2 à 3 beads produit maximum, hors éventuel bead de merge/vérification.
+- 1 bead de fondation maximum, uniquement si nécessaire pour éviter les conflits ou créer un seam partagé.
+- Pas de bead documentation dans le chemin critique.
+- Pas de polish, pas de refactor non indispensable, pas d'adaptateur LLM réel.
+- Tout ce qui n'est pas nécessaire à la démo en 30 minutes doit être explicitement différé.
+
+D'abord, ne lance pas encore de travail d'implémentation.
+
+Fais un préflight rapide:
+- vérifie que la branche de delivery, bd, Dolt/Gastown, witness/refinery, et les commandes de build/test minimales sont utilisables;
+- si une panne infra bloque bd, Dolt, mail, ou la merge queue plus de 2 minutes, arrête et reporte l'incident au lieu de démarrer du delivery produit.
+
+Ensuite, lis la documentation et inspecte l'application, mais timeboxe cette phase à 5 minutes. Prends toi-même les décisions raisonnables de produit, architecture, scope, séquencement, implémentation, nommage, ownership des fichiers et ordre de merge, en t'appuyant sur les patterns existants du projet.
+
+Présente-moi ensuite un plan court:
+- le workflow démo choisi et pourquoi;
+- ce qui est explicitement hors scope;
+- les beads proposés, 2 à 3 maximum;
+- l'ordre d'exécution et de merge;
+- les fichiers partagés et leur owner unique;
+- le plan mock/offline;
+- la vérification minimale pour dire que la démo est prête.
+
+Ne me demande pas de valider les choix routiniers de design, UI, implémentation, architecture, nommage, structure de fichiers, librairie, séquencement ou ownership. Demande seulement pour les décisions de scope de démo, dépendance externe, perte de données, coût/durée majeur, ou conflit non récupérable.
+
+Après avoir présenté le plan, attends mon GO explicite.
+
+Quand je dis GO, exécute en autonomie:
+- crée uniquement les beads nécessaires au chemin critique;
+- dispatche selon le graphe de dépendances minimal;
+- ne lance pas plus de 2 agents d'implémentation en parallèle;
+- évite les éditions parallèles sur les fichiers partagés;
+- soumets au merge seulement après vérification locale minimale;
+- merge seulement quand le résultat est accepté et vérifié sur la branche de delivery;
+- ne ferme les beads source qu'après merge et vérification sur la branche de delivery.
+
+Règles de delivery:
+- La branche de delivery canonique, généralement origin/main, est la source de vérité.
+- Une tâche n'est terminée que lorsqu'elle est mergée sur la branche de delivery et vérifiée.
+- Si le statut task, convoy, branche ou agent contredit la branche de delivery, la branche de delivery gagne.
+- Si un merge est rejeté ou en conflit, préserve la branche, garde/rouvre le bead source, marque le travail bloqué, puis rebase/retry seulement si c'est sûr.
+
+Règles de temps:
+- Si 20 minutes sont écoulées après GO et que le workflow n'est pas mergé, arrête les nouveaux dispatchs et passe en stabilisation.
+- En stabilisation, récupère le travail utile, merge le minimum démontrable, vérifie, et reporte honnêtement le reste comme différé.
+- Ne démarre pas de boucle idle/patrol longue pendant la démo.
+- Les waits événementiels ne doivent pas dépasser 2 minutes pendant l'exécution du delivery.
+
+Updates:
+- Donne une mise à jour courte toutes les 5 minutes, ou immédiatement en cas de blocage.
+- Chaque update doit indiquer seulement:
+  - livré sur la branche de delivery;
+  - actif;
+  - bloqué;
+  - soumis non mergé;
+  - décision nécessaire.
+- Ne fais pas de recap exhaustif des convoys, wisps, patrols ou résidus workflow pendant l'exécution, sauf s'ils bloquent le delivery.
+
+Avant d'annoncer la complétion, vérifie directement la branche de delivery:
+- le workflow démo fonctionne;
+- les checks minimaux backend/frontend passent;
+- le mode mock/offline fonctionne sans accès LLM;
+- les beads du chemin critique sont mergés et fermés;
+- le travail différé est nommé explicitement.
+
+Le recap final doit inclure:
+- le commit final de la branche de delivery;
+- le workflow démo livré;
+- les beads livrés;
+- la preuve de vérification;
+- le travail différé;
+- les risques restants.
+
+Arrête la boucle dès que le workflow démo est livré, vérifié, et recapé.
