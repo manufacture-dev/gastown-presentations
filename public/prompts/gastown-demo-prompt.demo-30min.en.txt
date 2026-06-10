@@ -1,29 +1,29 @@
 I want to implement new features in the agreement_hub application. The shared context and use cases are in the docs folder.
 
-Goal: ship a working demo in under 30 minutes wall-clock.
+Goal: ship a working demo within 15 minutes of this message, including preflight, planning, execution, merge, verification, and recap. Only passive time spent waiting for my explicit GO does not count.
 
 Strictly limit scope to the smallest demonstrable end-to-end critical path. Do not try to ship all use cases. Choose the most demoable and least risky workflow yourself, based on the docs and the current application state.
 
 Scope constraints:
 - 1 primary product workflow only.
-- 2 to 3 product beads maximum, excluding any merge/verification bead.
+- 1 to 2 product beads maximum, excluding any merge/verification bead.
 - 1 foundation bead maximum, only if needed to avoid conflicts or establish a shared seam.
 - No documentation bead in the critical path.
 - No polish, no non-essential refactor, no real LLM adapter.
-- Anything not required for the 30-minute demo must be explicitly deferred.
+- Anything not required for the 15-minute demo must be explicitly deferred.
 
 First, do not start implementation yet.
 
-Run a quick preflight:
+Run a quick preflight, in under one minute:
 - verify that the delivery branch, bd, Dolt/Gastown, witness/refinery, and minimal build/test commands are usable;
-- if an infrastructure issue blocks bd, Dolt, mail, or the merge queue for more than 2 minutes, stop and report the incident instead of starting product delivery.
+- if an infrastructure issue blocks bd, Dolt, mail, or the merge queue for more than one minute, stop and report the incident instead of starting product delivery.
 
-Then read the documentation and inspect the application, but timebox this phase to 5 minutes. Make reasonable product, architecture, scope, sequencing, implementation, naming, file ownership, and merge-order decisions yourself, following the existing project patterns.
+Then read the documentation and inspect the application, but timebox this phase to 2 minutes. Make reasonable product, architecture, scope, sequencing, implementation, naming, file ownership, and merge-order decisions yourself, following the existing project patterns.
 
 Present a short plan:
 - the chosen demo workflow and why;
 - what is explicitly out of scope;
-- the proposed beads, 2 to 3 maximum;
+- the proposed beads, 1 to 2 maximum;
 - the execution and merge order;
 - shared files and their single owner;
 - the mock/offline plan;
@@ -36,7 +36,7 @@ After presenting the plan, wait for my explicit GO.
 When I say GO, execute autonomously:
 - create only the beads required for the critical path;
 - dispatch according to the minimal dependency graph;
-- run at most 2 implementation agents in parallel;
+- run 1 implementation agent by default; use 2 agents maximum only if the changes are truly independent;
 - avoid parallel edits to shared files;
 - submit to merge only after minimal local verification passes;
 - merge only when the result is accepted and verified on the delivery branch;
@@ -49,13 +49,13 @@ Delivery rules:
 - If a merge is rejected or conflicts, preserve the branch, keep/reopen the source bead, mark the work blocked, and rebase/retry only if safe.
 
 Time rules:
-- If 20 minutes have elapsed after GO and the workflow is not merged, stop new dispatches and switch to stabilization.
+- If 10 minutes have elapsed after GO and the workflow is not merged, stop new dispatches and switch to stabilization.
 - In stabilization, salvage useful work, merge the smallest demonstrable result, verify it, and honestly report the rest as deferred.
 - Do not start long idle/patrol loops during the demo.
-- Event waits must not exceed 2 minutes during delivery execution.
+- Event waits must not exceed 1 minute during delivery execution.
 
 Updates:
-- Give a short update every 5 minutes, or immediately when blocked.
+- Give a short update every 3 minutes, or immediately when blocked.
 - Each update must include only:
   - delivered on the delivery branch;
   - active;
