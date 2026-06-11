@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { parseSync, stringify } from '@slidev/parser'
 
 const DEFAULT_VARIANT = 'full'
-const PROMPTS = new Set(['all-use-cases', 'demo-30min'])
+const PROMPTS = new Set(['all-use-cases', 'demo-15-min'])
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const talksDir = path.join(root, 'talks')

@@ -165,8 +165,8 @@ button copies through the required `prompt` field in `talks/*.json`.
 
 Available prompts:
 
-- `all-use-cases`: complete prompt for implementing all documented use cases.
-- `demo-30min`: prompt focused on shipping the demo critical path in 30 minutes.
+- `all-use-cases`: original full prompt used by the DiliTrust talk.
+- `demo-15-min`: prompt focused on shipping two functional demo increments in less than 15 minutes while showing the Gastown delivery pipeline.
 
 Example:
 
@@ -175,7 +175,7 @@ Example:
   "id": "dev_with_ai_live_4",
   "route": "dev-with-ai-live-4",
   "variant": "short",
-  "prompt": "demo-30min",
+  "prompt": "demo-15-min",
   "defaultLocale": "fr",
   "label": "Dev With AI Live #4",
   "date": "2026-06-12"
@@ -193,8 +193,8 @@ For every prompt used by a talk, provide both English and French files:
 ```text
 public/prompts/gastown-demo-prompt.all-use-cases.en.txt
 public/prompts/gastown-demo-prompt.all-use-cases.fr.txt
-public/prompts/gastown-demo-prompt.demo-30min.en.txt
-public/prompts/gastown-demo-prompt.demo-30min.fr.txt
+public/prompts/gastown-demo-prompt.demo-15-min.en.txt
+public/prompts/gastown-demo-prompt.demo-15-min.fr.txt
 ```
 
 Keep prompt files as plain text. The copy button writes the fetched `.txt` content
