@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { parseSync, stringify } from '@slidev/parser'
 
 const DEFAULT_VARIANT = 'full'
+const PROMPTS = new Set(['all-use-cases', 'demo-15-min'])
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const talksDir = path.join(root, 'talks')
@@ -21,6 +22,12 @@ function readTalks() {
       for (const field of ['id', 'route', 'defaultLocale', 'label', 'date']) {
         if (!talk[field])
           throw new Error(`Missing "${field}" in talks/${file}`)
+      }
+      if (!talk.prompt)
+        throw new Error(`Missing "prompt" in talks/${file}`)
+      if (!PROMPTS.has(talk.prompt)) {
+        const prompts = [...PROMPTS].join(', ')
+        throw new Error(`Invalid "prompt" in talks/${file}: ${talk.prompt}. Expected one of: ${prompts}`)
       }
       return talk
     })
@@ -49,8 +56,39 @@ function variantForTalk(talk) {
   return talk.variant || DEFAULT_VARIANT
 }
 
+function promptForTalk(talk) {
+  return talk.prompt
+}
+
+function renderTable(rows) {
+  const widths = rows[0].map((_, columnIndex) =>
+    Math.max(...rows.map(row => row[columnIndex].length)))
+
+  return rows
+    .map(row => row
+      .map((cell, columnIndex) => cell.padEnd(widths[columnIndex]))
+      .join('  ')
+      .trimEnd())
+    .join('\n')
+}
+
+function renderTalkList(talks) {
+  return renderTable([
+    ['Talk', 'Date', 'Locale', 'Slides', 'Prompt', 'Route'],
+    ['----', '----', '------', '------', '------', '-----'],
+    ...talks.map(talk => [
+      talk.label,
+      talk.date,
+      talk.defaultLocale,
+      variantForTalk(talk),
+      promptForTalk(talk),
+      talk.route,
+    ]),
+  ])
+}
+
 function envForTalk(talk) {
-  return {
+  const env = {
     ...process.env,
     VITE_TALK_ID: talk.id,
     VITE_TALK_ROUTE: talk.route,
@@ -58,6 +96,8 @@ function envForTalk(talk) {
     VITE_DEFAULT_LOCALE: talk.defaultLocale,
     VITE_TALK_VARIANT: variantForTalk(talk),
   }
+  env.VITE_TALK_PROMPT = promptForTalk(talk)
+  return env
 }
 
 function readLocalizedHeading(locale) {
@@ -316,8 +356,7 @@ async function main() {
   const [command, ...args] = ownArgs
 
   if (command === 'list') {
-    for (const talk of readTalks())
-      console.log(`${talk.route}\t${talk.defaultLocale}\t${talk.label}`)
+    console.log(renderTalkList(readTalks()))
     return
   }
 

@@ -1,11 +1,14 @@
 <script setup>
+import { inject } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { locale, t } = useI18n()
+const talkConfig = inject('talkConfig', {})
 
 async function copyDemoPrompt() {
   const lang = locale.value?.startsWith('fr') ? 'fr' : 'en'
-  const response = await fetch(`${import.meta.env.BASE_URL}prompts/gastown-demo-prompt.${lang}.txt`)
+  const promptName = `gastown-demo-prompt.${talkConfig.prompt}.${lang}`
+  const response = await fetch(`${import.meta.env.BASE_URL}prompts/${promptName}.txt`)
   if (!response.ok)
     throw new Error(`Prompt fetch failed: ${response.status}`)
 
