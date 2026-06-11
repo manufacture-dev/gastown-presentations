@@ -10,8 +10,8 @@ Each scenario should:
 
 ## Scenarios
 
-- `dilitrust-techday.md`: DiliTrust TechDay.
-- `dev-with-ai-live-4.md`: Dev With AI Live #4.
+- [DiliTrust TechDay](dilitrust-techday.md)
+- [Dev With AI Live #4](dev-with-ai-live-4.md)
 
 ## Prompt Convention
 
