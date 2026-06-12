@@ -24,7 +24,7 @@ speakers:
     bio: Ingénieur et coach en transformation AI-native. J’aide les organisations et les équipes engineering à faire évoluer leurs plateformes et leurs workflows de delivery pour intégrer durablement les systèmes multi-agents et les pratiques de développement agentiques.
     qr_alt: QR code du profil LinkedIn de Jean-Louis Rigau
   emmanuelsciara:
-    bio: Agent Lead et ingénieur AI-native. J'interviens sur la stratégie, le déploiement et de coaching sur les coding agents, avec une pratique terrain de Claude Code et sur la montée en compétence des développeurs.
+    bio: Agent Lead et ingénieur AI-native. J'interviens sur la stratégie d'entreprise, le déploiement et le coaching de l'utilisation des coding agents. Spécialiste Claude Code.
     qr_alt: QR code du profil LinkedIn d'Emmanuel Sciara
 
 evolution:
@@ -33,55 +33,58 @@ evolution:
     zero: IA nulle ou quasi nulle
     ide_assistant: Assistant IDE avec permissions
     yolo: Agent IDE en mode YOLO
-    wide_ide: La place de l'agent s'élargie dans l'IDE
-    cli_agent: Agent CLI unique
-    multi_cli: Workflow CLI multi-agent
-    hand_managed: 10+ agents pilotés à la main
+    wide_ide: Agent IDE en mode large
+    cli_agent: Agent CLI en session unique
+    multi_cli: Agent CLI en multi-sessions
+    hand_managed: 10+ agents, pilotés à la main
     orchestrator: Construire un orchestrateur
   copy_label: Changement de pratique
-  lede: D'une demande à un assistant vers l'opération d'un système de delivery.
+  lede: D'une requête à un assistant vers la gestion d'un système de delivery.
   bullets:
     early: Les premières étapes améliorent le flux individuel.
     middle: Les étapes intermédiaires augmentent le débit (CLI).
     late: Les dernières étapes créent un enjeu de coordination.
-    gastown: Gastown apparaît quand le pilotage manuel ne scale plus.
-  takeaway: Le développement IA évolue de l'assistance individuelle vers la coordination organisationnelle.
+    gastown: Gastown entre en jeu quand le pilotage manuel n'est plus gérable.
+  takeaway: Le développement avec l'IA évolue de l'assistance individuelle vers la coordination organisationnelle.
 
 creator:
   photo_caption: "Photo : Bram Cymet, CC BY-NC 2.0"
   copy_label: De la pratique à l'organisation
-  lede: Steve Yegge formalise le passage du coding IA individuel au delivery logiciel AI-native.
+  lede: Steve Yegge cadre la bascule de l'utilisation individuelle des agents de code au delivery logiciel AI-native.
   vibe:
-    desc: Du logiciel prêt pour la Production avec des agents de coding IA.
+    desc: Developpement de logiciel de qualité production avec des agents de coding IA.
   gastown:
     desc: Un modèle opérationnel pour coordonner de nombreux agents sur des projets réels.
   beads:
-    desc: Un registre de travail adossé à Git pour les workflows d'ingénierie agentiques.
+    desc: Un registre de travail basé sur Git pour workflows d'ingénierie agentiques.
   cover_caption: "Couverture : IT Revolution / Simon & Schuster"
 
 gastown:
   heading: "Gastown : un système de delivery urbanisé"
   town:
+    title: Town
     strong: Quartier général agentique
-    desc: Un espace opérationnel séparé où vivent orchestration, identité, mail et suivi du travail.
+    desc: Un espace opérationnel séparé où vivent orchestration, identité, mail et traçage du travail.
   mayor:
+    title: Mayor
     strong: Coordination
-    desc: "La porte d'entrée : absorbe le bruit des workers et transforme l'intention en travail coordonné."
+    desc: "C'est le point d'entrée : absorbe le bruit des workers et transforme l'intention en travail coordonné."
   rigs:
-    strong: Usines projet
+    title: Rigs (Tour de forage)
+    strong: Usines projets
     desc: Polecats, Crew, Witness et Refinery opèrent directement sur des repositories.
   copy_label: La ville comme modèle opérationnel
   lede: Gastown rend le vibe coding opérationnel sans nier le chaos.
   bullets:
     identities: Les agents deviennent des workers visibles, avec une identité.
-    beads: Les beads fournissent un registre adossé à Git du travail, de la mémoire, du mail et de la provenance.
-    convoys: Les convoys suivent le delivery; les Polecats exécutent.
-    supervision: Witness et Refinery évitent le chaos de merge.
-  takeaway: Gastown rend le coding agentique observable et coordonné.
+    beads: Les beads fournissent un registre du travail, de la mémoire, du mail et de la provenance, avec Git comme backend.
+    convoys: Les convoys suivent le delivery ; les Polecats exécutent.
+    supervision: Witness et Refinery évitent le chaos du merge.
+  takeaway: Gastown rend l'utilisation des agents de code observable et coordonnée.
 
 demo:
   heading: Application de démo
-  desc: Une application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste.
+  desc: "Exemple de delivey réaliste : application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste."
   bullets:
     stack: "Stack : frontend React/Vite, backend Express/TypeScript et base SQLite."
     baseline: Gastown travaille sur un repository forké, donc la démo repart d'une baseline propre.
@@ -89,7 +92,7 @@ demo:
   image_alt: État initial d'Agreement Hub
   flow_label: Déroulé démo
   flow_start: "Démarrer la boucle : ouvrir Agreement Hub → montrer l'état courant → demander au Mayor."
-  flow_next: À partir d'ici, chaque Live Signal indique ce qu'il faut observer.
+  flow_next: À partir d'ici, chaque signal live des workers indique ce qu'il faut observer.
   open_app: Ouvrir l'app ↗
   copy_prompt: Copier le prompt
 
@@ -98,11 +101,11 @@ break:
   core:
     label: Agent unique
     strong: Très bon assistant local
-    desc: Un contexte, un fil d'exécution, une branche de travail.
+    desc: Un seul contexte, un seul fil d'exécution, une seule branche de travail.
   cards:
     context:
       title: Saturation du contexte
-      desc: Les contraintes importantes disparaissent quand la session grandit.
+      desc: Les contraintes importantes disparaissent  la session grandit.
     sequential:
       title: Exécution séquentielle
       desc: Le débit est limité par une seule boucle de worker.
@@ -116,9 +119,9 @@ break:
       title: Pas de supervision opérationnelle
       desc: Le travail bloqué devient difficile à observer et à récupérer.
   panel_label: Problème
-  panel_desc: L'agent de dev IA fonctionne localement, mais le delivery logiciel est organisationnel.
+  panel_desc: le développement avec IA se fait localement, alors que le delivery logiciel est organisationnel.
   bullets:
-    context: Les fenêtres de contexte ne modélisent pas les dépendances.
+    context: Les Context Windows ne modélisent pas les dépendances.
     sequential: Le travail séquentiel limite le débit.
     parallel: Le travail parallèle crée une pression sur l'intégration.
     supervision: La supervision devient un sujet de premier ordre.
@@ -129,7 +132,7 @@ organizes:
   input:
     label: Entrée
     strong: Intention humaine
-    desc: Une demande en langage naturel, incomplète par design.
+    desc: Une demande en langage naturel, incomplète par construction.
   layer:
     label: Couche d'organisation
     strong: Gastown structure le delivery
@@ -263,8 +266,8 @@ polecats:
     delivery: Delivery coordonné
   panel_desc: Le Mayor assigne des beads cadrés à des Polecats isolés, chacun dans son contexte et sa branche.
   bullets:
-    spawned: Spawnés à la demande.
-    isolated: Les affectations restent isolées.
+    spawned: Lancés à la demande.
+    isolated: Les affectations de travail restent isolées entre elles.
     disappear: Les Polecats disparaissent après livraison.
     parallelism: La parallélisation augmente le débit, pas le chaos.
   takeaway: Les Polecats scalent l'exécution via des contextes isolés.
@@ -281,7 +284,7 @@ supervision:
   rig_label: Boucle opérationnelle du rig
   crew: Workers persistants
   witness: Surveille les Polecats · détecte le travail bloqué · relance la reprise
-  polecats: Exécutent les beads
+  polecats: Implémentent les beads
   refinery: Merge queue · convergence delivery
   panel_desc: La supervision Gastown est organisée en couches, pas autour d'un watcher unique.
   bullets:

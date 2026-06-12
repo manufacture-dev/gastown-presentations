@@ -62,12 +62,15 @@ creator:
 gastown:
   heading: "Gastown: a town-shaped delivery system"
   town:
+    title: Town
     strong: Agent headquarters
     desc: A separate operating space where orchestration, identity, mail, and work tracking live.
   mayor:
+    title: Mayor
     strong: Chief of staff
     desc: "The front door: absorbs worker noise and turns intent into coordinated work."
   rigs:
+    title: Rigs
     strong: Project factories
     desc: Polecats, Crew, Witness and Refinery operate around real repositories.
   copy_label: Town as operating model
