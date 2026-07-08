@@ -1,0 +1,9 @@
+{
+  "id": "sacem_matinale_dsi",
+  "route": "sacem-matinale-dsi",
+  "variant": "short",
+  "prompt": "demo-15-min",
+  "defaultLocale": "fr",
+  "label": "SACEM - Matinale DSI",
+  "date": "2026-07-10"
+}

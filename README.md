@@ -77,6 +77,14 @@ The title slide keeps its main title in the global locale keys and reads talk-sp
 context with `$talk("event")`. The date comes from the talk JSON and is formatted with
 `$talkDate()` according to the active locale.
 
+Configured talks:
+
+| Talk | Date | Locale | Variant | Prompt | Route |
+|---|---:|:---:|:---:|---|---|
+| SACEM - Matinale DSI | 2026-07-10 | fr | short | `demo-15-min` | `sacem-matinale-dsi` |
+| Dev With AI Live #4 | 2026-06-12 | fr | short | `demo-15-min` | `dev-with-ai-live-4` |
+| DiliTrust TechDay | 2026-05-21 | en | full | `all-use-cases` | `dilitrust-techday` |
+
 The `route` value becomes the URL segment in the generated site. For example,
 `dev-with-ai-live-4` is available at:
 
@@ -111,10 +119,8 @@ keeps each talk language visible, and links to:
 ## Talk Scenarios
 
 Scenario runbooks live in [docs/scenarios](docs/scenarios/). Start from the
-[scenarios README](docs/scenarios/README.md), or open a scenario directly:
-
-- [DiliTrust TechDay](docs/scenarios/dilitrust-techday.md)
-- [Dev With AI Live #4](docs/scenarios/dev-with-ai-live-4.md)
+[scenarios README](docs/scenarios/README.md), which is the canonical index for
+the detailed talk conductors and preparation notes.
 
 ## Talk Variants
 

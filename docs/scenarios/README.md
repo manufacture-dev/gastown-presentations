@@ -1,6 +1,6 @@
 # Talk Scenarios
 
-This directory contains scenario runbooks for public Gastown presentation flows.
+This directory contains scenario runbooks for Gastown presentation flows.
 
 Each scenario should:
 
@@ -12,6 +12,7 @@ Each scenario should:
 
 - [DiliTrust TechDay](dilitrust-techday.md)
 - [Dev With AI Live #4](dev-with-ai-live-4.md)
+- [SACEM - Matinale DSI](sacem-matinale-dsi.md)
 
 ## Prompt Convention
 

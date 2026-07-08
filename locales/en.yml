@@ -16,6 +16,8 @@ talks:
     event: DiliTrust TechDay
   dev_with_ai_live_4:
     event: "Dev With AI Live #4"
+  sacem_matinale_dsi:
+    event: "SACEM - Matinale DSI"
 
 speakers:
   heading: Speakers
