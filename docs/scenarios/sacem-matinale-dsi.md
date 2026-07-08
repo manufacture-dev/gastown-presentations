@@ -25,7 +25,7 @@ Le talk doit rester concret. Le deck installe le vocabulaire, puis la démonstra
 - le contexte est un live interne SACEM;
 - l'application cible reste Agreement Hub;
 - la démo doit livrer au maximum deux incréments démontrables;
-- Langfuse peut être montré brièvement pour matérialiser échanges LLM et coût, sans devenir le sujet principal.
+- Langfuse est démarré avant la session pour montrer brièvement les traces et le coût en fin de live, sans devenir le sujet principal.
 
 ## Choix de scénario recommandé
 
@@ -86,7 +86,21 @@ Le talk utilise la variante `short`. La slide `Formulas` n'est pas jouée. La sy
 
 Le live doit démarrer avec un lab déjà prêt. Ne pas créer l'environnement devant l'audience.
 
-Créer le lab:
+Initialiser le runtime Taxiway et vérifier l'état global:
+
+```bash
+taxiway init
+taxiway status
+```
+
+Démarrer Langfuse avant la session pour pouvoir montrer les traces et le coût à la fin:
+
+```bash
+taxiway observe up
+taxiway access
+```
+
+Créer et démarrer le lab Gas Town:
 
 ```bash
 taxiway up live-sacem-matinale-dsi \
@@ -97,12 +111,26 @@ taxiway up live-sacem-matinale-dsi \
   --repo https://github.com/manufacture-dev/agreement-hub.git
 ```
 
-Vérifier et corriger l'environnement:
+Si une phase échoue ou doit être rejouée, reprendre explicitement au bon endroit plutôt que recréer le lab:
+
+```bash
+taxiway up live-sacem-matinale-dsi --from gateway
+taxiway up live-sacem-matinale-dsi --from workspace \
+  --repo https://github.com/manufacture-dev/agreement-hub.git
+```
+
+Vérifier que le lab et le shell sont disponibles:
+
+```bash
+taxiway list live-sacem-matinale-dsi
+taxiway shell live-sacem-matinale-dsi --check
+```
+
+Diagnostiquer et corriger l'environnement si nécessaire:
 
 ```bash
 taxiway doctor live-sacem-matinale-dsi
 taxiway doctor live-sacem-matinale-dsi --fix
-taxiway doctor live-sacem-matinale-dsi
 ```
 
 Entrer dans le lab:
@@ -111,6 +139,8 @@ Entrer dans le lab:
 taxiway shell live-sacem-matinale-dsi
 gt status
 ```
+
+`taxiway shell` ouvre directement le shell du lab, dans le répertoire Crew du rig Gas Town quand un `--repo` a été fourni. Depuis ce shell, utiliser `gt mayor attach` pour rejoindre la session Mayor, puis `Ctrl-b d` pour revenir au shell sans arrêter la session.
 
 Signal attendu:
 
@@ -128,8 +158,8 @@ http://localhost:5173/
 
 Vérifier Langfuse si disponible:
 
-```text
-http://localhost:3000/
+```bash
+taxiway observe open
 ```
 
 Langfuse reste un repère annexe: il peut servir à montrer rapidement les échanges LLM et le coût, mais il ne doit pas détourner le talk du modèle Gas Town.
@@ -162,7 +192,14 @@ Quand le plan est acceptable:
 GO
 ```
 
-Commandes live principales:
+Commandes hôte utiles avant ou après le live:
+
+```bash
+taxiway status
+taxiway access
+```
+
+Commandes live principales à exécuter dans le lab:
 
 ```bash
 gt status
