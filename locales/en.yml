@@ -3,7 +3,7 @@ common:
   why_it_matters: Why it matters
 
 title:
-  heading: Organizing AI-native software delivery with Gastown
+  heading: Organizing AI-native software delivery with Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara
   tags:
     ai_native: "#AI-native engineering"
@@ -46,7 +46,7 @@ evolution:
     early: Early stages improve individual flow.
     middle: Middle stages increase throughput with CLI agents.
     late: Late stages create a coordination problem.
-    gastown: Gastown appears when hand-management stops scaling.
+    gastown: Gas Town appears when hand-management stops scaling.
   takeaway: AI development evolves from individual assistance to organizational coordination.
 
 creator:
@@ -62,7 +62,7 @@ creator:
   cover_caption: "Cover source: IT Revolution / Simon & Schuster"
 
 gastown:
-  heading: "Gastown: a town-shaped delivery system"
+  heading: "Gas Town: a town-shaped delivery system"
   town:
     title: Town
     strong: Agent headquarters
@@ -76,20 +76,20 @@ gastown:
     strong: Project factories
     desc: Polecats, Crew, Witness and Refinery operate around real repositories.
   copy_label: Town as operating model
-  lede: Gastown makes vibe coding operational without pretending the chaos disappears.
+  lede: Gas Town makes vibe coding operational without pretending the chaos disappears.
   bullets:
     identities: Many coding agents become first-class workers with visible identities.
     beads: Beads provide the Git-backed ledger for work, memory, mail, and provenance.
     convoys: Convoys track delivery streams; Polecats execute the work.
     supervision: Witness and Refinery keep the system from turning into merge chaos.
-  takeaway: Gastown turns agentic coding into observable, coordinated software delivery.
+  takeaway: Gas Town turns agentic coding into observable, coordinated software delivery.
 
 demo:
   heading: Demo application
   desc: A CRUD Contract Lifecycle Management application used as a realistic delivery target.
   bullets:
     stack: "Stack: React/Vite frontend, Express/TypeScript backend, SQLite database."
-    baseline: Gastown works on a forked repository, so the demo starts from a clean baseline.
+    baseline: Gas Town works on a forked repository, so the demo starts from a clean baseline.
     real: "The demo is real: the outcome may differ from the initial plan."
   image_alt: Agreement Hub initial state
   flow_label: Demo flow
@@ -130,14 +130,14 @@ break:
   takeaway: Software delivery is organizational. The bottleneck becomes coordination.
 
 organizes:
-  heading: Gastown organizes work, not prompts
+  heading: Gas Town organizes work, not prompts
   input:
     label: Input
     strong: Human intent
     desc: Natural language request, incomplete by design.
   layer:
     label: Organization layer
-    strong: Gastown structures delivery
+    strong: Gas Town structures delivery
     mayor: plans and coordinates.
     beads: make work addressable.
     convoys: track delivery streams.
@@ -148,7 +148,7 @@ organizes:
     strong: Observable delivery
     desc: Status, dependencies, ownership, progress, and merge flow become inspectable.
   panel_label: Response
-  panel_desc: Gastown turns intent into shared delivery objects.
+  panel_desc: Gas Town turns intent into shared delivery objects.
   bullets:
     mayor: Mayor separates planning from execution.
     beads: Beads and convoys make work addressable and trackable.
@@ -169,13 +169,13 @@ organization:
     polecats: Ephemeral workers
     witness: Rig supervision
     refinery: Merge queue
-  panel_desc: Gastown is organized around a town and one or more rigs.
+  panel_desc: Gas Town is organized around a town and one or more rigs.
   bullets:
     town: The Town coordinates across repositories.
     rig: Each Rig is attached to a real codebase.
     workers: Crew members are persistent; Polecats are disposable execution workers.
     roles: Witness and Refinery are rig-level operating roles.
-  takeaway: Gastown separates coordination, execution, supervision, and integration.
+  takeaway: Gas Town separates coordination, execution, supervision, and integration.
   live_signal: Identify the rig, the persistent crew, and the disposable workers attached to the repository.
 
 beads:
@@ -288,7 +288,7 @@ supervision:
   witness: Monitors Polecats · detects stuck work · nudges recovery
   polecats: Execute beads
   refinery: Merge queue · delivery convergence
-  panel_desc: Gastown supervision is layered, not a single watcher.
+  panel_desc: Gas Town supervision is layered, not a single watcher.
   bullets:
     daemon: Daemon wakes Boot when health needs checking.
     deacon: Deacon keeps the town healthy.
@@ -303,7 +303,7 @@ verification:
   desc: We inspect the delivered repository by running Agreement Hub locally and comparing it with the starting version.
   bullets:
     not_deployed: The app is not deployed during the demo.
-    clone: We clone the complete repository produced by Gastown.
+    clone: We clone the complete repository produced by Gas Town.
     run: We run that repository locally, then compare it with the baseline app.
   question: What will the delivered app reveal?
   checkpoints:
@@ -314,7 +314,7 @@ verification:
     search: Search & Intelligence
     library: Clause Library
   flow_label: Verification checkpoint
-  flow_start: The Gastown delivery loop pauses here.
+  flow_start: The Gas Town delivery loop pauses here.
   flow_next: Now we clone the delivered repository, run Agreement Hub locally, and compare it with the starting application.
 
 formulas:
@@ -354,10 +354,10 @@ formulas:
       desc: 3 sequential passes compare plan to beads and fill gaps.
 
 synthesis:
-  heading: What Gastown changed
+  heading: What Gas Town changed
   problem_label: Problem
   problem: Single-agent workflows break when coding becomes delivery.
-  response_label: Gastown response
+  response_label: Gas Town response
   response: Turn delivery into a supervised, distributed operating model.
   rows:
     context: Structure work into beads, artifacts, and explicit handoffs.
@@ -371,6 +371,6 @@ thanks:
   subheading: Questions & discussion
   examples_label: Example questions
   questions:
-    cost: What does it cost to deliver a feature with Gastown?
+    cost: What does it cost to deliver a feature with Gas Town?
     control: How much control do we have over the models?
     crew: When should we use the Crew instead of only the Mayor?

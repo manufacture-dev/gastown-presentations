@@ -1,6 +1,6 @@
 # DiliTrust TechDay
 
-Ce document décrit la cinématique complète de la présentation DiliTrust TechDay: les slides portent le récit, Gastown travaille en arrière-plan, et Agreement Hub sert de preuve produit.
+Ce document décrit la cinématique complète de la présentation DiliTrust TechDay: les slides portent le récit, Gas Town travaille en arrière-plan, et Agreement Hub sert de preuve produit.
 
 Le but est de rendre la démonstration filmable, répétable et cohérente avec le deck: une présentation sur l'organisation du delivery AI-native, pas une simple session de coding assistée.
 
@@ -10,7 +10,7 @@ La démonstration doit prouver une bascule de posture:
 
 - on ne demande pas à un agent unique de coder une petite tâche;
 - on donne une intention produit au Mayor;
-- Gastown transforme cette intention en beads, dépendances, convoys et travail distribué;
+- Gas Town transforme cette intention en beads, dépendances, convoys et travail distribué;
 - des Polecats exécutent en parallèle dans des contextes isolés;
 - Witness, Refinery et Deacon rendent l'exécution observable;
 - la preuve finale se fait sur le repository livré et dans Agreement Hub.
@@ -24,7 +24,7 @@ Le présentateur garde le contrôle du mandat, du périmètre de démo et des d�
 1. donner le mandat complet au Mayor;
 2. attendre le plan;
 3. donner un `GO` explicite;
-4. laisser Gastown créer les beads, convoys, assignments et merges;
+4. laisser Gas Town créer les beads, convoys, assignments et merges;
 5. revenir régulièrement observer l'état du système;
 6. n'interrompre que pour les décisions qui changent réellement le périmètre.
 
@@ -87,13 +87,13 @@ http://localhost:5173/
 
 La vidéo suit trois mouvements.
 
-### Mouvement 1 - Pourquoi Gastown existe
+### Mouvement 1 - Pourquoi Gas Town existe
 
 Slides 1 à 5. On installe le problème:
 
 - l'AI coding a évolué de l'assistance individuelle vers des systèmes de delivery;
 - le single-agent ne suffit plus quand le travail devient distribué;
-- Gastown introduit un modèle d'organisation: Town, Mayor, Rigs, Beads, Convoys, Polecats, Witness, Refinery.
+- Gas Town introduit un modèle d'organisation: Town, Mayor, Rigs, Beads, Convoys, Polecats, Witness, Refinery.
 
 Il n'y a pas encore de démonstration active. La vidéo doit rester sur le deck, avec éventuellement un court plan de l'environnement prêt.
 
@@ -103,7 +103,7 @@ Slides 6 à 13. C'est le coeur de la cinématique:
 
 - Agreement Hub est montré comme baseline;
 - le Mayor reçoit le mandat complet;
-- Gastown produit un plan;
+- Gas Town produit un plan;
 - les beads et convoys matérialisent le travail;
 - les Polecats exécutent;
 - Witness, Refinery et Deacon rendent l'exécution supervisable.
@@ -129,18 +129,18 @@ La preuve finale n'est pas une belle sortie terminal. La preuve finale est l'ét
 |---:|---:|---|---:|---:|---:|---|
 | 0-2 min | 1-2 | Ouverture | 2 min | - | 2 min | Deck uniquement. Cadrer le sujet: organiser le delivery AI-native, pas seulement coder plus vite. |
 | 2-6 min | 3-4 | Évolution AI coding | 4 min | - | 4 min | Deck uniquement. Installer le passage assistant individuel -> système de delivery. |
-| 6-9 min | 5 | Modèle Gastown | 3 min | - | 3 min | Deck uniquement. Introduire Town, Mayor, Rig, Beads, Convoys, Polecats, Witness, Refinery. |
+| 6-9 min | 5 | Modèle Gas Town | 3 min | - | 3 min | Deck uniquement. Introduire Town, Mayor, Rig, Beads, Convoys, Polecats, Witness, Refinery. |
 | 9-16 min | 6 | Baseline + mandat Mayor | 1 min | 6 min | 7 min | Montrer Agreement Hub, lancer `gt mayor attach`, copier le prompt depuis le bouton du deck, le coller au Mayor, laisser le Mayor présenter le plan, puis donner `GO`. |
-| 16-18 min | 7 | Pourquoi le single-agent casse | 2 min | - | 2 min | Deck pendant que Gastown démarre. Revue rapide des cinq limites: contexte, séquentiel, coordination, merge, supervision. |
-| 18-22 min | 8 | Gastown organise le travail | 1 min | 3 min | 4 min | Observer le Mayor, `gt convoy list --all`, `bd list --all --flat`, `bd ready`, `gt refinery queue agreement_hub`. |
+| 16-18 min | 7 | Pourquoi le single-agent casse | 2 min | - | 2 min | Deck pendant que Gas Town démarre. Revue rapide des cinq limites: contexte, séquentiel, coordination, merge, supervision. |
+| 18-22 min | 8 | Gas Town organise le travail | 1 min | 3 min | 4 min | Observer le Mayor, `gt convoy list --all`, `bd list --all --flat`, `bd ready`, `gt refinery queue agreement_hub`. |
 | 22-25 min | 9 | Organisation | 3 min | - | 3 min | Deck principalement. Option rapide: `gt status` si utile pour relier rôles et système réel. |
 | 25-28 min | 10 | Beads | 1 min | 2 min | 3 min | Montrer `bd list --all --flat`, `bd ready`, `bd show <bead_id>`, et la queue Refinery si un merge existe. |
 | 28-31 min | 11 | Convoys | 1 min | 2 min | 3 min | Montrer `gt convoy list --all` puis `gt convoy status <convoy_id>` sur les streams actifs ou terminés. |
-| 31-35 min | 12 | Polecats | 1 min | 3 min | 4 min | Montrer `gt status`, beads actifs, convoys, branches ou merge queue. Observer le parallélisme choisi par Gastown. |
+| 31-35 min | 12 | Polecats | 1 min | 3 min | 4 min | Montrer `gt status`, beads actifs, convoys, branches ou merge queue. Observer le parallélisme choisi par Gas Town. |
 | 35-38 min | 13 | Supervision | 2 min | 1 min | 3 min | Montrer Deacon, Witness, Refinery, `gt dolt status`, et lancer la patrol si le timing le permet. |
 | 38-42 min | 14 | Vérification Agreement Hub | 1 min | 3 min | 4 min | Demander le recap final, inspecter git/beads/convoys, ouvrir Agreement Hub et vérifier les use cases livrés. |
 | 42-43 min | 15 | Formulas | 1 min | - | 1 min | Deck. Mentionner `mol-idea-to-plan`; ouvrir le lien seulement s'il est déjà prêt. |
-| 43-44 min | 16 | Synthèse | 1 min | - | 1 min | Deck uniquement. Reboucler les cinq problèmes single-agent avec les réponses Gastown. |
+| 43-44 min | 16 | Synthèse | 1 min | - | 1 min | Deck uniquement. Reboucler les cinq problèmes single-agent avec les réponses Gas Town. |
 | 44-45 min | 17 | Questions + coût + arrêt | - | 1 min | 1 min | Montrer `gt cost` si disponible, puis arrêter le lab avec `gt estop -r "lab done"` après la capture finale. |
 
 ## Préparation avant le talk
@@ -179,11 +179,11 @@ Quand un repository est passé à `taxiway up --repo`, Taxiway utilise GitHub co
 
 Texte oral FR:
 
-> Nous partons d'un repository Agreement Hub propre. Taxiway provisionne le lab Gastown, attache le vrai code applicatif, et démarre les rôles opérationnels qui vont coordonner, exécuter, superviser et merger le travail.
+> Nous partons d'un repository Agreement Hub propre. Taxiway provisionne le lab Gas Town, attache le vrai code applicatif, et démarre les rôles opérationnels qui vont coordonner, exécuter, superviser et merger le travail.
 
 Texte oral EN:
 
-> We start from a clean Agreement Hub repository. Taxiway provisions the Gastown lab, attaches the real codebase, and starts the operating roles that will coordinate, execute, supervise and merge work.
+> We start from a clean Agreement Hub repository. Taxiway provisions the Gas Town lab, attaches the real codebase, and starts the operating roles that will coordinate, execute, supervise and merge work.
 
 ### 2. Vérifier la santé
 
@@ -207,7 +207,7 @@ Texte oral EN:
 
 > Before asking agents to work, we verify the operating environment. The important signal is that the system is healthy enough to run distributed delivery.
 
-### 3. Entrer dans Gastown
+### 3. Entrer dans Gas Town
 
 ```bash
 taxiway shell live-dilitrust
@@ -243,11 +243,11 @@ gt doctor --rig agreement_hub
 
 Texte oral FR:
 
-> À ce stade, Gastown est lancé. Le Town coordonne, le rig Agreement Hub est attaché au repository, et nous faisons les derniers contrôles Town et rig manuellement parce que cette partie n'est pas encore entièrement couverte par Taxiway.
+> À ce stade, Gas Town est lancé. Le Town coordonne, le rig Agreement Hub est attaché au repository, et nous faisons les derniers contrôles Town et rig manuellement parce que cette partie n'est pas encore entièrement couverte par Taxiway.
 
 Texte oral EN:
 
-> At this point, Gastown is running. The Town coordinates, the Agreement Hub rig is attached to the repository, and we run the remaining Town and rig checks manually because this part is not fully covered by Taxiway yet.
+> At this point, Gas Town is running. The Town coordinates, the Agreement Hub rig is attached to the repository, and we run the remaining Town and rig checks manually because this part is not fully covered by Taxiway yet.
 
 ### 5. Vérifier les sessions agents
 
@@ -271,7 +271,7 @@ Texte oral EN:
 
 ## Scène 1 - Slides 1-2: ouvrir sur le modèle
 
-Objectif: éviter de présenter Gastown comme un outil de plus.
+Objectif: éviter de présenter Gas Town comme un outil de plus.
 
 Image:
 
@@ -294,7 +294,7 @@ Texte oral EN:
 
 - ne pas lancer le terminal trop tôt;
 - ne pas détailler la stack Agreement Hub;
-- ne pas présenter Gastown comme une démo CLI.
+- ne pas présenter Gas Town comme une démo CLI.
 
 ## Scène 2 - Slides 3-4: de l'assistant au système
 
@@ -303,7 +303,7 @@ Objectif: installer la progression des pratiques AI coding.
 Image:
 
 - slide des 8 stages;
-- slide Steve Yegge / Vibe Coding / Gastown / Beads.
+- slide Steve Yegge / Vibe Coding / Gas Town / Beads.
 
 Texte oral FR:
 
@@ -315,13 +315,13 @@ Texte oral EN:
 
 Transition FR:
 
-> Gastown apparaît au moment où piloter des agents à la main ne passe plus à l'échelle.
+> Gas Town apparaît au moment où piloter des agents à la main ne passe plus à l'échelle.
 
 Transition EN:
 
-> Gastown appears at the moment where hand-managing agents stops scaling.
+> Gas Town appears at the moment where hand-managing agents stops scaling.
 
-## Scène 3 - Slide 5: modèle mental Gastown
+## Scène 3 - Slide 5: modèle mental Gas Town
 
 Objectif: donner le vocabulaire avant le live.
 
@@ -338,11 +338,11 @@ Image:
 
 Texte oral FR:
 
-> Pensez à Gastown comme à un modèle opérationnel. Le Mayor coordonne. Les beads rendent le travail adressable. Les convoys suivent les streams de delivery. Les Polecats exécutent du travail borné. Witness et Refinery rendent l'exécution et l'intégration observables.
+> Pensez à Gas Town comme à un modèle opérationnel. Le Mayor coordonne. Les beads rendent le travail adressable. Les convoys suivent les streams de delivery. Les Polecats exécutent du travail borné. Witness et Refinery rendent l'exécution et l'intégration observables.
 
 Texte oral EN:
 
-> Think of Gastown as an operating model. The Mayor coordinates. Beads make work addressable. Convoys track delivery streams. Polecats execute scoped work. Witness and Refinery make execution and integration observable.
+> Think of Gas Town as an operating model. The Mayor coordinates. Beads make work addressable. Convoys track delivery streams. Polecats execute scoped work. Witness and Refinery make execution and integration observable.
 
 Transition FR:
 
@@ -370,9 +370,9 @@ http://localhost:5173/
 
 - liste des contrats;
 - fiche contrat ou formulaire;
-- état initial avant intervention Gastown.
+- état initial avant intervention Gas Town.
 
-3. Basculer vers Gastown.
+3. Basculer vers Gas Town.
 4. Attacher le Mayor:
 
 ```bash
@@ -390,19 +390,19 @@ le bouton "Copier le prompt" / "Copy prompt" du deck
 
 ### Texte oral FR
 
-> Voici le point de départ. Agreement Hub est une application réaliste de contract lifecycle management: frontend React/Vite, backend Express/TypeScript, base SQLite. Nous n'allons pas piloter un agent étape par étape. Nous allons donner à Gastown l'intention produit, les règles de delivery, le contrat de supervision, puis le laisser organiser le travail.
+> Voici le point de départ. Agreement Hub est une application réaliste de contract lifecycle management: frontend React/Vite, backend Express/TypeScript, base SQLite. Nous n'allons pas piloter un agent étape par étape. Nous allons donner à Gas Town l'intention produit, les règles de delivery, le contrat de supervision, puis le laisser organiser le travail.
 
 Après le prompt:
 
-> À partir de maintenant, la posture importante est la supervision. Je ne vais pas décider manuellement chaque worker, chaque branche ou chaque merge. Gastown doit planifier, dispatcher, monitorer, récupérer et reporter.
+> À partir de maintenant, la posture importante est la supervision. Je ne vais pas décider manuellement chaque worker, chaque branche ou chaque merge. Gas Town doit planifier, dispatcher, monitorer, récupérer et reporter.
 
 ### Texte oral EN
 
-> This is the starting point. Agreement Hub is a realistic contract lifecycle application: React/Vite frontend, Express/TypeScript backend, SQLite database. We are not going to drive one agent step by step. We are going to give Gastown the product intent, the delivery rules, the supervision contract, and then let it organize the work.
+> This is the starting point. Agreement Hub is a realistic contract lifecycle application: React/Vite frontend, Express/TypeScript backend, SQLite database. We are not going to drive one agent step by step. We are going to give Gas Town the product intent, the delivery rules, the supervision contract, and then let it organize the work.
 
 Après le prompt:
 
-> From now on, the important posture is supervision. I will not manually decide every worker, every branch, or every merge. Gastown must plan, dispatch, monitor, recover and report.
+> From now on, the important posture is supervision. I will not manually decide every worker, every branch, or every merge. Gas Town must plan, dispatch, monitor, recover and report.
 
 ### Signal attendu
 
@@ -432,7 +432,7 @@ gt refinery queue agreement_hub
 
 Temps cible: 2 minutes.
 
-Objectif: pendant que Gastown planifie, expliquer pourquoi le modèle single-agent ne suffit pas.
+Objectif: pendant que Gas Town planifie, expliquer pourquoi le modèle single-agent ne suffit pas.
 
 Image:
 
@@ -451,7 +451,7 @@ Texte oral EN:
 - rester sur le deck;
 - ne pas interrompre le Mayor sauf s'il demande une décision relevant du périmètre.
 
-## Scène 6 - Slide 8: Gastown organise le travail
+## Scène 6 - Slide 8: Gas Town organise le travail
 
 Temps cible: 4 minutes.
 
@@ -650,11 +650,11 @@ gt mail inbox
 
 ### Texte oral FR
 
-> C'est ici que l'organisation compte. Le point intéressant n'est pas d'avoir beaucoup de terminaux ouverts. Le point intéressant est que Gastown décide ce qui peut tourner en parallèle, ce qui doit attendre, ce qui peut merger, et ce qui doit être escaladé.
+> C'est ici que l'organisation compte. Le point intéressant n'est pas d'avoir beaucoup de terminaux ouverts. Le point intéressant est que Gas Town décide ce qui peut tourner en parallèle, ce qui doit attendre, ce qui peut merger, et ce qui doit être escaladé.
 
 ### Texte oral EN
 
-> This is where the organization matters. The interesting part is not that many terminals are open. The interesting part is that Gastown decides what can run in parallel, what must wait, what can merge, and what needs escalation.
+> This is where the organization matters. The interesting part is not that many terminals are open. The interesting part is that Gas Town decides what can run in parallel, what must wait, what can merge, and what needs escalation.
 
 ### Si le parallèle n'apparaît pas
 
@@ -815,15 +815,15 @@ Objectif: refermer la boucle.
 Image:
 
 - les cinq problèmes single-agent;
-- les cinq réponses Gastown.
+- les cinq réponses Gas Town.
 
 Texte oral FR:
 
-> Nous sommes partis de cinq limites du delivery single-agent: saturation du contexte, exécution séquentielle, absence de couche de coordination, pression de merge, et absence de supervision opérationnelle. Gastown répond avec les beads, les Polecats, le Mayor et les convoys, Refinery, Witness et Deacon.
+> Nous sommes partis de cinq limites du delivery single-agent: saturation du contexte, exécution séquentielle, absence de couche de coordination, pression de merge, et absence de supervision opérationnelle. Gas Town répond avec les beads, les Polecats, le Mayor et les convoys, Refinery, Witness et Deacon.
 
 Texte oral EN:
 
-> We started with five limits of single-agent delivery: context saturation, sequential execution, no coordination layer, merge pressure, and no operational supervision. Gastown answers with beads, Polecats, Mayor and convoys, Refinery, Witness and Deacon.
+> We started with five limits of single-agent delivery: context saturation, sequential execution, no coordination layer, merge pressure, and no operational supervision. Gas Town answers with beads, Polecats, Mayor and convoys, Refinery, Witness and Deacon.
 
 ## Scène 15 - Slide 17: questions et coût
 
@@ -929,7 +929,7 @@ Ce qu'il faut écouter:
 Réponse:
 
 ```text
-Continue autonomously using Gastown's normal operating model. Do not wait for me to manually validate routine design, UI, architecture, naming, file ownership, sequencing, or implementation choices. Ask only for demo-scope, external dependency, data-loss, major cost/time, or unrecoverable conflict decisions.
+Continue autonomously using Gas Town's normal operating model. Do not wait for me to manually validate routine design, UI, architecture, naming, file ownership, sequencing, or implementation choices. Ask only for demo-scope, external dependency, data-loss, major cost/time, or unrecoverable conflict decisions.
 ```
 
 ### Le Mayor a oublié les updates
@@ -990,11 +990,11 @@ Ne pas surjouer.
 
 Texte oral FR:
 
-> L'état de delivery honnête compte plus que l'histoire de démo parfaite. Gastown doit nous dire ce qui est shipped, ce qui est pending, ce qui est préservé, et quel risque reste.
+> L'état de delivery honnête compte plus que l'histoire de démo parfaite. Gas Town doit nous dire ce qui est shipped, ce qui est pending, ce qui est préservé, et quel risque reste.
 
 Texte oral EN:
 
-> The honest delivery state matters more than the perfect demo story. Gastown should tell us what is shipped, what is pending, what is preserved, and what risk remains.
+> The honest delivery state matters more than the perfect demo story. Gas Town should tell us what is shipped, what is pending, what is preserved, and what risk remains.
 
 À montrer:
 
@@ -1066,11 +1066,11 @@ La cinématique doit tenir en une phrase:
 
 Phrase FR:
 
-> Nous partons d'une vraie application, nous donnons à Gastown une intention produit, nous regardons le système la transformer en objets de delivery, nous supervisons l'exécution distribuée, puis nous vérifions le repository et l'application livrés.
+> Nous partons d'une vraie application, nous donnons à Gas Town une intention produit, nous regardons le système la transformer en objets de delivery, nous supervisons l'exécution distribuée, puis nous vérifions le repository et l'application livrés.
 
 Phrase EN:
 
-> We start with a real app, give Gastown product intent, watch the system turn it into delivery objects, supervise distributed execution, and verify the delivered repository and application.
+> We start with a real app, give Gas Town product intent, watch the system turn it into delivery objects, supervise distributed execution, and verify the delivered repository and application.
 
 Ordre des preuves:
 
@@ -1087,4 +1087,4 @@ Ordre des preuves:
 11. synthèse;
 12. coût.
 
-Ce récit doit rester stable même si l'exécution réelle varie. Si Gastown livre moins, plus, ou différemment que prévu, la vidéo doit montrer la vérité du système: ce qu'il a décidé, ce qu'il a livré, ce qu'il a bloqué, ce qu'il a récupéré, et ce qui reste à faire.
+Ce récit doit rester stable même si l'exécution réelle varie. Si Gas Town livre moins, plus, ou différemment que prévu, la vidéo doit montrer la vérité du système: ce qu'il a décidé, ce qu'il a livré, ce qu'il a bloqué, ce qu'il a récupéré, et ce qui reste à faire.

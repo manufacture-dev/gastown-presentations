@@ -2,10 +2,10 @@
 theme: the-unnamed
 addons:
   - slidev-addon-i18nb
-title: Gastown - Organizing AI-native software delivery
+title: Gas Town - Organizing AI-native software delivery
 titleTemplate: '%s'
 info: |
-  Gastown organizes AI-native software delivery. Live implementation on Agreement Hub.
+  Gas Town organizes AI-native software delivery. Live implementation on Agreement Hub.
 class: text-left
 drawings:
   persist: false
@@ -128,7 +128,7 @@ Use this as the bridge from personal AI practice to organizational orchestration
         <p>{{ $t("creator.vibe.desc") }}</p>
       </div>
       <div>
-        <strong><a href="https://github.com/gastownhall/gastown" target="_blank" rel="noopener noreferrer">Gastown</a></strong>
+        <strong><a href="https://github.com/gastownhall/gastown" target="_blank" rel="noopener noreferrer">Gas Town</a></strong>
         <p>{{ $t("creator.gastown.desc") }}</p>
       </div>
       <div>
@@ -223,7 +223,7 @@ The story: Gas Town starts from vibe-coding chaos, then adds city-like operating
 
 <!--
 LIVE START:
-- Launch Gastown.
+- Launch Gas Town.
 - Present Agreement Hub in the browser.
 - Ask the Mayor for the first implementation step.
 Contract: the deck explains, the terminal works, the app proves.
@@ -282,7 +282,7 @@ Contract: the deck explains, the terminal works, the app proves.
 </div>
 
 <!--
-The audience should understand why Gastown exists before we introduce roles.
+The audience should understand why Gas Town exists before we introduce roles.
 The bottleneck is not just model intelligence; it is coordination.
 -->
 
@@ -332,7 +332,7 @@ The bottleneck is not just model intelligence; it is coordination.
 <div class="live-signal">{{ $t("organizes.live_signal") }}</div>
 
 <!--
-Use this slide to position Gastown as an AI-native delivery organization.
+Use this slide to position Gas Town as an AI-native delivery organization.
 Avoid tool tour language.
 -->
 
@@ -714,7 +714,7 @@ This slide turns distributed execution into an operational system.
 
 <!--
 Switch to the browser and slow down.
-The audience must see that Agreement Hub changed because Gastown delivered code.
+The audience must see that Agreement Hub changed because Gas Town delivered code.
 -->
 
 ---

@@ -37,13 +37,13 @@ These rules are independent from the orchestration tool:
 - do not wait passively for more than one minute without useful action: check state, adjust the plan, or stabilize.
 
 ---
-## What Gastown Must Show
+## What Gas Town Must Show
 
-This demo must show Gastown orchestrating delivery, not just show a working application. For execution, use Gastown as the mandatory delivery system.
+This demo must show Gas Town orchestrating delivery, not just show a working application. For execution, use Gas Town as the mandatory delivery system.
 
-You act as Mayor / coordinator: do not code the features directly yourself, except for an explicitly justified stabilization adjustment. Product work must go through the Gastown mechanics.
+You act as Mayor / coordinator: do not code the features directly yourself, except for an explicitly justified stabilization adjustment. Product work must go through the Gas Town mechanics.
 
-When I say GO, the expected Gastown demonstration is:
+When I say GO, the expected Gas Town demonstration is:
 - 2 product beads created, each tied to a demonstrable functional increment;
 - a convoy created if it helps track the 2 beads together;
 - each bead slung to a distinct Polecat;
@@ -51,12 +51,12 @@ When I say GO, the expected Gastown demonstration is:
 - at most 1 foundation bead if a minimal technical prerequisite is required;
 - integration passed through the normal review, Witness/validation, Refinery, and merge queue steps;
 - no direct push to the main delivery branch;
-- no commit must include Gastown or Claude runtime artifacts (`CLAUDE.md`, `.beads/`, `.runtime/`); if these files appear in a worktree, exclude them locally and recommit cleanly before submission;
+- no commit must include Gas Town or Claude runtime artifacts (`CLAUDE.md`, `.beads/`, `.runtime/`); if these files appear in a worktree, exclude them locally and recommit cleanly before submission;
 - beads closed only after integration and verification on the main delivery branch.
 
 Give a short update every 3 minutes, or immediately when blocked. Each update must clearly separate:
 - functional result already usable;
-- Gastown state: beads, optional convoy, Polecats, review, validation, Refinery, merge queue;
+- Gas Town state: beads, optional convoy, Polecats, review, validation, Refinery, merge queue;
 - blockers or deferred work;
 - any decision needed from me.
 
@@ -71,7 +71,7 @@ Before announcing completion, verify that:
 The final recap must be compact but more visual than a plain paragraph: use short tables, aligned lists, or a mini diagram if that makes the state easier to read. It must include:
 - what was completed;
 - what is demonstrable in the application;
-- visible Gastown evidence: beads, optional convoy, Polecats, Refinery, Witness/validation, merge queue;
+- visible Gas Town evidence: beads, optional convoy, Polecats, Refinery, Witness/validation, merge queue;
 - integration state on the main delivery branch;
 - verification evidence;
 - what was deferred;

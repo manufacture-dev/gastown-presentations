@@ -1,6 +1,6 @@
 # Talk Scenarios
 
-This directory contains scenario runbooks for Gastown presentation flows.
+This directory contains scenario runbooks for Gas Town presentation flows.
 
 Each scenario should:
 

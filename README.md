@@ -1,4 +1,4 @@
-# Gastown Presentations
+# Gas Town Presentations
 
 Talks about **Gas Town** and AI-native software delivery.
 
@@ -10,14 +10,14 @@ This repository contains one shared Slidev deck that can be rendered for several
 events, languages and dates. Each talk instance reuses the same `slides.md`
 content and injects event-specific metadata from `talks/*.json`.
 
-The deck introduces Gastown as an operating model for AI-native software delivery.
+The deck introduces Gas Town as an operating model for AI-native software delivery.
 It starts from the evolution of individual AI coding practices, then moves into
 the coordination problem that appears when many coding agents work on real repositories.
 
 The presentation covers:
 
 - why single-agent workflows break down when delivery becomes distributed;
-- how Gastown organizes work through towns, rigs, the Mayor, beads, convoys, Polecats, Witness and Refinery;
+- how Gas Town organizes work through towns, rigs, the Mayor, beads, convoys, Polecats, Witness and Refinery;
 - how supervision, recovery and verification make agent execution operational;
 - a live Agreement Hub demo used as a realistic software delivery target;
 - how formulas can turn orchestration patterns into repeatable delivery playbooks.
@@ -180,7 +180,7 @@ button copies through the required `prompt` field in `talks/*.json`.
 Available prompts:
 
 - `all-use-cases`: original full prompt used by the DiliTrust talk.
-- `demo-15-min`: prompt focused on shipping two functional demo increments in less than 15 minutes while showing the Gastown delivery pipeline.
+- `demo-15-min`: prompt focused on shipping two functional demo increments in less than 15 minutes while showing the Gas Town delivery pipeline.
 
 Example:
 

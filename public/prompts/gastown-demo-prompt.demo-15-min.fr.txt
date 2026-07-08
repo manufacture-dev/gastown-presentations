@@ -37,13 +37,13 @@ Ces règles sont indépendantes de l'outil d'orchestration:
 - n'attends pas passivement plus d'une minute sans action utile: vérifie l'état, ajuste le plan ou stabilise.
 
 ---
-## Ce que Gastown doit montrer
+## Ce que Gas Town doit montrer
 
-Cette démo doit montrer Gastown en train d'orchestrer le delivery, pas seulement montrer une application qui fonctionne. Pour l'exécution, utilise Gastown comme système de delivery obligatoire.
+Cette démo doit montrer Gas Town en train d'orchestrer le delivery, pas seulement montrer une application qui fonctionne. Pour l'exécution, utilise Gas Town comme système de delivery obligatoire.
 
-Tu agis comme Mayor / coordinateur: ne code pas directement les fonctionnalités toi-même, sauf ajustement de stabilisation explicitement justifié. Le travail produit doit passer par les mécaniques Gastown.
+Tu agis comme Mayor / coordinateur: ne code pas directement les fonctionnalités toi-même, sauf ajustement de stabilisation explicitement justifié. Le travail produit doit passer par les mécaniques Gas Town.
 
-Quand je dis GO, la démonstration Gastown attendue est:
+Quand je dis GO, la démonstration Gas Town attendue est:
 - 2 beads produit créés, chacun lié à un incrément fonctionnel démontrable;
 - un convoy créé si cela aide à suivre les 2 beads ensemble;
 - chaque bead slingué à un Polecat distinct;
@@ -51,12 +51,12 @@ Quand je dis GO, la démonstration Gastown attendue est:
 - au maximum 1 bead de fondation si un prérequis technique minimal est nécessaire;
 - intégration passée par les étapes normales de review, Witness/validation, Refinery et merge queue;
 - aucun push direct sur la branche principale de delivery;
-- aucun commit ne doit inclure les artefacts runtime Gastown ou Claude (`CLAUDE.md`, `.beads/`, `.runtime/`); si ces fichiers apparaissent dans un worktree, exclue-les localement et recommitte proprement avant soumission;
+- aucun commit ne doit inclure les artefacts runtime Gas Town ou Claude (`CLAUDE.md`, `.beads/`, `.runtime/`); si ces fichiers apparaissent dans un worktree, exclue-les localement et recommitte proprement avant soumission;
 - beads fermés seulement après intégration et vérification sur la branche principale de delivery.
 
 Donne une mise à jour courte toutes les 3 minutes, ou immédiatement en cas de blocage. Chaque mise à jour doit séparer clairement:
 - résultat fonctionnel déjà utilisable;
-- état Gastown: beads, convoy éventuel, Polecats, review, validation, Refinery, merge queue;
+- état Gas Town: beads, convoy éventuel, Polecats, review, validation, Refinery, merge queue;
 - blocages ou travail différé;
 - décision nécessaire de ma part.
 
@@ -71,7 +71,7 @@ Avant d'annoncer la fin, vérifie que:
 Le compte rendu final doit être compact mais plus visuel qu'un simple paragraphe: utilise des tableaux courts, listes alignées ou un mini schéma si cela rend l'état plus lisible. Il doit inclure:
 - ce qui a été réalisé;
 - ce qui est démontrable dans l'application;
-- les preuves Gastown visibles: beads, convoy éventuel, Polecats, Refinery, Witness/validation, merge queue;
+- les preuves Gas Town visibles: beads, convoy éventuel, Polecats, Refinery, Witness/validation, merge queue;
 - l'état d'intégration sur la branche principale de delivery;
 - la preuve de vérification;
 - ce qui a été différé;

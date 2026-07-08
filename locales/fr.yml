@@ -3,7 +3,7 @@ common:
   why_it_matters: Pourquoi c'est important
 
 title:
-  heading: Organiser le delivery logiciel AI-native avec Gastown
+  heading: Organiser le delivery logiciel AI-native avec Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara
   tags:
     ai_native: "#Engineering AI-native"
@@ -46,7 +46,7 @@ evolution:
     early: Les premières étapes améliorent le flux individuel.
     middle: Les étapes intermédiaires augmentent le débit (CLI).
     late: Les dernières étapes créent un enjeu de coordination.
-    gastown: Gastown entre en jeu quand le pilotage manuel n'est plus gérable.
+    gastown: Gas Town entre en jeu quand le pilotage manuel n'est plus gérable.
   takeaway: Le développement avec l'IA évolue de l'assistance individuelle vers la coordination organisationnelle.
 
 creator:
@@ -62,7 +62,7 @@ creator:
   cover_caption: "Couverture : IT Revolution / Simon & Schuster"
 
 gastown:
-  heading: "Gastown : un système de delivery urbanisé"
+  heading: "Gas Town : un système de delivery urbanisé"
   town:
     title: Town
     strong: Quartier général agentique
@@ -76,20 +76,20 @@ gastown:
     strong: Usines projets
     desc: Polecats, Crew, Witness et Refinery opèrent directement sur des repositories.
   copy_label: La ville comme modèle opérationnel
-  lede: Gastown rend le vibe coding opérationnel sans nier le chaos.
+  lede: Gas Town rend le vibe coding opérationnel sans nier le chaos.
   bullets:
     identities: Les agents deviennent des workers visibles, avec une identité.
     beads: Les beads fournissent un registre du travail, de la mémoire, du mail et de la provenance, avec Git comme backend.
     convoys: Les convoys suivent le delivery ; les Polecats exécutent.
     supervision: Witness et Refinery évitent le chaos du merge.
-  takeaway: Gastown rend l'utilisation des agents de code observable et coordonnée.
+  takeaway: Gas Town rend l'utilisation des agents de code observable et coordonnée.
 
 demo:
   heading: Application de démo
   desc: "Exemple de delivey réaliste : application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste."
   bullets:
     stack: "Stack : frontend React/Vite, backend Express/TypeScript et base SQLite."
-    baseline: Gastown travaille sur un repository forké, donc la démo repart d'une baseline propre.
+    baseline: Gas Town travaille sur un repository forké, donc la démo repart d'une baseline propre.
     real: "La démo est réelle : le résultat peut différer du plan."
   image_alt: État initial d'Agreement Hub
   flow_label: Déroulé démo
@@ -130,14 +130,14 @@ break:
   takeaway: Le delivery logiciel est organisationnel. Le goulot devient la coordination.
 
 organizes:
-  heading: Gastown organise le travail, pas les prompts
+  heading: Gas Town organise le travail, pas les prompts
   input:
     label: Entrée
     strong: Intention humaine
     desc: Une demande en langage naturel, incomplète par construction.
   layer:
     label: Couche d'organisation
-    strong: Gastown structure le delivery
+    strong: Gas Town structure le delivery
     mayor: planifie et coordonne.
     beads: rendent le travail adressable.
     convoys: suivent les flux de delivery.
@@ -148,7 +148,7 @@ organizes:
     strong: Delivery observable
     desc: Statuts, dépendances, responsabilités, progression et flux de merge deviennent inspectables.
   panel_label: Réponse
-  panel_desc: Gastown transforme l'intention en objets de delivery partagés.
+  panel_desc: Gas Town transforme l'intention en objets de delivery partagés.
   bullets:
     mayor: Le Mayor sépare planification et exécution.
     beads: Beads et convoys rendent le travail adressable et traçable.
@@ -169,13 +169,13 @@ organization:
     polecats: Workers éphémères
     witness: Supervision du rig
     refinery: Queue de merge
-  panel_desc: Gastown se structure autour d'une town et d'un ou plusieurs rigs.
+  panel_desc: Gas Town s'articule autour d'une town et de ses rigs.
   bullets:
     town: La Town coordonne les repositories.
     rig: Chaque Rig cible une vraie codebase.
     workers: Les Crew sont persistants; les Polecats sont des workers d'exécution jetables.
     roles: Witness et Refinery opèrent au niveau du rig.
-  takeaway: Gastown sépare coordination, exécution, supervision et intégration.
+  takeaway: Gas Town sépare coordination, exécution, supervision et intégration.
   live_signal: Identifier le rig, le crew persistant et les workers jetables attachés au repository.
 
 beads:
@@ -288,7 +288,7 @@ supervision:
   witness: Surveille les Polecats · détecte le travail bloqué · relance la reprise
   polecats: Implémentent les beads
   refinery: Merge queue · convergence delivery
-  panel_desc: La supervision Gastown est organisée en couches, pas autour d'un watcher unique.
+  panel_desc: La supervision Gas Town est organisée en couches, pas autour d'un watcher unique.
   bullets:
     daemon: Le Daemon réveille le Boot pour vérifier la santé.
     deacon: Le Deacon garde la town en bonne santé.
@@ -303,7 +303,7 @@ verification:
   desc: Nous inspectons le repository livré en lançant Agreement Hub localement et en le comparant à la version de départ.
   bullets:
     not_deployed: L'application n'est pas déployée pendant la démo.
-    clone: Nous clonons le repository complet produit par Gastown.
+    clone: Nous clonons le repository complet produit par Gas Town.
     run: Nous lançons ce repository localement, puis le comparons à la baseline.
   question: Que va révéler l'application livrée?
   checkpoints:
@@ -314,7 +314,7 @@ verification:
     search: Recherche & Intelligence
     library: Bibliothèque de clauses
   flow_label: Checkpoint de vérification
-  flow_start: La boucle de delivery Gastown s'arrête ici.
+  flow_start: La boucle de delivery Gas Town s'arrête ici.
   flow_next: Nous clonons le repository livré, lançons Agreement Hub localement, et le comparons à la version de départ.
 
 formulas:
@@ -354,10 +354,10 @@ formulas:
       desc: 3 passes séquentielles comparent le plan aux beads et comblent les gaps.
 
 synthesis:
-  heading: Ce que Gastown change
+  heading: Ce que Gas Town change
   problem_label: Problème
   problem: Les workflows single-agent cassent quand le développement devient un enjeu de delivery.
-  response_label: Réponse Gastown
+  response_label: Réponse Gas Town
   response: Transformer le delivery en modèle opérationnel distribué et supervisé.
   rows:
     context: Structurer le travail en beads, artefacts et passages de relais explicites.
@@ -371,6 +371,6 @@ thanks:
   subheading: Questions & discussion
   examples_label: Exemples de questions
   questions:
-    cost: Combien coûte le delivery d'une feature avec Gastown?
+    cost: Combien coûte le delivery d'une feature avec Gas Town?
     control: Quel niveau de contrôle avons-nous sur les modèles?
     crew: Quand faut-il utiliser le Crew plutôt que seulement le Mayor?

@@ -246,7 +246,7 @@ function renderIndex(talks) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gastown presentations</title>
+  <title>Gas Town presentations</title>
   <style>
     body { margin: 0; padding: 4rem; background: #151b2a; color: #f5f2e8; font-family: system-ui, sans-serif; }
     main { max-width: 760px; margin: 0 auto; }
@@ -269,7 +269,7 @@ function renderIndex(talks) {
 </head>
 <body>
   <main>
-    <h1>Gastown presentations</h1>
+    <h1>Gas Town presentations</h1>
     <ul>
 ${links}
     </ul>

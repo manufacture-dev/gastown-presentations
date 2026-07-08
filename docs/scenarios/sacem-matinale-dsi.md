@@ -1,6 +1,6 @@
 # SACEM - Matinale DSI
 
-Ce document décrit le scénario court pour `SACEM - Matinale DSI | Organiser le delivery logiciel AI-native avec Gastown`, prévu le 10 juillet 2026.
+Ce document décrit le scénario court pour `SACEM - Matinale DSI | Organiser le delivery logiciel AI-native avec Gas Town`, prévu le 10 juillet 2026.
 
 La session est un live interne SACEM, en français, avec Jean-Louis Rigau et Emmanuel Sciara. Le format total est de 45 minutes: 30 minutes de présentation et démonstration, puis 15 minutes de questions.
 
@@ -12,7 +12,7 @@ La présentation doit faire passer un message simple:
 
 > Quand les agents deviennent une partie du delivery logiciel, le sujet principal n'est plus seulement le prompt ou la vitesse de génération. Le sujet devient l'organisation: découpage, coordination, supervision, intégration et vérification.
 
-Le talk doit rester concret. Le deck installe le vocabulaire, puis la démonstration montre comment Gastown transforme une intention produit en objets de delivery observables: beads, convoys, Polecats, Witness, Refinery et résultat vérifiable dans Agreement Hub.
+Le talk doit rester concret. Le deck installe le vocabulaire, puis la démonstration montre comment Gas Town transforme une intention produit en objets de delivery observables: beads, convoys, Polecats, Witness, Refinery et résultat vérifiable dans Agreement Hub.
 
 ## Cadre de la présentation
 
@@ -38,7 +38,7 @@ Le scénario recommandé est le même que pour Dev With AI Live #4, avec un cadr
 5. envoyer `GO`;
 6. suivre beads, convoys, workers et merge queue dans le terminal;
 7. vérifier le résultat livré dans Agreement Hub;
-8. conclure sur ce que Gastown change dans l'organisation du delivery;
+8. conclure sur ce que Gas Town change dans l'organisation du delivery;
 9. garder 15 minutes pour questions et discussion.
 
 Le périmètre live recommandé reste:
@@ -57,29 +57,29 @@ Pourquoi ce choix:
 À éviter pendant cette session:
 
 - chercher à livrer tous les use cases Agreement Hub;
-- détailler tous les rôles internes Gastown;
+- détailler tous les rôles internes Gas Town;
 - faire une visite longue de Langfuse;
 - expliquer chaque commande du terminal comme une formation outil;
 - laisser la démonstration prendre les 15 minutes de questions.
 
 ## Conducteur 30 minutes
 
-Le talk utilise la variante `short`. La slide `Formulas` n'est pas jouée. La synthèse `Ce que Gastown change` précède la slide de remerciement/questions.
+Le talk utilise la variante `short`. La slide `Formulas` n'est pas jouée. La synthèse `Ce que Gas Town change` précède la slide de remerciement/questions.
 
 | Temps | Slides | Séquence | Deck | Démo | Preuve à l'écran |
 |---:|---:|---|---:|---:|---|
 | 0-1 min | 1-2 | Ouverture + intervenants | 1 min | - | Titre `SACEM - Matinale DSI`, date, Jean-Louis et Emmanuel. |
-| 1-5 min | 3-5 | Evolution de la pratique vers Gastown | 4 min | - | Les 8 étapes, Steve Yegge, Gastown comme système de delivery. |
+| 1-5 min | 3-5 | Evolution de la pratique vers Gas Town | 4 min | - | Les 8 étapes, Steve Yegge, Gas Town comme système de delivery. |
 | 5-10 min | 6 | Application de démo + prompt | 1 min | 4 min | Agreement Hub, copie du prompt, `gt mayor attach`, plan Mayor. |
 | 10-11 min | 7 | Pourquoi le single-agent casse | 1 min | - | Installer les limites: contexte, séquentialité, coordination, merge, supervision. |
-| 11-14 min | 8 | Gastown organise le travail | 1 min | 2 min | Plan Mayor, recadrage à deux incréments, `GO`, premiers beads/convoys. |
-| 14-16 min | 9 | Organisation Gastown | 1 min | 1 min | `gt status`: town, rig, crew, Mayor, Witness, Refinery. |
+| 11-14 min | 8 | Gas Town organise le travail | 1 min | 2 min | Plan Mayor, recadrage à deux incréments, `GO`, premiers beads/convoys. |
+| 14-16 min | 9 | Organisation Gas Town | 1 min | 1 min | `gt status`: town, rig, crew, Mayor, Witness, Refinery. |
 | 16-18 min | 10 | Beads | 1 min | 1 min | `bd list --all --flat`, `bd ready`, ready/blocked. |
 | 18-20 min | 11 | Convoys | 1 min | 1 min | `gt convoy list --all`, `gt convoy status`. |
 | 20-22 min | 12 | Polecats | 1 min | 1 min | Workers, branches, progression parallèle. |
-| 22-24 min | 13 | Supervision Gastown | 1 min | 1 min | Deacon, Witness, Refinery, queue de merge. |
+| 22-24 min | 13 | Supervision Gas Town | 1 min | 1 min | Deacon, Witness, Refinery, queue de merge. |
 | 24-28 min | 14 | Vérification Agreement Hub | 1 min | 3 min | App livrée: recherche/filtre et revue de risques si disponibles. |
-| 28-29 min | 15 | Synthèse | 1 min | - | Ce que Gastown change pour le delivery. |
+| 28-29 min | 15 | Synthèse | 1 min | - | Ce que Gas Town change pour le delivery. |
 | 29-30 min | 16 | Passage aux questions | 1 min | - | Slide `Merci`, ouverture Q/R. |
 
 ## Préparation avant le live
@@ -132,7 +132,7 @@ Vérifier Langfuse si disponible:
 http://localhost:3000/
 ```
 
-Langfuse reste un repère annexe: il peut servir à montrer rapidement les échanges LLM et le coût, mais il ne doit pas détourner le talk du modèle Gastown.
+Langfuse reste un repère annexe: il peut servir à montrer rapidement les échanges LLM et le coût, mais il ne doit pas détourner le talk du modèle Gas Town.
 
 ## Phrases d'ouverture
 

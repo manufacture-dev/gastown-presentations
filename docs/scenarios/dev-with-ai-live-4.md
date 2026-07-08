@@ -2,7 +2,7 @@
 
 Ce document décrit le scénario court pour Dev With AI Live #4, prévu le 12 juin 2026.
 
-La démonstration est optimisée pour 30 minutes: peu de théorie, une navigation terminal resserrée, deux incréments produit maximum, et un focus fort sur les concepts Gastown.
+La démonstration est optimisée pour 30 minutes: peu de théorie, une navigation terminal resserrée, deux incréments produit maximum, et un focus fort sur les concepts Gas Town.
 
 Tout le talk est en français. Les phrases ci-dessous sont donc uniquement en français.
 
@@ -10,10 +10,10 @@ Tout le talk est en français. Les phrases ci-dessous sont donc uniquement en fr
 
 La démonstration doit prouver deux choses en peu de temps:
 
-- Gastown transforme une intention produit en travail distribué: beads, convoy, Polecats, review, Witness, Refinery, merge queue;
+- Gas Town transforme une intention produit en travail distribué: beads, convoy, Polecats, review, Witness, Refinery, merge queue;
 - une démo courte doit choisir des incréments indépendants et démontrables, pas chercher à couvrir tous les use cases Agreement Hub.
 
-À côté de Gastown, le lab expose aussi Langfuse. On l'utilise comme repère annexe pour visualiser rapidement les échanges LLM et le coût, sans en faire une partie du modèle Gastown.
+À côté de Gas Town, le lab expose aussi Langfuse. On l'utilise comme repère annexe pour visualiser rapidement les échanges LLM et le coût, sans en faire une partie du modèle Gas Town.
 
 Le point narratif principal n'est plus seulement "plusieurs agents codent en parallèle". Le point principal est:
 
@@ -25,7 +25,7 @@ Le deck reste le fil conducteur. Les slides qui n'ont pas d'encadré violet `Liv
 
 Les bascules vers le terminal ou Agreement Hub se font quand la slide affiche un `LiveSignal`. À ce moment-là, la slide annonce ce qu'il faut observer, puis l'écran live donne la preuve.
 
-Langfuse est un outil du lab, pas une partie de Gastown. On le vérifie avant le talk et on peut le montrer très vite en fin de live pour matérialiser les échanges LLM et le coût, mais le fil de la présentation doit rester sur les concepts Gastown.
+Langfuse est un outil du lab, pas une partie de Gas Town. On le vérifie avant le talk et on peut le montrer très vite en fin de live pour matérialiser les échanges LLM et le coût, mais le fil de la présentation doit rester sur les concepts Gas Town.
 
 Exception pratique: la slide 6 sert à copier le prompt et à le donner au Mayor. C'est le lancement du système, pas encore une séquence d'observation détaillée. L'observation live commence vraiment à la première slide `LiveSignal`.
 
@@ -40,7 +40,7 @@ Les slides montrent parfois le modèle complet avec tous les use cases Agreement
 - le périmètre produit doit rester limité à 2 incréments;
 - Langfuse reste un outil d'observation du lab, montré brièvement;
 - le coût peut être montré dans Langfuse, sans analyser toutes les traces ou sessions;
-- le terminal sert à montrer les objets de delivery Gastown;
+- le terminal sert à montrer les objets de delivery Gas Town;
 - Agreement Hub sert à prouver les incréments livrés.
 
 ## Choix de scénario recommandé
@@ -56,7 +56,7 @@ Le meilleur scénario de 30 minutes est:
    - `AI Risk Reviewer (mock/offline)`;
 6. suivre beads, convoy et merge queue dans le terminal;
 7. jeter un coup d'oeil rapide à Langfuse pour les échanges et le coût;
-8. conclure sur le produit livré et les concepts Gastown.
+8. conclure sur le produit livré et les concepts Gas Town.
 
 Pourquoi ce choix:
 
@@ -79,22 +79,22 @@ Pourquoi ce choix:
 
 ## Conducteur 30 minutes
 
-Le talk utilise la variante `short`: la slide `Formulas` n'est pas jouée. La synthèse `Ce que Gastown change` est donc la slide 15, puis la slide de remerciement/questions termine le deck.
+Le talk utilise la variante `short`: la slide `Formulas` n'est pas jouée. La synthèse `Ce que Gas Town change` est donc la slide 15, puis la slide de remerciement/questions termine le deck.
 
 | Temps | Slides | Qui | Séquence | Deck | Démo | Preuve à l'écran |
 |---:|---:|---|---|---:|---:|---|
 | 0-1 min | 1-2 | Jean-Louis puis Emmanuel | Ouverture + intervenants | 1 min | - | Jean-Louis ouvre et se présente, puis passe la main à Emmanuel qui se présente. |
-| 1-5 min | 3-5 | Emmanuel, puis Jean-Louis au takeaway | Évolution de la pratique vers Gastown | 4 min | - | Emmanuel présente les 8 étapes, Steve Yegge, puis Gastown. Jean-Louis reprend au takeaway et fait le lien vers la démo. |
+| 1-5 min | 3-5 | Emmanuel, puis Jean-Louis au takeaway | Évolution de la pratique vers Gas Town | 4 min | - | Emmanuel présente les 8 étapes, Steve Yegge, puis Gas Town. Jean-Louis reprend au takeaway et fait le lien vers la démo. |
 | 5-10 min | 6 | Jean-Louis | Application de démo + prompt | 1 min | 4 min | Montrer l'app, copier le prompt depuis le deck, `gt mayor attach`, coller au Mayor, laisser le plan arriver. |
 | 10-11 min | 7 | Emmanuel | Pourquoi le single-agent casse | 1 min | - | Deck pendant que le Mayor inspecte. Installer les cinq limites sans développer. |
-| 11-14 min | 8 | Emmanuel, puis Jean-Louis au `LiveSignal` | Gastown organise le travail | 1 min | 2 min | Emmanuel présente le modèle. Jean-Louis reprend au `LiveSignal`: plan Mayor, recadrage à 2 incréments, `GO`, premiers beads/convoy. |
+| 11-14 min | 8 | Emmanuel, puis Jean-Louis au `LiveSignal` | Gas Town organise le travail | 1 min | 2 min | Emmanuel présente le modèle. Jean-Louis reprend au `LiveSignal`: plan Mayor, recadrage à 2 incréments, `GO`, premiers beads/convoy. |
 | 14-16 min | 9 | Jean-Louis | `LiveSignal`: organisation | 1 min | 1 min | `gt status`. Rig, crew, Mayor, Witness, Refinery. |
 | 16-18 min | 10 | Jean-Louis | `LiveSignal`: beads | 1 min | 1 min | `bd list --all --flat`, `bd ready`. Expliquer que tous les use cases du slide ne seront pas livrés. |
 | 18-20 min | 11 | Jean-Louis | `LiveSignal`: convoys | 1 min | 1 min | `gt convoy list --all`, `gt convoy status`. Progression des deux incréments. |
 | 20-22 min | 12 | Jean-Louis | `LiveSignal`: Polecats | 1 min | 1 min | `gt status`, branches/workers. Parallélisme limité, pas tour de terminaux. |
-| 22-24 min | 13 | Emmanuel, puis Jean-Louis au `LiveSignal` | Supervision Gastown | 1 min | 1 min | Emmanuel présente la supervision. Jean-Louis reprend au `LiveSignal`: Deacon, Witness, Refinery et convergence côté terminal. |
+| 22-24 min | 13 | Emmanuel, puis Jean-Louis au `LiveSignal` | Supervision Gas Town | 1 min | 1 min | Emmanuel présente la supervision. Jean-Louis reprend au `LiveSignal`: Deacon, Witness, Refinery et convergence côté terminal. |
 | 24-28 min | 14 | Jean-Louis | Vérification Agreement Hub | 1 min | 3 min | App. Montrer uniquement les incréments réellement livrés, avec assez de temps pour vérifier devant le public. |
-| 28-29 min | 15 | Emmanuel + Jean-Louis | Synthèse `Ce que Gastown change` | 1 min | - | Emmanuel prend chaque problème, Jean-Louis donne la réponse Gastown. |
+| 28-29 min | 15 | Emmanuel + Jean-Louis | Synthèse `Ce que Gas Town change` | 1 min | - | Emmanuel prend chaque problème, Jean-Louis donne la réponse Gas Town. |
 | 29-30 min | 16 | Les deux | Questions + coût | 1 min | - | Slide de remerciement/questions. Montrer très rapidement le coût dans Langfuse si le rythme le permet, sans analyser les traces. |
 
 ## Préparation avant le talk
@@ -103,7 +103,7 @@ Le talk utilise la variante `short`: la slide `Formulas` n'est pas jouée. La sy
 
 Le lab utilisé en live est un nouveau lab, créé avant la présentation.
 
-Le live ne doit donc pas commencer par la création du lab. Il commence avec un lab déjà prêt, Agreement Hub attaché, Gastown démarré, et le Mayor disponible.
+Le live ne doit donc pas commencer par la création du lab. Il commence avec un lab déjà prêt, Agreement Hub attaché, Gas Town démarré, et le Mayor disponible.
 
 Commandes de création à exécuter avant le talk:
 
@@ -148,7 +148,7 @@ gt status
 
 Texte oral:
 
-> On part d'un lab Gastown déjà provisionné pour cette session live. Agreement Hub est attaché comme repository de travail, Gastown est démarré, et le Mayor est disponible. Le premier geste visible ne sera pas de créer l'environnement: ce sera de copier le prompt depuis la slide et de le donner au Mayor.
+> On part d'un lab Gas Town déjà provisionné pour cette session live. Agreement Hub est attaché comme repository de travail, Gas Town est démarré, et le Mayor est disponible. Le premier geste visible ne sera pas de créer l'environnement: ce sera de copier le prompt depuis la slide et de le donner au Mayor.
 
 ### 2. Vérifier Langfuse rapidement
 
@@ -167,7 +167,7 @@ http://localhost:3000/
 
 Texte oral:
 
-> Langfuse ne fait pas partie de Gastown. C'est un outil du lab qui nous permet de voir rapidement les échanges LLM et le coût. On ne va pas analyser toutes les traces; c'est juste un repère utile pendant la démo.
+> Langfuse ne fait pas partie de Gas Town. C'est un outil du lab qui nous permet de voir rapidement les échanges LLM et le coût. On ne va pas analyser toutes les traces; c'est juste un repère utile pendant la démo.
 
 ### 3. Vérifier Agreement Hub
 
@@ -221,7 +221,7 @@ Passage de main:
 
 Transition:
 
-> On va commencer par la progression des pratiques de développement avec l'IA, parce que Gastown arrive assez naturellement à la fin de cette progression.
+> On va commencer par la progression des pratiques de développement avec l'IA, parce que Gas Town arrive assez naturellement à la fin de cette progression.
 
 ## Scène 3 - Slide 3: les 8 étapes du développement IA
 
@@ -241,7 +241,7 @@ Transition:
 
 > Pour ce live, on va se concentrer sur ce dernier passage: du coding assisté vers un delivery agentique organisé.
 
-## Scène 4 - Slide 4: Steve Yegge, Vibe Coding, Gastown, Beads
+## Scène 4 - Slide 4: Steve Yegge, Vibe Coding, Gas Town, Beads
 
 Temps cible: 1 minute.
 
@@ -251,14 +251,14 @@ Texte oral:
 
 > Steve Yegge a très bien formalisé cette bascule: l'IA coding ne s'arrête pas à "écrire du code plus vite". Elle oblige à repenser la façon dont on fait produire du logiciel par des agents.
 
-> Gastown et Beads s'inscrivent dans cette logique: Gastown organise les rôles et le delivery, Beads rend le travail adressable, traçable, et compatible avec Git.
+> Gas Town et Beads s'inscrivent dans cette logique: Gas Town organise les rôles et le delivery, Beads rend le travail adressable, traçable, et compatible avec Git.
 
 À éviter:
 
 - ne pas faire une biographie;
-- ne pas détailler tous les concepts Gastown maintenant.
+- ne pas détailler tous les concepts Gas Town maintenant.
 
-## Scène 5 - Slide 5: Gastown comme système de delivery urbanisé
+## Scène 5 - Slide 5: Gas Town comme système de delivery urbanisé
 
 Temps cible: 1 minute.
 
@@ -268,7 +268,7 @@ Texte oral:
 
 > L'image importante ici, c'est la ville. Une ville n'est pas seulement une collection de travailleurs. Elle a des rôles, des lieux, des règles, des flux et des mécanismes de supervision.
 
-> Gastown applique cette idée au delivery agentique. La Town coordonne, le Mayor transforme l'intention en travail, les Rigs sont les repositories où le travail s'exécute.
+> Gas Town applique cette idée au delivery agentique. La Town coordonne, le Mayor transforme l'intention en travail, les Rigs sont les repositories où le travail s'exécute.
 
 Reprise Jean-Louis au takeaway:
 
@@ -301,7 +301,7 @@ Texte oral:
 
 > Le deck et les docs contiennent plusieurs use cases possibles. Mais aujourd'hui, on est sur une démo de 30 minutes. On ne va pas chercher à tout livrer. Le mandat demandé au Mayor est volontairement contraint: deux incréments maximum, démontrables vite, avec un mode mock/offline si nécessaire.
 
-> À partir d'ici, je copie le prompt depuis la slide, je le donne au Mayor, et je laisse Gastown préparer son plan.
+> À partir d'ici, je copie le prompt depuis la slide, je le donne au Mayor, et je laisse Gas Town préparer son plan.
 
 Pendant que le Mayor inspecte:
 
@@ -327,7 +327,7 @@ Transition vers la première démo:
 
 > À partir de la slide suivante, les encadrés violets `LiveSignal` indiquent ce qu'on doit vérifier dans le système réel.
 
-## Scène 8 - Slide 8: Gastown organise le travail, pas les prompts
+## Scène 8 - Slide 8: Gas Town organise le travail, pas les prompts
 
 Temps cible: 3 minutes.
 
@@ -335,7 +335,7 @@ Présentateurs: Emmanuel pour la slide, puis Jean-Louis à partir du `LiveSignal
 
 Texte oral Emmanuel:
 
-> Ici, l'idée est que Gastown ne cherche pas à écrire un prompt parfait. Il ajoute une couche d'organisation entre l'intention humaine et le delivery observable.
+> Ici, l'idée est que Gas Town ne cherche pas à écrire un prompt parfait. Il ajoute une couche d'organisation entre l'intention humaine et le delivery observable.
 
 > Le Mayor planifie, les beads rendent le travail adressable, les convoys suivent les flux, Witness et Refinery gardent l'exécution observable, et les Polecats font le travail.
 
@@ -369,7 +369,7 @@ gt convoy list --all
 
 Texte oral Jean-Louis:
 
-> Ici, on voit le passage important: je ne donne pas une liste de fichiers à modifier. Je donne une intention. Gastown doit la transformer en objets de delivery: beads, convoys, affectations, statuts.
+> Ici, on voit le passage important: je ne donne pas une liste de fichiers à modifier. Je donne une intention. Gas Town doit la transformer en objets de delivery: beads, convoys, affectations, statuts.
 
 > La slide présente le modèle général. Dans cette session, je limite volontairement le périmètre. Si le système propose cinq use cases, je le recadre. L'objectif du live n'est pas d'être exhaustif, c'est d'être observable et vérifiable.
 
@@ -483,7 +483,7 @@ Si une merge queue est visible:
 
 > La merge queue est le moment où le travail cesse d'être seulement "fait dans une branche". Il devient candidat à l'intégration.
 
-## Scène 13 - Slide 13: supervision Gastown
+## Scène 13 - Slide 13: supervision Gas Town
 
 Temps cible: 2 minutes.
 
@@ -510,11 +510,11 @@ gt refinery queue agreement_hub
 
 Texte oral Jean-Louis:
 
-> Cette slide parle de supervision opérationnelle côté Gastown: Deacon, Witness, Refinery. C'est ce qui empêche le parallélisme de devenir juste du chaos.
+> Cette slide parle de supervision opérationnelle côté Gas Town: Deacon, Witness, Refinery. C'est ce qui empêche le parallélisme de devenir juste du chaos.
 
 > Ici, je reste sur les briques internes: la santé de la town, le statut du rig, ce que surveille le Witness, et ce qui attend en Refinery.
 
-> Le point de cette slide, c'est la supervision Gastown: reprise, queue de merge et convergence du delivery.
+> Le point de cette slide, c'est la supervision Gas Town: reprise, queue de merge et convergence du delivery.
 
 À ne pas faire:
 
@@ -565,35 +565,35 @@ Pour `AI Risk Reviewer mock/offline`:
 
 Temps cible: 1 minute.
 
-Présentateurs: Emmanuel lit chaque problème, Jean-Louis donne la réponse Gastown.
+Présentateurs: Emmanuel lit chaque problème, Jean-Louis donne la réponse Gas Town.
 
 Rythme:
 
 1. Emmanuel annonce le problème.
-2. Jean-Louis donne la réponse Gastown.
+2. Jean-Louis donne la réponse Gas Town.
 3. Passer à la ligne suivante sans développer.
 
 Texte oral:
 
 > Emmanuel: Premier problème, la saturation du contexte.
 
-> Jean-Louis: Réponse Gastown: structurer le travail en beads, artefacts et passages de relais explicites.
+> Jean-Louis: Réponse Gas Town: structurer le travail en beads, artefacts et passages de relais explicites.
 
 > Emmanuel: Deuxième problème, l'exécution séquentielle.
 
-> Jean-Louis: Réponse Gastown: utiliser les Polecats pour exécuter le travail indépendant en parallèle.
+> Jean-Louis: Réponse Gas Town: utiliser les Polecats pour exécuter le travail indépendant en parallèle.
 
 > Emmanuel: Troisième problème, l'absence de coordination.
 
-> Jean-Louis: Réponse Gastown: Mayor, Crew et convoys rendent les responsabilités et la progression visibles.
+> Jean-Louis: Réponse Gas Town: Mayor, Crew et convoys rendent les responsabilités et la progression visibles.
 
 > Emmanuel: Quatrième problème, la pression sur le merge.
 
-> Jean-Louis: Réponse Gastown: la Refinery gère la convergence au lieu de laisser l'intégration au hasard.
+> Jean-Louis: Réponse Gas Town: la Refinery gère la convergence au lieu de laisser l'intégration au hasard.
 
 > Emmanuel: Cinquième problème, l'absence de supervision opérationnelle.
 
-> Jean-Louis: Réponse Gastown: Witness et Deacon rendent l'exécution observable, et la Refinery rend l'intégration pilotable.
+> Jean-Louis: Réponse Gas Town: Witness et Deacon rendent l'exécution observable, et la Refinery rend l'intégration pilotable.
 
 > La conclusion, ce n'est pas que l'agent écrit du code plus vite. C'est que le delivery agentique devient un système à organiser et à mesurer.
 
@@ -614,7 +614,7 @@ Garder ouvert selon le type de question:
 
 - deck pour les questions conceptuelles;
 - Langfuse pour les questions sur les échanges LLM ou le coût du lab;
-- terminal pour les questions Gastown;
+- terminal pour les questions Gas Town;
 - Agreement Hub pour les questions produit.
 
 Texte oral:
@@ -656,7 +656,7 @@ Utilisation:
 
 ## Gestion des cas réels
 
-Cette partie doit rester courte. Elle ne couvre que les incidents plausibles côté Gastown pendant le live.
+Cette partie doit rester courte. Elle ne couvre que les incidents plausibles côté Gas Town pendant le live.
 
 ### Le delivery avance moins vite que prévu
 
@@ -672,7 +672,7 @@ Donne-moi ta vue d'ensemble maintenant: ce qui est actif, ce qui est mergé, ce 
 
 Texte oral:
 
-> C'est aussi ça qu'on veut montrer: Gastown ne sert pas seulement quand tout va vite. Il sert à rendre l'état du delivery lisible.
+> C'est aussi ça qu'on veut montrer: Gas Town ne sert pas seulement quand tout va vite. Il sert à rendre l'état du delivery lisible.
 
 ### La merge queue bloque
 
