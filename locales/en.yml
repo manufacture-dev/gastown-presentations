@@ -23,10 +23,10 @@ speakers:
   heading: Speakers
   role: Speaker
   jlrigau:
-    bio: Engineering and AI-native transformation advisor. Helps organizations modernize platforms, delivery practices, product operating models and agentic workflows.
+    bio: Vibe coder & AI-native advisor. Hands-on AI-augmented engineering and coaching to modernize platforms, delivery practices and agentic workflows.
     qr_alt: QR code for Jean-Louis Rigau LinkedIn profile
   emmanuelsciara:
-    bio: Agent Lead and AI-native Engineer. Works on strategy, deployment and coaching of coding agents, with hands-on Claude Code and developer enablement.
+    bio: Agent Lead & AI-native Engineer. Works on strategy, deployment and coaching of coding agents, with hands-on Claude Code and developer enablement.
     qr_alt: QR code for Emmanuel Sciara LinkedIn profile
 
 evolution:
