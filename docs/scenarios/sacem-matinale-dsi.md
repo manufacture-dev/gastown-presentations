@@ -159,10 +159,21 @@ taxiway doctor live-sacem-matinale-dsi
 taxiway doctor live-sacem-matinale-dsi --fix
 ```
 
-Lancer l'enregistrement et entrer dans le lab:
+Lancer l'enregistrement:
 
 ```bash
 taxiway record start live-sacem-matinale-dsi --name sacem-matinale-dsi
+```
+
+Entrer dans le lab:
+
+```bash
+taxiway shell live-sacem-matinale-dsi
+```
+
+Vérifier Gas Town depuis le lab:
+
+```bash
 gt doctor
 ```
 
@@ -179,13 +190,28 @@ gt doctor --fix
 gt doctor --fix hooks-sync
 ```
 
+Si une session Deacon affiche un patrol ou un hook en attente, ne pas exécuter ses commandes depuis le shell principal. Revenir dans la session Deacon et laisser Deacon exécuter son hook.
+
+Vérifier explicitement l'état de Deacon:
+
+```bash
+gt deacon status
+```
+
+Si Deacon ne se lance pas correctement ou si son statut indique `Health: stale`, le redémarrer avant le live:
+
+```bash
+gt deacon restart
+gt deacon status
+```
+
 Vérifier l'état de départ:
 
 ```bash
 gt status
 ```
 
-`taxiway record start` ouvre le shell du lab en l'enregistrant. Depuis ce shell, utiliser `gt mayor attach` pour rejoindre la session Mayor, puis `Ctrl-b d` pour revenir au shell sans arrêter la session.
+Depuis le shell du lab, utiliser `gt mayor attach` pour rejoindre la session Mayor, puis `Ctrl-b d` pour revenir au shell sans arrêter la session.
 
 Signal attendu:
 
