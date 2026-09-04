@@ -90,7 +90,7 @@ gastown:
 
 demo:
   heading: Application de démo
-  desc: "Exemple de delivey réaliste : application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste."
+  desc: "Application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste."
   bullets:
     stack: "Stack : frontend React/Vite, backend Express/TypeScript et base SQLite."
     baseline: Gas Town travaille sur un repository forké, donc la démo repart d'une baseline propre.
