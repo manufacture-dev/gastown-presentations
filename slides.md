@@ -336,7 +336,7 @@ The bottleneck is not just model intelligence; it is coordination.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("organizes.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("organizes.live_signal") }}</div>
 
 <!--
 Use this slide to position Gas Town as an AI-native delivery organization.
@@ -404,7 +404,7 @@ Avoid tool tour language.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("organization.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("organization.live_signal") }}</div>
 
 <!--
 This is a central slide. The key line is:
@@ -478,7 +478,7 @@ The Mayor coordinates work. Polecats execute it.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("beads.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("beads.live_signal") }}</div>
 
 <!--
 Use this slide to explain why dependency management matters.
@@ -544,7 +544,7 @@ The important point: work becomes executable and inspectable.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("convoys.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("convoys.live_signal") }}</div>
 
 <!--
 Convoys should feel operational, not decorative.
@@ -610,7 +610,7 @@ They are the shared handle for distributed delivery.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("polecats.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("polecats.live_signal") }}</div>
 
 <!--
 This is the "wow" moment, but keep it engineering-oriented.
@@ -679,7 +679,7 @@ The claim is throughput through isolated execution.
   </div>
 </div>
 
-<div class="live-signal">{{ $t("supervision.live_signal") }}</div>
+<div v-if="$variant !== 'workshop'" class="live-signal">{{ $t("supervision.live_signal") }}</div>
 
 <!--
 Important for DiliTrust: supervision and control are not optional.

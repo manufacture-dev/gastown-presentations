@@ -170,11 +170,22 @@ variants: [full]
 # This slide only appears in the full variant
 ```
 
+### Marking an element for specific variants
+
+The active variant is available as `$variant` in slide templates. Use Vue's
+`v-if` when only part of a shared slide needs to change:
+
+```html
+<div v-if="$variant !== 'workshop'">
+  This element is hidden in the workshop variant
+</div>
+```
+
 Notes:
 
 - A slide without a `variants` list is part of every variant (the shared core).
-- `variant` selection is also exposed at runtime as `talkConfig.variant`, so
-  in-slide tweaks can use `v-if` when removing a whole slide is not desired.
+- Use slide frontmatter for whole-slide selection and `$variant` with `v-if`
+  for individual elements.
 - Exports keep their `gastown-<route>.<locale>.<ext>` naming; because `route`
   is unique per talk, the variant is already disambiguated.
 

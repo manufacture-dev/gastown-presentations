@@ -5,6 +5,7 @@ import test from 'node:test'
 import { parseSync } from '@slidev/parser'
 
 const source = await readFile(new URL('../slides.md', import.meta.url), 'utf8')
+const setupSource = await readFile(new URL('../setup/main.ts', import.meta.url), 'utf8')
 const slides = parseSync(source, 'slides.md').slides
 
 function slideIndex(translationKey) {
@@ -36,4 +37,20 @@ test('includes the full-only Formula slide in the workshop', () => {
   const [formulaSlide] = slidesFor('formulas')
 
   assert.deepEqual(formulaSlide.frontmatter.variants, ['full', 'workshop'])
+})
+
+test('exposes the active variant to slide templates', () => {
+  assert.match(
+    setupSource,
+    /app\.config\.globalProperties\.\$variant\s*=\s*talkConfig\.variant/,
+  )
+})
+
+test('hides every live signal from the workshop variant', () => {
+  const liveSignals = [...source.matchAll(/<div\b[^>]*class="live-signal"[^>]*>/g)]
+    .map(match => match[0])
+
+  assert.equal(liveSignals.length, 6)
+  for (const liveSignal of liveSignals)
+    assert.match(liveSignal, /v-if="\$variant !== 'workshop'"/)
 })
