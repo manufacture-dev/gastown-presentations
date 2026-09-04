@@ -353,6 +353,49 @@ function parseExportArgs(args, existingPassthrough = []) {
   }
 }
 
+async function buildWeb(talks) {
+  mkdirSync(path.join(root, 'dist'), { recursive: true })
+
+  for (const talk of talks) {
+    rmSync(path.join(root, 'dist', talk.route), { recursive: true, force: true })
+    await runTalkSlidev(entry => [
+      'build',
+      entry,
+      '--out',
+      `dist/${talk.route}`,
+      '--base',
+      './',
+    ], talk)
+  }
+
+  writeFileSync(path.join(root, 'dist', 'index.html'), renderIndex(talks), 'utf8')
+  rmSync(path.join(root, 'dist', localPreviewPrefix), { recursive: true, force: true })
+  writeLocalPreviewAliases(talks)
+}
+
+async function exportDownloads(talks) {
+  await mkdir(path.join(root, 'dist', 'downloads'), { recursive: true })
+
+  for (const talk of talks) {
+    await runTalkSlidev(entry => withDefaultExportWait([
+      'export',
+      entry,
+      '--format',
+      'pdf',
+      '--output',
+      path.join('dist', 'downloads', exportName(talk, 'pdf')),
+    ]), talk)
+    await runTalkSlidev(entry => withDefaultExportWait([
+      'export',
+      entry,
+      '--format',
+      'pptx',
+      '--output',
+      path.join('dist', 'downloads', exportName(talk, 'pptx')),
+    ]), talk)
+  }
+}
+
 async function main() {
   const { ownArgs, passthrough } = splitArgs(process.argv.slice(2))
   const [command, ...args] = ownArgs
@@ -365,38 +408,13 @@ async function main() {
   if (command === 'build-all') {
     const talks = readTalks()
     rmSync(path.join(root, 'dist'), { recursive: true, force: true })
+    await buildWeb(talks)
+    await exportDownloads(talks)
+    return
+  }
 
-    for (const talk of talks) {
-      await runTalkSlidev(entry => [
-        'build',
-        entry,
-        '--out',
-        `dist/${talk.route}`,
-        '--base',
-        './',
-      ], talk)
-
-      await mkdir(path.join(root, 'dist', 'downloads'), { recursive: true })
-      await runTalkSlidev(entry => withDefaultExportWait([
-        'export',
-        entry,
-        '--format',
-        'pdf',
-        '--output',
-        path.join('dist', 'downloads', exportName(talk, 'pdf')),
-      ]), talk)
-      await runTalkSlidev(entry => withDefaultExportWait([
-        'export',
-        entry,
-        '--format',
-        'pptx',
-        '--output',
-        path.join('dist', 'downloads', exportName(talk, 'pptx')),
-      ]), talk)
-    }
-
-    writeFileSync(path.join(root, 'dist', 'index.html'), renderIndex(talks), 'utf8')
-    writeLocalPreviewAliases(talks)
+  if (command === 'build-web') {
+    await buildWeb(readTalks())
     return
   }
 
@@ -432,7 +450,7 @@ async function main() {
     return
   }
 
-  throw new Error(`Unknown command "${command}". Use dev, build, build-all, export, or list.`)
+  throw new Error(`Unknown command "${command}". Use dev, build, build-all, build-web, export, or list.`)
 }
 
 try {

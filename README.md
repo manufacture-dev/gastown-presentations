@@ -35,6 +35,7 @@ npm run dev
 npm run dev -- dilitrust-techday --port 3030
 npm run build
 npm run build:all
+npm run build:web
 npm run export:pdf
 npm run export:pptx
 ```
@@ -48,11 +49,12 @@ npm run export:pptx
 - `npm run build -- <route>` creates a specific talk static website in `dist/`.
 - `npm run build:all` creates one route per configured talk in `dist/<route>/`
   and downloadable PDF/PPTX files in `dist/downloads/`.
+- `npm run build:web` refreshes the landing page and every web route without
+  regenerating PDF/PPTX files. Existing downloads are preserved.
 - `npm run export:pdf` renders the latest talk PDF in `exports/`.
 - `npm run export:pptx` renders the latest talk PowerPoint file in `exports/`.
 - `npm run export:pdf -- <route>` renders a specific talk PDF in `exports/`.
 - `npm run export:pptx -- <route>` renders a specific talk PowerPoint file in `exports/`.
-
 ## Talk Instances
 
 Talk-specific metadata lives in two places:
@@ -98,12 +100,13 @@ Useful commands:
 npm run talk:list
 npm run dev -- dilitrust-techday
 npm run build -- dilitrust-techday
+npm run build:web
 npm run build:all
 npx serve dist
 ```
 
-After `npm run build:all`, `npx serve dist` lets you test the generated index,
-all talk routes, and downloadable PDF/PPTX files locally:
+After `npm run build:web` or `npm run build:all`, `npx serve dist` lets you test
+the generated index, all talk routes, and any available PDF/PPTX files locally:
 
 ```text
 http://localhost:3000/

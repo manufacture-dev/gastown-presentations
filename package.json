@@ -8,6 +8,7 @@
     "dev": "node scripts/talk.mjs dev",
     "build": "node scripts/talk.mjs build",
     "build:all": "node scripts/talk.mjs build-all",
+    "build:web": "node scripts/talk.mjs build-web",
     "export:pdf": "node scripts/talk.mjs export pdf",
     "export:pptx": "node scripts/talk.mjs export pptx",
     "talk:list": "node scripts/talk.mjs list",
