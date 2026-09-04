@@ -195,6 +195,8 @@ The story: Gas Town starts from vibe-coding chaos, then adds city-like operating
 -->
 
 ---
+variants: [full, short]
+---
 
 # {{ $t("demo.heading") }}
 
@@ -685,6 +687,47 @@ This slide turns distributed execution into an operational system.
 -->
 
 ---
+variants: [workshop]
+---
+
+# {{ $t("demo.heading") }}
+
+<div class="app-layout">
+  <div class="app-copy">
+    <span>Agreement Hub</span>
+    <p>{{ $t("demo.desc") }}</p>
+    <ul>
+      <li>{{ $t("demo.bullets.stack") }}</li>
+      <li>{{ $t("demo.bullets.baseline") }}</li>
+      <li>{{ $t("demo.bullets.real") }}</li>
+    </ul>
+  </div>
+  <div class="app-shot">
+    <div class="app-window">
+      <img :src="'images/screenshots/agreement-hub-initial.png'" :alt="$t('demo.image_alt')" />
+    </div>
+  </div>
+</div>
+
+<div class="demo-flow">
+  <div class="demo-flow-copy">
+    <span>{{ $t("demo.flow_label") }}</span>
+    <p>{{ $t("demo.flow_start") }}<br />{{ $t("demo.flow_next") }}</p>
+  </div>
+  <div class="demo-actions">
+    <CopyPromptButton />
+    <a class="app-open-link" href="http://localhost:5173/" target="_blank" rel="noopener noreferrer">{{ $t("demo.open_app") }}</a>
+  </div>
+</div>
+
+<!--
+WORKSHOP START:
+- Launch Gas Town.
+- Present Agreement Hub in the browser.
+- Start the guided workshop sequence.
+-->
+
+---
 
 # {{ $t("verification.heading") }}
 
@@ -723,7 +766,7 @@ The audience must see that Agreement Hub changed because Gas Town delivered code
 -->
 
 ---
-variants: [full]
+variants: [full, workshop]
 ---
 
 # {{ $t("formulas.heading") }}
