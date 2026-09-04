@@ -1172,10 +1172,9 @@
 }
 
 .title-meta {
-  width: min(28rem, 100%);
-  margin-top: 0.9rem;
-  margin-left: auto;
-  text-align: right;
+  width: min(32rem, 100%);
+  margin-top: 0.72rem;
+  text-align: left;
 }
 
 .title-meta .byline {
@@ -1189,18 +1188,40 @@
 
 .title-tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 2.2rem;
+  flex-wrap: nowrap;
+  gap: 0.42rem;
+  align-items: center;
+  width: 100%;
 }
 
 .title-tags span {
+  flex: 0 0 auto;
   border: 1px solid var(--gt-card-border);
   background: var(--gt-card-bg);
   padding: 0.32rem 0.5rem;
   color: var(--slidev-theme-accents-yellow);
   font-size: 0.64rem;
   line-height: 1;
+  white-space: nowrap;
+}
+
+.title-info-row {
+  margin-top: 0.8rem;
+}
+
+.title-info-row .lede {
+  margin: 0;
+}
+
+.title-footer {
+  position: absolute;
+  right: 3.5rem;
+  bottom: 3.75rem;
+  left: 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
 }
 
 .speakers-slide {
@@ -2094,6 +2115,10 @@
 
 .slidev-layout h1 {
   margin-bottom: 0.35rem;
+}
+
+.slidev-layout.title-slide h1 {
+  transform: translateY(-0.6rem);
 }
 
 .slidev-layout h2 {

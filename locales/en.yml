@@ -5,6 +5,8 @@ common:
 title:
   heading: Organizing AI-native software delivery with Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara
+  qr_label: Open the presentation
+  qr_accessible_label: Open this presentation in English
   tags:
     ai_native: "#AI-native engineering"
     distributed: "#Distributed delivery"

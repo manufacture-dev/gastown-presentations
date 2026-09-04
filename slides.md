@@ -6,7 +6,7 @@ title: Gas Town - Organizing AI-native software delivery
 titleTemplate: '%s'
 info: |
   Gas Town organizes AI-native software delivery. Live implementation on Agreement Hub.
-class: text-left
+class: text-left title-slide
 drawings:
   persist: false
 presenter: true
@@ -17,19 +17,24 @@ mdc: true
 
 # {{ $t("title.heading") }}
 
-<p class="lede">{{ $talk("event") }}</p>
-
-<div class="title-meta">
-<div class="byline">{{ $t("title.byline") }}</div>
-
-<div class="event-date">{{ $talkDate() }}</div>
+<div class="title-info-row">
+  <div class="title-context">
+    <p class="lede">{{ $talk("event") }}</p>
+    <div class="title-meta">
+      <div class="byline">{{ $t("title.byline") }}</div>
+      <div class="event-date">{{ $talkDate() }}</div>
+    </div>
+  </div>
 </div>
 
-<div class="title-tags">
-  <span>{{ $t("title.tags.ai_native") }}</span>
-  <span>{{ $t("title.tags.distributed") }}</span>
-  <span>{{ $t("title.tags.orchestration") }}</span>
-  <span>{{ $t("title.tags.supervised") }}</span>
+<div class="title-footer">
+  <div class="title-tags">
+    <span>{{ $t("title.tags.ai_native") }}</span>
+    <span>{{ $t("title.tags.distributed") }}</span>
+    <span>{{ $t("title.tags.orchestration") }}</span>
+    <span>{{ $t("title.tags.supervised") }}</span>
+  </div>
+  <PresentationQrCode />
 </div>
 
 <!--
