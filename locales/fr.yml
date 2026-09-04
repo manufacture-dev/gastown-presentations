@@ -14,6 +14,8 @@ title:
     supervised: "#Exécution supervisée"
 
 talks:
+  agile_en_seine_2026:
+    event: "Agile En Seine & IA"
   dilitrust_techday:
     event: DiliTrust TechDay
   dev_with_ai_live_4:
