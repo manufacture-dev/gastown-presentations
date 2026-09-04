@@ -45,10 +45,12 @@ const accessibleLabel = computed(() => t('title.qr_accessible_label'))
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
-  color: inherit;
+  color: var(--gt-card-muted);
   font-size: 0.65rem;
   line-height: 1.15;
   text-align: center;
+  border: 0;
+  box-shadow: none;
   text-decoration: none;
 }
 
