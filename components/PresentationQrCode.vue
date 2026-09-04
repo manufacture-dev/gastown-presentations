@@ -4,23 +4,18 @@ import { useI18n } from 'vue-i18n'
 
 import {
   buildPresentationUrl,
-  normalizePresentationLocale,
   presentationQrCodeFilename,
 } from '../lib/presentation-links.mjs'
 
-const { locale, t } = useI18n()
+const { t } = useI18n()
 const talkConfig = inject('talkConfig', {})
 
-const presentationLocale = computed(() =>
-  normalizePresentationLocale(locale.value, talkConfig.defaultLocale),
-)
-
 const presentationUrl = computed(() =>
-  buildPresentationUrl(talkConfig.route, presentationLocale.value),
+  buildPresentationUrl(talkConfig.route),
 )
 
 const qrCodeSource = computed(() => {
-  const filename = presentationQrCodeFilename(talkConfig.route, presentationLocale.value)
+  const filename = presentationQrCodeFilename(talkConfig.route)
   return `${import.meta.env.BASE_URL}images/talk-qrs/${filename}`
 })
 
@@ -40,7 +35,6 @@ const accessibleLabel = computed(() => t('title.qr_accessible_label'))
     </span>
     <span class="presentation-qr-code__label">
       {{ t('title.qr_label') }}
-      <strong>{{ presentationLocale.toUpperCase() }}</strong>
     </span>
   </a>
 </template>
@@ -74,10 +68,5 @@ const accessibleLabel = computed(() => t('title.qr_accessible_label'))
 
 .presentation-qr-code__label {
   max-width: 11rem;
-}
-
-.presentation-qr-code__label strong {
-  margin-left: 0.2rem;
-  color: var(--slidev-theme-accents-yellow);
 }
 </style>

@@ -6,7 +6,6 @@ import QRCode from 'qrcode'
 
 import {
   buildPresentationUrl,
-  PRESENTATION_LOCALES,
   presentationQrCodeFilename,
 } from '../lib/presentation-links.mjs'
 
@@ -35,22 +34,20 @@ async function generateTalkQrs() {
   await mkdir(outputDirectory, { recursive: true })
 
   for (const route of routes) {
-    for (const locale of PRESENTATION_LOCALES) {
-      const url = buildPresentationUrl(route, locale)
-      const outputPath = path.join(outputDirectory, presentationQrCodeFilename(route, locale))
+    const url = buildPresentationUrl(route)
+    const outputPath = path.join(outputDirectory, presentationQrCodeFilename(route))
 
-      await QRCode.toFile(outputPath, url, {
-        errorCorrectionLevel: 'M',
-        margin: 4,
-        width: 512,
-        color: {
-          dark: '#111827',
-          light: '#FFFFFFFF',
-        },
-      })
+    await QRCode.toFile(outputPath, url, {
+      errorCorrectionLevel: 'M',
+      margin: 4,
+      width: 512,
+      color: {
+        dark: '#111827',
+        light: '#FFFFFFFF',
+      },
+    })
 
-      console.log(`${path.relative(root, outputPath)} -> ${url}`)
-    }
+    console.log(`${path.relative(root, outputPath)} -> ${url}`)
   }
 }
 

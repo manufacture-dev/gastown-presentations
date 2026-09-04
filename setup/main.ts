@@ -1,6 +1,6 @@
 import { defineAppSetup } from '@slidev/types'
 
-import { parsePresentationLocale } from '../lib/presentation-links.mjs'
+import { resolveInitialPresentationLocale } from '../lib/presentation-locale.mjs'
 
 interface TalkConfig {
   id: string
@@ -68,14 +68,23 @@ function setAppLocale(app: Parameters<Parameters<typeof defineAppSetup>[0]>[0]['
 
 // noinspection JSUnusedGlobalSymbols
 export default defineAppSetup(({ app }) => {
-  const initialLocale = parsePresentationLocale(
-    globalThis.location?.search,
-    talkConfig.defaultLocale,
-  )
+  let initialLocale = talkConfig.defaultLocale
 
   if (globalThis.localStorage !== undefined) {
-    globalThis.localStorage.setItem('slidev-lang', initialLocale)
-    globalThis.localStorage.setItem('slidev-talk', talkConfig.route)
+    const previousTalk = globalThis.localStorage.getItem('slidev-talk')
+    const storedLocale = globalThis.localStorage.getItem('slidev-lang')
+
+    initialLocale = resolveInitialPresentationLocale({
+      defaultLocale: talkConfig.defaultLocale,
+      route: talkConfig.route,
+      storedLocale,
+      storedTalk: previousTalk,
+    })
+
+    if (previousTalk !== talkConfig.route) {
+      globalThis.localStorage.setItem('slidev-lang', talkConfig.defaultLocale)
+      globalThis.localStorage.setItem('slidev-talk', talkConfig.route)
+    }
   }
 
   setAppLocale(app, initialLocale)
