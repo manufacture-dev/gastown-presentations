@@ -5,6 +5,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseSync, stringify } from '@slidev/parser'
 
+import { withDefaultExportWait } from '../lib/slidev-export-options.mjs'
+
 const DEFAULT_VARIANT = 'full'
 const PROMPTS = new Set(['all-use-cases', 'demo-15-min'])
 
@@ -375,22 +377,22 @@ async function main() {
       ], talk)
 
       await mkdir(path.join(root, 'dist', 'downloads'), { recursive: true })
-      await runTalkSlidev(entry => [
+      await runTalkSlidev(entry => withDefaultExportWait([
         'export',
         entry,
         '--format',
         'pdf',
         '--output',
         path.join('dist', 'downloads', exportName(talk, 'pdf')),
-      ], talk)
-      await runTalkSlidev(entry => [
+      ]), talk)
+      await runTalkSlidev(entry => withDefaultExportWait([
         'export',
         entry,
         '--format',
         'pptx',
         '--output',
         path.join('dist', 'downloads', exportName(talk, 'pptx')),
-      ], talk)
+      ]), talk)
     }
 
     writeFileSync(path.join(root, 'dist', 'index.html'), renderIndex(talks), 'utf8')
@@ -418,7 +420,7 @@ async function main() {
     const extension = outputFormat === 'pptx' ? 'pptx' : 'pdf'
     const output = exportName(talk, extension)
     await mkdir(path.join(root, 'exports'), { recursive: true })
-    await runTalkSlidev(entry => [
+    await runTalkSlidev(entry => withDefaultExportWait([
       'export',
       entry,
       '--format',
@@ -426,7 +428,7 @@ async function main() {
       '--output',
       path.join('exports', output),
       ...slidevArgs,
-    ], talk)
+    ]), talk)
     return
   }
 
