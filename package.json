@@ -5,11 +5,11 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "generate:talk-qrs": "node scripts/generate-talk-qrs.mjs",
-    "dev": "node scripts/generate-talk-qrs.mjs && node scripts/talk.mjs dev",
-    "build": "node scripts/generate-talk-qrs.mjs && node scripts/talk.mjs build",
-    "build:all": "node scripts/generate-talk-qrs.mjs && node scripts/talk.mjs build-all",
-    "export:pdf": "node scripts/generate-talk-qrs.mjs && node scripts/talk.mjs export pdf",
-    "export:pptx": "node scripts/generate-talk-qrs.mjs && node scripts/talk.mjs export pptx",
+    "dev": "node scripts/talk.mjs dev",
+    "build": "node scripts/talk.mjs build",
+    "build:all": "node scripts/talk.mjs build-all",
+    "export:pdf": "node scripts/talk.mjs export pdf",
+    "export:pptx": "node scripts/talk.mjs export pptx",
     "talk:list": "node scripts/talk.mjs list",
     "format": "slidev format slides.md"
   },
