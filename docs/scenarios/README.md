@@ -10,6 +10,7 @@ Each scenario should:
 
 ## Scenarios
 
+- [Agile En Seine & IA 2026](agile-en-seine-2026.md)
 - [DiliTrust TechDay](dilitrust-techday.md)
 - [Dev With AI Live #4](dev-with-ai-live-4.md)
 - [SACEM - Matinale DSI](sacem-matinale-dsi.md)

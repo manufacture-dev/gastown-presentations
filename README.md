@@ -83,6 +83,7 @@ Configured talks:
 
 | Talk | Date | Locale | Variant | Prompt | Route |
 |---|---:|:---:|:---:|---|---|
+| Agile En Seine & IA | 2026-09-22 | fr | workshop | `all-use-cases` | `agile-en-seine-2026` |
 | SACEM - Matinale DSI | 2026-07-10 | fr | short | `demo-15-min` | `sacem-matinale-dsi` |
 | Dev With AI Live #4 | 2026-06-12 | fr | short | `demo-15-min` | `dev-with-ai-live-4` |
 | DiliTrust TechDay | 2026-05-21 | en | full | `all-use-cases` | `dilitrust-techday` |
@@ -132,10 +133,12 @@ A single `slides.md` can produce several **content variants** of the same deck
 selection happens at build time, so a slide that is not part of a variant is
 removed from the generated deck rather than rendered empty.
 
-Two variants are currently used:
+Three variants are currently used:
 
 - `full` (default): the complete deck.
 - `short`: a reduced critical-path cut.
+- `workshop`: the complete deck with the demo moved after supervision, immediately
+  before verification, so practical workshop slides can be inserted there.
 
 ### Selecting a variant for a talk
 
