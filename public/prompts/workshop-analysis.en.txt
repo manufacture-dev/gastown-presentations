@@ -1,0 +1,9 @@
+Analyze the agile-en-seine lab in read-only mode.
+Run taxiway record analyze agile-en-seine --prompt-only; follow its instructions and read the referenced files, without launching another agent.
+
+Using the agent-browser skill, open http://langfuse.localhost:4000 in a dedicated session. If needed, ask me to log in without displaying secrets.
+Filter traces for this lab and workshop period. Cross-check them with the terminal: coordination, errors, recoveries, available tokens and costs.
+
+Do not change the lab or application. If a source is missing or you cannot attribute a trace to this lab, state the limitation; invent nothing.
+
+Provide a short report with evidence and timestamps, facts separated from hypotheses, and three lessons. Do not conclude that the product works: we are checking that separately.

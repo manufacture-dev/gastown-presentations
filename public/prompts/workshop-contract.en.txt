@@ -1,0 +1,11 @@
+During this workshop, work incrementally and always wait for my explicit request before creating or dispatching work.
+
+Delivery guardrails:
+- the delivery branch is the source of truth;
+- a bead is complete only after merge and verification on that branch;
+- create atomic beads with one owner, dependencies, and acceptance criteria;
+- merge foundations before dependent work;
+- give shared integration files to a single owner;
+- if a conflict occurs, preserve the branch and report the blocker instead of claiming completion.
+
+Keep replies concise and make the real delivery state observable.

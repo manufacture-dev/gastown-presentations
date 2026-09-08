@@ -305,6 +305,205 @@ supervision:
   takeaway: La supervision rend l'exécution distribuée opérationnelle.
   live_signal: Santé du Deacon, statut du Witness, reprise des Polecats, Refinery queue et convergence du delivery.
 
+workshop_transition:
+  heading: Votre mission
+  intro: Faire évoluer Agreement Hub avec Gas Town, du premier besoin à l'application vérifiée.
+  build:
+    title: Construire progressivement
+    desc: Une première fonctionnalité, puis plusieurs en parallèle.
+  control:
+    title: Garder la main
+    desc: Observer les agents, comprendre leur avancement et intervenir si nécessaire.
+  verify:
+    title: Vérifier le résultat
+    desc: Lancer l'application et tester ce qui a réellement été livré.
+  note: Travaillez par deux sur un lab commun.
+  roles: L’un manipule, l’autre suit les étapes et vérifie. Inversez les rôles pendant l’atelier.
+  image_alt: Deux participants collaborent sur une application devant un ordinateur.
+
+workshop_setup:
+  heading: Installer l'environnement
+  lede: Avec Taxiway, créons un environnement local isolé pour l'atelier.
+  duration: "Setup complet · 15 minutes"
+  install_context: Installer Taxiway
+  init_context: Initialiser et vérifier l'environnement
+  prerequisites_heading: Prérequis Taxiway
+  runtime_desc: Installer les deux outils, puis démarrer Docker avant de continuer.
+  windows:
+    title: Windows 11
+    desc: Installer WSL2 d'abord, puis suivre les étapes Linux dans son terminal.
+
+workshop_lab:
+  heading: Créer le lab Taxiway
+  intro: Commencez depuis la machine hôte (depuis WSL2 sous Windows).
+  create_context: Créer le lab
+  check_context: Vérifier que le lab est prêt
+  access_context: Récupérer les accès aux services
+  observability_note: Ouvrez Langfuse dans un onglet et connectez-vous avec les identifiants affichés par taxiway access. Nous y observerons les agents pendant l'atelier.
+  open_langfuse: Ouvrir Langfuse ↗
+  health_context: Vérifier Gas Town
+  checkpoint_label: Checkpoint setup
+  checkpoint: Le diagnostic n'a pas d'erreur bloquante et les accès aux services sont disponibles.
+  recovery: En cas d'échec, demandez de l'aide.
+
+workshop_tmux:
+  heading: Entrer dans le lab et naviguer avec tmux
+  enter_context: Ouvrir le lab
+  intro: Les sessions tmux de Gas Town s'ouvrent à l'intérieur de la session tmux de Taxiway.
+  current_label: Tmux courant
+  nested_label: Tmux imbriqué
+  select_current: Lister les sessions Taxiway
+  attach_context: Rejoindre le Mayor
+  attach_note: Une fois attaché au Mayor, utilisez les raccourcis imbriqués à droite.
+  select_nested: Lister les sessions Gas Town
+  detach_nested: Revenir à Taxiway
+  detach_current: Sortir de Taxiway
+  guide: Guide officiel tmux ↗
+  cheatsheet: Cheat sheet tmux ↗
+  tip: Ctrl+b, relâchez les touches, puis tapez la commande.
+  tip_nested: Ctrl+b deux fois, relâchez les touches, puis tapez la commande.
+
+workshop_app_setup:
+  prerequisites_heading: Prérequis application
+  git_desc: Récupérer le dépôt et ses changements.
+  node_desc: Node.js 20+ et npm 10+ pour lancer l’application.
+  claude_desc: Vérifier l’application et, si besoin, générer des données.
+  heading: Récupérer et lancer l'application
+  intro: Sur votre machine (WSL2 sous Windows), clonez le dépôt puis ouvrez deux terminaux.
+  clone_context: Récupérer l’application depuis le lab
+  backend: Lancer le backend
+  frontend: Lancer le frontend
+  note: Cette copie permettra de récupérer le travail produit dans le lab.
+  keep_running: Gardez les deux serveurs actifs pendant l'atelier.
+
+workshop_app:
+  heading: Application de l'atelier
+  desc: Agreement Hub est une application CRUD de Contract Lifecycle Management servant de cible de delivery réaliste.
+  bullets:
+    stack: "Stack : frontend React/Vite, backend Express/TypeScript et base SQLite."
+    local: L'application est lancée depuis la copie locale créée par Taxiway.
+    clean: Chaque binôme commence sur une copie propre et isolée du même repository.
+  image_alt: État initial d'Agreement Hub pour l'atelier
+  flow_label: Découvrir l'application
+  flow_start: Ouvrir l'application et parcourir rapidement son état initial.
+  flow_next: Nous réutiliserons cette copie de référence pour vérifier le résultat livré.
+  open_app: Ouvrir l'app ↗
+
+workshop_seed:
+  heading: Générer les premiers contrats
+  intro: Créons 12 contrats fictifs et variés via l’interface de l’application locale.
+  install: Installer agent-browser et son navigateur
+  platform: "Navigateur : install sur macOS ; install --with-deps sur Linux/WSL2. Une seule des deux commandes."
+  launch: Préparer le skill et ouvrir Claude Code
+  skill_note: Sélectionnez le skill agent-browser pour Claude Code. Nous le réutiliserons pour la vérification finale.
+  prompt_context: Créer le jeu de données
+  recipient: Agent de préparation
+
+workshop_contract:
+  heading: Poser les garde-fous du delivery
+  intro: Le premier prompt définit le contrat de collaboration pour tout l'atelier. Il ne lance aucun travail.
+  prompt_context: Poser les garde-fous
+  checkpoint_label: Résultat attendu
+  checkpoint: Le Mayor confirme les règles et attend la demande du premier incrément.
+
+workshop_first:
+  heading: Préparer le premier incrément
+  intro: Nous commençons par un seul flux produit visible avant d'introduire le parallélisme.
+  attach_context: Rejoindre le Mayor
+  prompt_context: Préparer la bibliothèque de clauses
+  target_label: Incrément cible
+  target: Une Bibliothèque de clauses verticale, avec uniquement les fondations indispensables.
+  checkpoint: Le plan, les beads, les dépendances et la vérification sont compris. Aucun worker n'est encore lancé.
+
+workshop_observe:
+  heading: Lancer et observer
+  intro: Après lecture du plan, le GO autorise la création et le dispatch du travail proposé.
+  go_context: Autoriser l'exécution
+  observe_context: Observer le delivery
+  ids_note: Remplacez {bead} et {convoy}, chevrons compris, par les identifiants affichés dans les listes avant d'exécuter ces commandes.
+  checkpoint_label: Checkpoint premier incrément
+  checkpoint: Un bead produit, son Polecat et son convoy sont identifiés. Le statut réel est lisible.
+  switch_roles: Inversez maintenant les rôles entre la personne qui manipule et celle qui vérifie.
+
+workshop_parallel:
+  heading: Travailler en parallèle
+  intro: Le Mayor prépare deux flux produit et ne dispatche que le travail dont les dépendances sont satisfaites.
+  prompt_context: Préparer deux incréments
+  streams_label: Flux proposés
+  first_stream: Workflow d'approbation
+  second_stream: Générateur de clauses
+  rule: Les fichiers partagés gardent un seul owner ; un blocage reste visible.
+
+workshop_parallel_observe:
+  heading: Observer le parallélisme
+  intro: Nous observons les objets de delivery, pas une collection de terminaux.
+  commands_context: Observer les agents et l'intégration
+  checkpoint_label: Checkpoint parallélisme
+  beads: Les beads indépendants et bloqués sont distingués.
+  polecats: Chaque Polecat possède une affectation bornée.
+  convoys: Les convoys suivent les beads produit attendus.
+  refinery: La queue d'intégration reste observable.
+
+workshop_stabilize:
+  heading: Stabiliser et intégrer
+  intro: À cinq minutes de la vérification, nous gelons les nouveaux dispatchs et faisons converger le travail existant.
+  prompt_context: Stabiliser le delivery
+  commands_context: Suivre l'intégration
+  diagnostics_context: Diagnostics complémentaires · si nécessaire
+  checkpoint_label: Sortie acceptable
+  checkpoint: Livré, encore en intégration ou bloqué avec une cause précise — mais jamais déclaré terminé sans preuve.
+
+workshop_record:
+  start: Enregistrer le terminal
+  start_note: Sur la machine hôte, avant d’ouvrir le lab.
+
+workshop_stop:
+  heading: Mettre Gas Town en pause
+  intro: Après le bilan du Mayor, gelez les agents. Le Mayor et l’overseer restent actifs.
+  lab_note: Dans le shell du lab, hors de la session du Mayor.
+  agents: Geler le travail des agents
+  host_note: Sur la machine hôte, après avoir gelé les agents.
+  recording: Terminer l’enregistrement
+  later: Optionnel — après l’atelier
+  later_note: Sur la machine hôte, pas dans le lab. L’analyse sera lancée à la slide suivante.
+  replay: Revoir la session terminal
+
+workshop_analysis:
+  heading: Analyser le déroulement en parallèle
+  intro: Lancez l’analyse du lab, puis vérifiez l’application sans attendre le rapport.
+  launch: Ouvrir une session Claude Code dédiée
+  session_note: Sur la machine hôte. Gardez cette session ouverte ; utilisez une autre session pour vérifier le produit.
+  prompt_context: Croiser le terminal et les traces
+  recipient: Agent d’analyse
+  return_label: Après la vérification
+  return_note: Revenez au rapport avant la synthèse. Comparez le déroulement observé et le résultat réel.
+  cost_note: L’analyse et la vérification consomment encore des tokens, même si les workers sont gelés.
+
+workshop_verify:
+  heading: Mettre à jour et explorer l’application
+  intro: Récupérez le travail livré, relancez l’application et essayez les nouveaux parcours.
+  update_context: Récupérer le delivery
+  run_context: Mettre à jour les dépendances
+  stop_note: Avant la mise à jour, arrêtez les serveurs backend et frontend avec Ctrl+C.
+  restart_note: Relancez npm run dev dans chacun des deux terminaux backend et frontend.
+  agent_note: Ouvrez une autre session Claude Code dans ~/agreement-hub, sans interrompre l’analyse, puis envoyez ce prompt.
+  recipient: Agent de vérification
+  agent_context: Vérifier l'application
+  checkpoint_label: Preuve attendue
+  checkpoint: Application mise à jour, contrats présents et premiers parcours essayés manuellement.
+  manual_label: À vérifier dans l’interface
+  manual_contracts: Retrouver les contrats créés au début de l’atelier.
+  manual_features: Essayer la bibliothèque, les approbations et le générateur, si livrés.
+  manual_save: Enregistrer un essai fictif, recharger la page et contrôler le résultat.
+
+workshop_functional:
+  heading: Vérifier chaque fonctionnalité avec un agent
+  intro: Le code indique ce qui a été livré ; le navigateur montre si cela fonctionne.
+  launch: Ouvrir l’agent de vérification
+  expected: Rapport fonctionnel attendu
+  report: Pour chaque fonctionnalité, un scénario exécuté, un résultat observé et une preuve.
+  return_note: Comparez ensuite vos essais, ce rapport et l’analyse du lab avant la synthèse.
+
 verification:
   heading: Vérification Agreement Hub
   copy_label: Inspection locale

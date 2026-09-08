@@ -1,0 +1,5 @@
+Now prepare two product increments: Approval Workflow and Clause Generator.
+
+Check their dependencies against work already merged. Create separate actionable beads, avoid concurrent edits to shared files, then dispatch only work that is ready. If an increment remains blocked, make the dependency visible instead of bypassing it.
+
+Then give a short summary: beads created, active Polecats, blocked work, and tracked product convoys.

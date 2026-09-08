@@ -16,21 +16,30 @@ function slidesFor(translationKey) {
   return slides.filter(slide => slide.content.includes(`$t("${translationKey}.heading")`))
 }
 
-test('declares separate demo slides for presentations and the workshop', () => {
+test('keeps the demo slide for talks and uses a dedicated workshop application slide', () => {
   const demoSlides = slidesFor('demo')
+  const workshopAppSlides = slidesFor('workshop_app')
 
-  assert.equal(demoSlides.length, 2)
+  assert.equal(demoSlides.length, 1)
   assert.deepEqual(demoSlides[0].frontmatter.variants, ['full', 'short'])
-  assert.deepEqual(demoSlides[1].frontmatter.variants, ['workshop'])
+  assert.equal(workshopAppSlides.length, 1)
+  assert.deepEqual(workshopAppSlides[0].frontmatter.variants, ['workshop'])
 })
 
-test('places the workshop demo between supervision and verification', () => {
-  const workshopDemoIndex = slides.findIndex(slide =>
-    slide.content.includes('$t("demo.heading")')
-    && slide.frontmatter.variants?.includes('workshop'))
+test('starts the workshop with setup before presenting Agreement Hub', () => {
+  const setupIndex = slideIndex('workshop_setup')
+  const labIndex = slideIndex('workshop_lab')
+  const tmuxIndex = slideIndex('workshop_tmux')
+  const workshopAppIndex = slideIndex('workshop_app')
 
-  assert.equal(workshopDemoIndex, slideIndex('supervision') + 1)
-  assert.equal(slideIndex('verification'), workshopDemoIndex + 1)
+  assert.equal(slideIndex('workshop_transition'), slideIndex('supervision') + 1)
+  assert.equal(setupIndex, slideIndex('workshop_transition') + 1)
+  assert.equal(labIndex, setupIndex + 1)
+  assert.equal(slideIndex('workshop_app_setup'), labIndex + 1)
+  assert.equal(workshopAppIndex, slideIndex('workshop_app_setup') + 1)
+  assert.equal(slideIndex('workshop_seed'), workshopAppIndex + 1)
+  assert.equal(tmuxIndex, slideIndex('workshop_seed') + 1)
+  assert.equal(slideIndex('workshop_contract'), tmuxIndex + 1)
 })
 
 test('includes the full-only Formula slide in the workshop', () => {

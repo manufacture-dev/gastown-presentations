@@ -1,0 +1,9 @@
+Inspecte la documentation et les patterns existants d'Agreement Hub.
+
+Prépare uniquement un premier incrément vertical pour la Bibliothèque de clauses. Identifie le plus petit travail de fondation réellement bloquant, puis propose :
+- le périmètre et les critères d'acceptation ;
+- les beads atomiques et leurs dépendances ;
+- les fichiers attendus et leur owner ;
+- la vérification à exécuter après merge.
+
+Ne crée et ne dispatche encore rien. Présente le plan brièvement, puis attends mon GO.

@@ -1,0 +1,9 @@
+Inspect Agreement Hub's documentation and existing patterns.
+
+Prepare only one first vertical increment for the Clause Library. Identify the smallest truly blocking foundation work, then propose:
+- scope and acceptance criteria;
+- atomic beads and their dependencies;
+- expected files and their owner;
+- verification to run after merge.
+
+Do not create or dispatch anything yet. Present the plan briefly, then wait for my GO.

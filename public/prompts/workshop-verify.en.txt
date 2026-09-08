@@ -1,0 +1,9 @@
+Functionally verify the local application.
+Read the code, delivered changes and documentation; identify the branch, commit and implemented features. Run relevant checks.
+
+Using the agent-browser skill, open http://localhost:5173 in a dedicated session, separate from the Langfuse analysis.
+For each delivered feature (library, approvals, generator…), test a happy path and a relevant edge case or validation. Verify outcomes and persistence after reload where applicable.
+
+Use fictional test data without deleting existing contracts. Do not change code or fix bugs.
+
+Report per feature: scenario, expected result, actual result, evidence and verdict (passed, failed, blocked or not delivered). Code and tests alone do not prove that the interface works. Flag every check not executed.

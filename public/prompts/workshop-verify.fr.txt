@@ -1,0 +1,9 @@
+Vérifie fonctionnellement l’application locale.
+Lis le code, les changements livrés et la documentation ; identifie la branche, le commit et les fonctionnalités implémentées. Lance les checks pertinents.
+
+Avec le skill agent-browser, ouvre http://localhost:5173 dans une session dédiée, distincte de l’analyse Langfuse.
+Pour chaque feature livrée (bibliothèque, approbations, générateur…), teste un parcours nominal et un cas limite ou une validation pertinente. Vérifie les résultats et leur persistance après rechargement lorsque applicable.
+
+Utilise des données fictives de test, sans supprimer les contrats existants. Ne modifie pas le code et ne corrige pas les bugs.
+
+Rapporte par feature : scénario, attendu, observé, preuve et verdict (réussi, échoué, bloqué ou non livré). Le code et les tests seuls ne prouvent pas le fonctionnement de l’interface. Signale toute vérification non exécutée.
