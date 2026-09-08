@@ -1,6 +1,6 @@
 ---
 name: slidev-editorial-design
-description: Use when defining or improving the visual direction of a Slidev deck: typography, colors, hierarchy, spacing, recurring blocks, and editorial presentation style.
+description: "Use when defining or improving the visual direction of a Slidev deck: typography, colors, hierarchy, spacing, recurring blocks, and editorial presentation style."
 ---
 
 # Slidev Editorial Design
