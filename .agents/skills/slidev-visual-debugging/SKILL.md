@@ -23,9 +23,9 @@ Fix rendering problems with measured layout changes, not guesswork.
 4. Prefer structural fixes:
    - grid layout
    - reduced text density
-   - smaller type scale
    - simpler diagram
    - larger slide area for the dominant element
+   Reduce font size only after checking space allocation and content simplification, and only if the result remains readable for the intended audience.
 5. Avoid repeated pixel nudging. If repeated nudging starts, refactor the layout.
 6. Run the deck build after changes.
 7. Capture the slide again and compare visually.
@@ -39,3 +39,4 @@ Before saying a visual issue is fixed, verify:
 - recurring blocks are visible
 - slide still builds
 - the fix did not shrink content unnecessarily
+- computed typography is consistent with equivalent blocks on adjacent slides in every supported language

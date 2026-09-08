@@ -25,12 +25,13 @@ Make slide layouts predictable and reusable instead of relying on fragile per-sl
    - no absolute positioning unless unavoidable
 4. Use Flexbox for small internal alignment only.
 5. Avoid nested cards unless the content is genuinely grouped.
-6. Keep spacing tokens consistent across slides.
+6. Keep spacing and typography tokens consistent across slides. Compare computed styles: theme selectors can override the intended local values. Resolve specificity within the relevant slide scope instead of stacking per-slide fixes or broad global overrides.
 7. For each reusable layout, test with:
    - short text
    - long text
    - diagram content
    - export build
+   - supported language variants and fetched prompt content
 
 ## Rule
 

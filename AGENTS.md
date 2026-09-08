@@ -26,3 +26,27 @@ directly. Report unavailable tools or resources instead of claiming verification
 Commands and build/export scope are documented in the [README](README.md#slidev).
 Use the verification appropriate to the change; a successful build alone does not
 establish visual quality.
+
+## Workshop visual contract
+
+- Scope workshop styles with `workshop-slide`; include the application overview,
+  not just command slides. Preserve the shared presentation's background and headings.
+- Use the shared `--workshop-*` typography tokens by role. The Taxiway lab creation
+  slide (currently 15) is the command reference: 0.65rem, line height 1.35.
+- Explanations share one body size; prompts and tips each have a consistent size.
+  Do not shrink one slide to hide a layout problem.
+- Explanations, list items and tips use the same opaque `--workshop-text` white;
+  do not dim introductions or instructions. Reserve accent colors for semantic labels and links.
+- Commands copy one executable unit per row, including a multiline shell command.
+  Show the copy action on hover without an added focus frame or slide-navigation changes.
+- Prompts retain a yellow border and a global copy button. Tips use a pink left
+  border; bottom checkpoints reuse the original full pink `.demo-flow` frame
+  (setup, before coding and verification), including its original text color,
+  font sizes and line heights; exclude it from workshop typography overrides.
+  Inline expected results use turquoise.
+  Mark placeholders that need substitution.
+- Terminal headings describe actions; put host/lab context in surrounding text.
+- Verify FR and EN, including fetched prompts, internal overflow and computed
+  line heights. For local navigation, use `/#/<number>` and verify the active title.
+- For visual work, run `npm test` and `npm run build:web`, then inspect screenshots.
+  Do not claim that lab commands or clipboard behavior were tested unless executed.
