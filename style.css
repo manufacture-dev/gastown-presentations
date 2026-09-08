@@ -8,6 +8,101 @@
   --gt-synthesis-gap: 1.9rem;
 }
 
+.copy-code-block {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.34rem;
+  background: #10131c;
+}
+
+.copy-code-block__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 1.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.065);
+  padding: 0.22rem 0.34rem 0.22rem 0.55rem;
+  gap: 0.45rem;
+}
+
+.copy-code-block__heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.copy-code-block__bar span {
+  color: var(--gt-card-muted);
+  font-family: var(--gt-font-mono);
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.copy-code-block__bar button {
+  flex-shrink: 0;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.24rem;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--slidev-theme-text);
+  cursor: pointer;
+  font-size: 0.52rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.28rem 0.42rem;
+}
+
+.copy-code-block__bar button:hover,
+.copy-code-block__bar button:focus-visible {
+  border-color: var(--slidev-theme-accents-teal);
+  color: var(--slidev-theme-accents-teal);
+  outline: none;
+}
+
+.copy-code-block pre {
+  max-height: 9.4rem;
+  margin: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.62rem 0.7rem;
+  white-space: pre-wrap;
+}
+
+.copy-code-block code {
+  color: #f3eff5;
+  font-family: var(--gt-font-mono);
+  font-size: 0.61rem;
+  line-height: 1.35;
+}
+
+.copy-code-block--prompt {
+  border-left: 3px solid rgba(255, 226, 91, 0.78);
+}
+
+.slidev-layout .copy-code-block--prompt pre {
+  max-height: 14rem;
+  padding: 0.5rem 0.65rem;
+  font-family: var(--gt-font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 0.58rem;
+  line-height: 1.35;
+}
+
+.slidev-layout .copy-code-block--prompt code {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.slidev-layout .workshop-step-layout .copy-code-block--prompt pre {
+  max-height: 18rem;
+}
+
 .slidev-layout {
   position: relative;
   padding-bottom: 3.2rem;

@@ -2,6 +2,10 @@ common:
   locale: fr-FR
   why_it_matters: Pourquoi c'est important
 
+workshop_common:
+  copy: Copier
+  copied: Copié !
+
 title:
   heading: Organiser le delivery logiciel AI-native avec Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara

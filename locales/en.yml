@@ -2,6 +2,10 @@ common:
   locale: en-US
   why_it_matters: Why it matters
 
+workshop_common:
+  copy: Copy
+  copied: Copied!
+
 title:
   heading: Organizing AI-native software delivery with Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara
