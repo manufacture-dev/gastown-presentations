@@ -1739,6 +1739,101 @@
   line-height: var(--workshop-line-height);
 }
 
+.aes-partners-board {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+}
+
+.aes-partners-primary,
+.aes-partners-secondary {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.aes-partners-primary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aes-partners-primary img {
+  width: 100%;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.aes-partners-secondary {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.aes-partners-secondary img {
+  width: 100%;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.aes-feedback-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 0.7rem;
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout .aes-feedback-subheading {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.slidev-layout.workshop-slide .aes-feedback-intro {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.aes-feedback-steps {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 1.4rem;
+  list-style: decimal;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.aes-feedback-steps li { padding-left: 0.4rem; }
+.aes-feedback-steps li::marker { color: var(--slidev-theme-accents-teal); font-weight: 800; }
+/* Phone proportions, colors and element positions from the organizer's slide 10. */
+.aes-feedback-phone {
+  position: relative;
+  justify-self: center;
+  width: 10.75rem;
+  aspect-ratio: 2331720 / 4343400;
+  border: 1.5px solid #7a4e8f;
+  border-radius: 1.35rem;
+  background: #3e3552;
+  font-family: Calibri, Arial, sans-serif;
+}
+.aes-feedback-phone-screen {
+  position: absolute;
+  inset: 5.9% 7.06%;
+  border-radius: 0.6rem;
+  background: #fff;
+}
+.aes-feedback-phone-logo { position: absolute; left: 12.12%; top: 9.3%; width: 84.35%; height: auto; }
+.aes-feedback-phone-session,
+.aes-feedback-phone-stars,
+.aes-feedback-phone-rate { position: absolute; display: grid; place-items: center; }
+.aes-feedback-phone-session { left: 7.06%; top: 26.99%; width: 85.88%; height: 7.37%; color: #7a7488; font-size: 0.75rem; }
+.aes-feedback-phone-stars { left: 7.06%; top: 51.58%; width: 85.88%; height: 10.53%; color: #c85828; font-size: 1.2rem; font-weight: 700; white-space: nowrap; }
+.aes-feedback-phone-rate { left: 17.65%; top: 70.53%; width: 64.7%; height: 11.58%; border-radius: 2rem; background: #c85828; color: #fff; font-size: 0.85rem; font-weight: 700; }
+.aes-event-logo { position: absolute; left: var(--gt-slide-x); bottom: 0.8rem; width: 11rem; height: auto; }
+
 .workshop-lede {
   max-width: 45rem;
   margin: 0 0 0.7rem;

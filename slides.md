@@ -83,6 +83,48 @@ Keep the slide simple: names, photos, and the angle each speaker brings to the s
 -->
 
 ---
+variants: [workshop]
+class: workshop-slide aes-partners-slide
+---
+
+# {{ $t("aes_partners.heading") }}
+
+<p>{{ $t("aes_partners.intro") }}</p>
+
+<div class="aes-partners-board">
+  <div class="aes-partners-primary">
+<img :src="'images/agile-en-seine/flow-analytics-pro.png'" alt="Flow Analytics Pro" />
+    <img :src="'images/agile-en-seine/aqoba.png'" alt="aqoba" />
+    <img :src="'images/agile-en-seine/digital-tango.png'" alt="digital tango" />
+  </div>
+  <div class="aes-partners-secondary">
+    <img :src="'images/agile-en-seine/zenika.jpeg'" alt="Zenika" />
+    <img :src="'images/agile-en-seine/inspearit.jpeg'" alt="inspearit" />
+    <img :src="'images/agile-en-seine/mc2i.png'" alt="mc2i" />
+    <img :src="'images/agile-en-seine/jfo-conseil.jpeg'" alt="JFO Conseil" />
+    <img :src="'images/agile-en-seine/tuleap-dassault-systemes.png'" alt="Tuleap joins Dassault Systèmes" />
+    <img :src="'images/agile-en-seine/wakilee.jpeg'" alt="Wakilee" />
+    <img :src="'images/agile-en-seine/hymaia.png'" alt="hymaïa" />
+    <img :src="'images/agile-en-seine/opteamus.jpeg'" alt="opteamus" />
+    <img :src="'images/agile-en-seine/aet-consulting.jpeg'" alt="AET Consulting" />
+    <img :src="'images/agile-en-seine/fariance.jpeg'" alt="Fariance" />
+    <img :src="'images/agile-en-seine/agile4me.jpeg'" alt="agile4me" />
+    <img :src="'images/agile-en-seine/mindz-up.png'" alt="Mindz Up" />
+    <img :src="'images/agile-en-seine/we-love-agility.jpeg'" alt="WeLoveAgility.coach" />
+    <img :src="'images/agile-en-seine/coachissime.jpeg'" alt="Coachissime" />
+  </div>
+</div>
+
+<img class="aes-event-logo" :src="'images/agile-en-seine/event-logo-white.png'" alt="Agile en Seine & IA" />
+
+<!--
+Source: Template_AESIA_2026_erratum.pptx, slide 3, provided by the organizers.
+https://docs.google.com/presentation/d/1B-g804N3BMTrr-1yCUjOD-iK_Gu7SZoQ/edit
+Original logos extracted without modification; original order and size hierarchy preserved.
+Briefly thank the event partners before continuing.
+-->
+
+---
 
 # {{ $t("evolution.heading") }}
 
@@ -1480,4 +1522,42 @@ This closes the conceptual loop with the exact five problems introduced earlier.
 <!--
 Final slide for Q&A.
 Keep it quiet. Do not add new concepts.
+-->
+
+---
+variants: [workshop]
+class: workshop-slide aes-feedback-slide
+---
+
+# {{ $t("aes_feedback.kicker") }}
+
+<div class="aes-feedback-layout">
+  <div>
+    <h2 class="aes-feedback-subheading">{{ $t("aes_feedback.heading") }}</h2>
+    <i18n-t keypath="aes_feedback.intro" scope="global" tag="p" class="aes-feedback-intro">
+      <template #app><strong>TingEvent</strong></template>
+    </i18n-t>
+    <ol class="aes-feedback-steps">
+      <li>{{ $t("aes_feedback.steps.open") }}</li>
+      <li>{{ $t("aes_feedback.steps.find") }}</li>
+      <li>{{ $t("aes_feedback.steps.rate") }}</li>
+    </ol>
+  </div>
+  <div class="aes-feedback-phone">
+    <div class="aes-feedback-phone-screen"></div>
+    <img class="aes-feedback-phone-logo" :src="'images/agile-en-seine/tingevent.png'" alt="TingEvent" />
+    <span class="aes-feedback-phone-session">{{ $t("aes_feedback.session") }}</span>
+    <span class="aes-feedback-phone-stars">★ ★ ★ ★ ★</span>
+    <span class="aes-feedback-phone-rate">{{ $t("aes_feedback.rate") }}</span>
+  </div>
+</div>
+
+<img class="aes-event-logo" :src="'images/agile-en-seine/event-logo-white.png'" alt="Agile en Seine & IA" />
+
+<!--
+Source: Template_AESIA_2026_erratum.pptx, slide 10, provided by the organizers.
+https://docs.google.com/presentation/d/1B-g804N3BMTrr-1yCUjOD-iK_Gu7SZoQ/edit
+Original wording and assets; phone recreated from the template's shapes and coordinates.
+The phone's rating label is illustrative, not a working button. No confirmed QR/link is supplied.
+Keep this as the final slide, after thanks and questions.
 -->

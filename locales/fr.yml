@@ -363,6 +363,21 @@ workshop_tmux:
   tip: Ctrl+b, relâchez les touches, puis tapez la commande.
   tip_nested: Ctrl+b deux fois, relâchez les touches, puis tapez la commande.
 
+aes_partners:
+  heading: Nos partenaires
+  intro: Merci à celles et ceux qui rendent l'événement possible.
+
+aes_feedback:
+  kicker: Votre avis compte
+  heading: Évaluez cette session
+  intro: Rendez-vous sur l'application mobile {app} pour partager votre retour en quelques secondes.
+  steps:
+    open: Ouvrez l'application TingEvent sur votre mobile
+    find: Rendez-vous sur cette session dans le programme
+    rate: Attribuez votre note et laissez un commentaire
+  session: Votre session
+  rate: Évaluer
+
 workshop_app_setup:
   prerequisites_heading: Prérequis application
   git_desc: Récupérer le dépôt et ses changements.

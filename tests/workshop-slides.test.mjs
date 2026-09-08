@@ -37,7 +37,7 @@ function slideIndex(translationKey) {
 
 test('scopes the common workshop design to every workshop-only slide', () => {
   const workshopSlides = slides.filter(slide => slide.frontmatter.variants?.includes('workshop') && slide.frontmatter.variants.length === 1)
-  assert.equal(workshopSlides.length, 17)
+  assert.equal(workshopSlides.length, 19)
   for (const slide of workshopSlides)
     assert.ok(slide.frontmatter.class?.split(' ').includes('workshop-slide'), `missing workshop scope: ${slide.content.slice(0,100)}`)
 })
