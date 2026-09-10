@@ -1914,10 +1914,6 @@
   margin-top: 0.75rem;
 }
 
-.slidev-layout.workshop-slide .workshop-app-prerequisites + .workshop-lede {
-  margin: 0.5rem 0;
-}
-
 .workshop-setup-head p {
   margin: 0;
   font-size: 0.92rem;
@@ -1993,14 +1989,6 @@
   box-shadow: none;
 }
 
-.slidev-layout .workshop-setup-head a.workshop-taxiway-link {
-  white-space: nowrap;
-  color: var(--slidev-theme-accents-teal);
-  border: 0;
-  box-shadow: none;
-  text-decoration: none;
-}
-
 .workshop-tool-grid strong,
 .workshop-windows-note strong {
   display: block;
@@ -2018,6 +2006,7 @@
 
 .workshop-tool-grid a,
 .workshop-windows-note a,
+.workshop-slide a.workshop-taxiway-link,
 .workshop-resource-row a {
   border: 0;
   box-shadow: none;
@@ -2051,6 +2040,19 @@
 
 .workshop-command-grid--observe {
   grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+}
+
+.workshop-agent-grid {
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.workshop-agent-grid > .workshop-checkpoint {
+  margin-top: 0;
+}
+
+.workshop-agent-grid__mayor {
+  align-self: end;
 }
 
 .workshop-command-grid--three {
@@ -2243,7 +2245,8 @@
   padding-top: 0.36rem;
 }
 
-.tmux-levels kbd {
+.tmux-levels kbd,
+.tmux-keys kbd {
   border: 1px solid rgba(255, 255, 255, 0.26);
   border-bottom-width: 3px;
   border-radius: 0.28rem;
@@ -2263,6 +2266,11 @@
   gap: 0.2rem;
   white-space: nowrap;
   font-size: 0.65rem;
+}
+
+.tmux-keys--inline {
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .tmux-levels__nested > div {
@@ -2411,6 +2419,11 @@
   font-size: inherit;
 }
 
+.slidev-layout.workshop-slide .workshop-command-hint code::before,
+.slidev-layout.workshop-slide .workshop-command-hint code::after {
+  content: none;
+}
+
 .workshop-slide .workshop-step-note--bottom {
   position: absolute;
   right: var(--gt-slide-x);
@@ -2497,6 +2510,7 @@
 }
 
 .workshop-slide .workshop-checkpoint small,
+.workshop-slide a.workshop-taxiway-link,
 .workshop-slide .workshop-resource-row a,
 .workshop-slide .workshop-setup-prerequisites a {
   font-size: var(--workshop-note-size);
@@ -2532,7 +2546,8 @@
   color: var(--slidev-theme-accents-yellow);
 }
 
-.workshop-slide .copy-code-block--prompt .copy-code-block__bar .copy-code-block__recipient {
+.workshop-slide .copy-code-block--prompt .copy-code-block__bar .copy-code-block__recipient,
+.workshop-slide .workshop-platform-badge {
   border: 1px solid rgba(241, 65, 168, 0.4);
   border-radius: 0.24rem;
   background: rgba(241, 65, 168, 0.12);
@@ -2541,6 +2556,13 @@
   line-height: 1;
   padding: 0.28rem 0.42rem;
   white-space: nowrap;
+}
+
+.workshop-slide .workshop-terminal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
 }
 
 .slidev-layout.workshop-slide .copy-command-row code {
@@ -2691,6 +2713,10 @@
   align-self: start;
 }
 
+.workshop-slide .app-layout {
+  padding-top: 3rem;
+}
+
 .app-shot img {
   display: block;
   width: 100%;
@@ -2705,7 +2731,8 @@
   background: rgba(255, 255, 255, 0.035);
 }
 
-.app-open-link {
+.app-open-link,
+.slidev-layout.workshop-slide a.app-open-link {
   display: inline-flex;
   align-items: center;
   appearance: none;
@@ -2723,7 +2750,8 @@
   text-decoration: none;
 }
 
-.demo-flow .app-open-link {
+.demo-flow .app-open-link,
+.slidev-layout.workshop-slide a.app-open-link {
   border: 1px solid rgba(255, 255, 255, 0.78) !important;
   border-style: solid !important;
   outline: 0 !important;
