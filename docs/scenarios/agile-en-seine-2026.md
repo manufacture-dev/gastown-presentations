@@ -56,7 +56,7 @@ La variante `workshop` conserve toutes les slides conceptuelles de la présentat
 
 ## Setup et application
 
-Les participants n’ont aucune installation imposée avant de venir. Les vingt minutes couvrent les prérequis Taxiway, Git, Node.js 20+/npm 10+, Claude Code, agent-browser, son navigateur et les accès nécessaires. Windows 11 suit le parcours Linux dans WSL2. Le créneau de données n’inclut aucune installation. Suivre l’ordre des slides : installer Taxiway (15), préparer l’outillage de l’application (16), puis créer le lab (17).
+Les participants n’ont aucune installation imposée avant de venir. Les vingt minutes couvrent les prérequis Taxiway, Git, Node.js 24 LTS (24.x)/npm 11+, Claude Code, agent-browser, son navigateur et les accès nécessaires. Windows 11 suit le parcours Linux dans WSL2. Le créneau de données n’inclut aucune installation. Suivre l’ordre des slides : installer Taxiway (15), préparer l’outillage de l’application (16), puis créer le lab (17).
 
 ### Installer Taxiway — slide 15
 

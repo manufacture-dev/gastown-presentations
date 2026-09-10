@@ -396,7 +396,7 @@ aes_feedback:
 workshop_app_setup:
   prerequisites_heading: Application prerequisites
   git_desc: Retrieve the repository and its changes.
-  node_desc: Node.js 20+ and npm 10+ to run the application.
+  node_desc: Node.js 24 LTS and npm 11+ to run the application.
   claude_desc: Generate data and verify the application.
   heading: Clone and run the application
   intro: "On your machine, retrieve the application from the Taxiway lab."

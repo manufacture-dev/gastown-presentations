@@ -396,7 +396,7 @@ aes_feedback:
 workshop_app_setup:
   prerequisites_heading: Prérequis application
   git_desc: Récupérer le dépôt et ses changements.
-  node_desc: Node.js 20+ et npm 10+ pour lancer l’application.
+  node_desc: Node.js 24 LTS et npm 11+ pour lancer l’application.
   claude_desc: Générer les données et vérifier l’application.
   heading: Récupérer et lancer l'application
   intro: "Sur votre machine, récupérez l’application depuis le lab Taxiway."
