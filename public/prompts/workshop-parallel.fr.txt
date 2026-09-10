@@ -1,5 +1,0 @@
-Prépare maintenant deux incréments produit : Workflow d'approbation et Générateur de clauses.
-
-Vérifie leurs dépendances sur le travail déjà mergé. Crée des beads séparés et actionnables, évite les éditions concurrentes des fichiers partagés, puis dispatche uniquement ce qui est prêt. Si un incrément reste bloqué, rends la dépendance visible au lieu de la contourner.
-
-Donne ensuite un résumé court : beads créés, Polecats actifs, travail bloqué et convoys produit suivis.

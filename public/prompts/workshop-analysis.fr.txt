@@ -1,9 +1,0 @@
-Analyse le lab agile-en-seine en lecture seule.
-Exécute taxiway record analyze agile-en-seine --prompt-only ; suis ses consignes et lis les fichiers indiqués, sans lancer un autre agent.
-
-Avec le skill agent-browser, ouvre http://langfuse.localhost:4000 dans une session dédiée. Si nécessaire, demande-moi de me connecter, sans afficher de secrets.
-Filtre les traces de ce lab sur la période de l’atelier. Croise-les avec le terminal : coordination, erreurs, reprises, tokens et coûts disponibles.
-
-Ne modifie ni le lab ni l’application. Si une source manque ou si tu ne peux pas attribuer une trace au lab, signale cette limite ; n’invente rien.
-
-Présente un bilan court avec preuves et horaires, faits distincts des hypothèses, et trois enseignements. Ne conclus pas à la réussite du produit : nous le vérifions séparément.

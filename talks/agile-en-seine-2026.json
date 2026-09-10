@@ -1,7 +1,7 @@
 {
   "id": "agile_en_seine_2026",
   "route": "agile-en-seine-2026",
-  "prompt": "all-use-cases",
+  "prompt": "demo-15-min",
   "variant": "workshop",
   "defaultLocale": "fr",
   "label": "Agile En Seine & IA 2026",

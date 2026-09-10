@@ -1,5 +1,0 @@
-Stop new dispatches and switch to stabilization.
-
-Reconcile beads, convoys, Polecats, branches, and the merge queue against the delivery branch. Integrate only rebased and verified work; preserve and report every conflict.
-
-Summarize: delivered and verified, integrating, blocked, then workflow residue separated from product work.

@@ -1,5 +1,0 @@
-Stoppe les nouveaux dispatchs et passe en stabilisation.
-
-Réconcilie les beads, les convoys, les Polecats, les branches et la merge queue avec la branche de delivery. Intègre uniquement le travail rebasé et vérifié ; préserve et signale tout conflit.
-
-Résume : livré et vérifié, en cours d'intégration, bloqué, puis résidus de workflow séparés du travail produit.
