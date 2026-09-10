@@ -2,6 +2,10 @@ common:
   locale: en-US
   why_it_matters: Why it matters
 
+workshop_common:
+  copy: Copy
+  copied: Copied!
+
 title:
   heading: Organizing AI-native software delivery with Gas Town
   byline: Jean-Louis Rigau & Emmanuel Sciara
@@ -14,6 +18,8 @@ title:
     supervised: "#Supervised execution"
 
 talks:
+  agile_en_seine_2026:
+    event: "Agile En Seine & IA"
   dilitrust_techday:
     event: DiliTrust TechDay
   dev_with_ai_live_4:
@@ -299,6 +305,227 @@ supervision:
   takeaway: Supervision turns distributed execution into an operational system.
   live_signal: Deacon health, Witness status, Polecat recovery, Refinery queue, and delivery convergence.
 
+workshop_transition:
+  heading: Your turn to steer Gas Town
+  intro: "Two improvements, one plan, coordinated tasks, a verified application."
+  build:
+    title: "A shared starting point"
+    desc: "The current application, two increments chosen by the Mayor, then approved by your pair."
+  control:
+    title: Stay in control
+    desc: Observe the agents, understand their progress, and intervene when needed.
+  verify:
+    title: Verify the result
+    desc: Run the application and test what was actually delivered.
+  note: Work in pairs on a shared lab.
+  roles: One person operates, the other follows the steps and checks. Switch roles during the workshop.
+  image_alt: Two participants collaborate on an application at a computer.
+
+
+workshop_complete:
+  heading: Well done!
+  intro: You have steered your first Gas Town lab.
+  delegate:
+    title: Express the need
+    desc: Describe the desired outcome to the Mayor and approve the plan.
+  observe:
+    title: Observe the agents
+    desc: Follow the agents and understand their progress.
+  verify:
+    title: Verify the result
+    desc: Examine the delivered features and analyze the workflow.
+
+workshop_setup:
+  heading: Install the environment
+  lede: Taxiway lets you create an isolated local environment for the workshop.
+  install_context: Install Taxiway
+  init_context: Initialize and check the environment
+  prerequisites_heading: Taxiway prerequisites
+  runtime_desc: Install both tools, then start Docker before continuing.
+  windows:
+    title: Windows 11
+    desc: Install WSL2 first, then follow the Linux steps in its terminal.
+
+
+workshop_lab:
+  heading: Create the Taxiway lab
+  intro: "From the host machine (WSL2 on Windows), create a lab with the current application."
+  create_context: Create the lab
+  check_context: Check that the lab is ready
+  access_context: Retrieve service access details
+  observability_note: "Sign into Langfuse and open the lab project."
+  open_langfuse: Open Langfuse ↗
+  health_context: Verify Gas Town
+  checkpoint_label: Setup checkpoint
+  checkpoint: "You can continue if the lab is accessible, the diagnostics report no blocking errors and you have signed into Langfuse."
+  recovery: "If you get stuck, ask for help."
+
+
+workshop_tmux:
+  heading: Enter the lab and navigate with tmux
+  enter_context: Enter the lab
+  intro: Gas Town's tmux sessions open inside Taxiway's tmux session.
+  current_label: Current tmux
+  nested_label: Nested tmux
+  select_current: List Taxiway sessions
+  attach_context: Join the Mayor
+  attach_note: Once attached to the Mayor, use the nested shortcuts on the right.
+  select_nested: List Gas Town sessions
+  detach_nested: Return to Taxiway
+  detach_current: Leave Taxiway
+  guide: Official tmux guide ↗
+  cheatsheet: tmux cheat sheet ↗
+  tip: Press Ctrl+b, release the keys, then type the command.
+  tip_nested: Press Ctrl+b twice, release the keys, then type the command.
+
+aes_partners:
+  heading: Our partners
+  intro: Thank you to everyone who makes this event possible.
+
+aes_feedback:
+  kicker: Your feedback matters
+  heading: Rate this session
+  intro: Go to the {app} mobile app to share your feedback in a few seconds.
+  steps:
+    open: Open the TingEvent app on your phone
+    find: Go to this session in the programme
+    rate: Give a rating and leave a comment
+  session: Your session
+  rate: Rate
+
+workshop_app_setup:
+  prerequisites_heading: Application prerequisites
+  git_desc: Retrieve the repository and its changes.
+  node_desc: Node.js 20+ and npm 10+ to run the application.
+  claude_desc: Generate data and verify the application.
+  heading: Clone and run the application
+  intro: "On your machine, retrieve the application from the Taxiway lab."
+  terminals_intro: "Open two terminals: one for the backend and one for the frontend."
+  clone_context: Retrieve the application from the lab
+  backend: Start the backend
+  frontend: Start the frontend
+  note: "This local copy will let you retrieve the changes produced in the lab."
+  keep_running: "Keep both terminals open. Next, we will explore the application."
+
+
+workshop_app:
+  heading: Workshop application
+  desc: Agreement Hub is a Contract Lifecycle Management application. It lets you create, view and manage contracts.
+  bullets:
+    stack: "Under the hood: React/Vite, Express/TypeScript and SQLite."
+    local: "You will explore a local copy of the application."
+    update: "We will update it after the agents finish to discover the result."
+    clean: "The Mayor will select two features to add to the existing application."
+  image_alt: Initial Agreement Hub state for the workshop
+  flow_label: Explore the application
+  flow_start: "Keep the terminals open, then explore the application before implementation."
+  open_app: Open the app ↗
+
+
+workshop_seed:
+  heading: Generate the first contracts
+  intro: "Generate data in the application so you can test the features that will be delivered."
+  install: Install agent-browser
+  launch: "Open Claude Code in the application"
+  prompt_context: Create the sample data
+  recipient: Application agent
+  session_note: "Keep this session open: you’ll return to the same agent to verify the delivered features."
+
+
+workshop_contract:
+  heading: "Give the Mayor the mission"
+  intro: "The Mayor inspects the application and selects two increments that can run in parallel."
+  features_note: "Selected features may differ between pairs."
+  prompt_context: "Define the mission"
+  checkpoint_label: "Expected result"
+  checkpoint: "A short plan: visible results, dependencies, shared files, checks and exclusions."
+  wait_go: "The Mayor waits for your GO."
+
+workshop_observe:
+  heading: "Give the GO and observe"
+  intro: "Send GO to the Mayor. Then detach to the Taxiway shell to run the commands."
+  go_context: "Authorize execution"
+  observe_context: "Observe delivery"
+  status_context: "Observe Gas Town’s status"
+  status_help: "Spot newly spawned Polecats and check agent status."
+  mail_context: "Read received messages"
+  integration_context: "Track integration"
+  integration_help: "The Refinery queue shows changes awaiting integration."
+  tasks_context: "Explore tasks"
+  convoys_context: "Track progress"
+  ids_note: "Replace {bead} and {convoy} with the displayed IDs."
+  checkpoint_label: "Delivery checkpoint"
+  checkpoint: "Find the plan’s beads, the spawned Polecats and the convoy tracking delivery."
+  switch_roles: "Swap roles while observing. No additional prompt is needed to advance through the tasks."
+
+workshop_stabilize:
+  heading: "Read the Mayor’s final report"
+  commands_context: "Return to the Mayor’s session for the report"
+  checkpoint_label: "Delivery checkpoint"
+  checkpoint: "Identify the delivered features and any points to check in the application."
+  report_label: "Your lab’s report"
+  report: "The Mayor summarizes the features implemented, the checks performed and what remains to be done."
+  no_prompt: "Keep this report to compare it with the result observed in the application."
+
+workshop_record:
+  start: Start recording
+  start_note: Record the session for replay and analysis, then enter the lab and join the Mayor.
+
+workshop_stop:
+  heading: "Pause work and stop recording"
+  intro: "Once you have retrieved the Mayor’s report, pause the agents and stop recording."
+  lab_note: In the lab shell, outside the Mayor’s session.
+  agents: Freeze agent work
+  host_note: "On the host machine, once the agents are paused."
+  recording: "Stop recording"
+  later: Optional — after the workshop
+  later_note: On the host machine, not inside the lab. We will start analysis on the next slide.
+  replay: Replay the terminal session
+  preserve: "The lab stays available to retrieve the code and inspect traces."
+  check_label: "Recording checkpoint"
+  check: "Recording stopped and Mayor report saved."
+  guide: "Taxiway procedure ↗"
+
+workshop_analysis:
+  heading: "Analyze the workshop run"
+  intro: "On your machine, start an interactive recording analysis with Claude Code."
+  launch: "Analyze the latest recording"
+  session_note: "Taxiway prepares the context and opens the agent: no additional prompt to copy."
+  traces_note: "In Langfuse, open the lab project to inspect traces and the cost of calls."
+
+
+workshop_verify:
+  heading: "Update the application"
+  intro: "On your machine, retrieve the delivered changes in the local application copy."
+  update_context: "Retrieve the changes"
+  run_context: "Install dependencies and restart the server"
+  dependencies_note: "If new dependencies were added, stop the relevant server with {keys}, then run these commands in its existing backend or frontend terminal."
+  restart_note: "Otherwise, leave the servers running: no routine reinstall is needed."
+  recipient: Application agent
+  agent_context: Verify the application
+  checkpoint_label: "Ready for verification"
+  checkpoint: "The agent will now test the features in the visible browser."
+
+
+workshop_functional:
+  heading: "Verify features with the agent"
+  intro: "Follow the agent’s tests in the browser."
+  resume: "Return to the Claude Code session used to create contracts and send this prompt."
+  expected: "Expected result"
+  report: "For each added feature: what was tested, the observed result and any issues."
+
+
+workshop_tools:
+  heading: "Prepare the application tools"
+  intro: "Run these commands on your machine (inside WSL2 on Windows)."
+  access: "Prepare the agent-browser skill"
+  login: "Sign into Claude Code"
+  browser_macos: "Install the browser — macOS"
+  browser: "Install the browser"
+  browser_linux: "Install the browser — Linux / WSL2"
+  check: "Confirm you’re signed into Claude Code, then exit with {command}."
+
+
 verification:
   heading: Agreement Hub verification
   copy_label: Local inspection
@@ -376,3 +603,15 @@ thanks:
     cost: What does it cost to deliver a feature with Gas Town?
     control: How much control do we have over the models?
     crew: When should we use the Crew instead of only the Mayor?
+
+workshop_parallel_observe:
+  heading: "Watch the agents at work"
+  intro: "Join the Mayor from the Taxiway shell, then use {keys} to choose a session."
+  commands_context: "Join the Mayor"
+  checkpoint_label: "Which session should you watch?"
+  beads: "Follow a feature’s implementation and tests."
+  polecats: "Observe without typing instructions into agents."
+  convoys: "The Mayor reports progress every three minutes or when blocked. Return to read the final report."
+  witness: "Watch Polecat monitoring and detection of stalled workers."
+  refinery: "Follow the integration of changes delivered by Polecats."
+  deacon: "Watch Gas Town health patrols and Witness monitoring."

@@ -89,6 +89,8 @@ export default defineAppSetup(({ app }) => {
 
   setAppLocale(app, initialLocale)
 
+  app.config.globalProperties.$variant = talkConfig.variant
+
   app.config.globalProperties.$talk = (key: string, values?: Record<string, unknown>) => {
     const t = app.config.globalProperties.$t
     const fullKey = `talks.${talkConfig.id}.${key}`

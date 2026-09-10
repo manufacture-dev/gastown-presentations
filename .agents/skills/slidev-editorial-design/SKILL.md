@@ -1,6 +1,6 @@
 ---
 name: slidev-editorial-design
-description: Use when defining or improving the visual direction of a Slidev deck: typography, colors, hierarchy, spacing, recurring blocks, and editorial presentation style.
+description: "Use when defining or improving the visual direction of a Slidev deck: typography, colors, hierarchy, spacing, recurring blocks, and editorial presentation style."
 ---
 
 # Slidev Editorial Design
@@ -33,9 +33,10 @@ Create a calm, readable, coherent technical presentation style.
    - glow effects
    - decorative backgrounds
    - overloaded dashboards
-5. Keep text sizes PDF-friendly.
+5. Compare computed font sizes and line heights by role (explanation, command, prompt, tip, label) across adjacent slides, including explanatory slides inside a workshop.
+   Check projection readability separately from fitting in the viewport. If small text leaves substantial unused space, improve its size and allocation before changing the background or theme.
 6. Prefer reusable classes over one-off inline styles.
-7. Verify representative slides in browser screenshots before applying the pattern broadly.
+7. Verify representative slides in every supported language before applying the pattern broadly. Keep approved sizes and project-specific color meanings in repository guidance rather than making them universal skill rules.
 
 ## Recurring Blocks
 

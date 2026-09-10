@@ -35,6 +35,7 @@ npm run dev
 npm run dev -- dilitrust-techday --port 3030
 npm run build
 npm run build:all
+npm run build:web
 npm run export:pdf
 npm run export:pptx
 ```
@@ -48,11 +49,12 @@ npm run export:pptx
 - `npm run build -- <route>` creates a specific talk static website in `dist/`.
 - `npm run build:all` creates one route per configured talk in `dist/<route>/`
   and downloadable PDF/PPTX files in `dist/downloads/`.
+- `npm run build:web` refreshes the landing page and every web route without
+  regenerating PDF/PPTX files. Existing downloads are preserved.
 - `npm run export:pdf` renders the latest talk PDF in `exports/`.
 - `npm run export:pptx` renders the latest talk PowerPoint file in `exports/`.
 - `npm run export:pdf -- <route>` renders a specific talk PDF in `exports/`.
 - `npm run export:pptx -- <route>` renders a specific talk PowerPoint file in `exports/`.
-
 ## Talk Instances
 
 Talk-specific metadata lives in two places:
@@ -81,6 +83,7 @@ Configured talks:
 
 | Talk | Date | Locale | Variant | Prompt | Route |
 |---|---:|:---:|:---:|---|---|
+| Agile En Seine & IA | 2026-09-22 | fr | workshop | `all-use-cases` | `agile-en-seine-2026` |
 | SACEM - Matinale DSI | 2026-07-10 | fr | short | `demo-15-min` | `sacem-matinale-dsi` |
 | Dev With AI Live #4 | 2026-06-12 | fr | short | `demo-15-min` | `dev-with-ai-live-4` |
 | DiliTrust TechDay | 2026-05-21 | en | full | `all-use-cases` | `dilitrust-techday` |
@@ -98,12 +101,13 @@ Useful commands:
 npm run talk:list
 npm run dev -- dilitrust-techday
 npm run build -- dilitrust-techday
+npm run build:web
 npm run build:all
 npx serve dist
 ```
 
-After `npm run build:all`, `npx serve dist` lets you test the generated index,
-all talk routes, and downloadable PDF/PPTX files locally:
+After `npm run build:web` or `npm run build:all`, `npx serve dist` lets you test
+the generated index, all talk routes, and any available PDF/PPTX files locally:
 
 ```text
 http://localhost:3000/
@@ -129,10 +133,16 @@ A single `slides.md` can produce several **content variants** of the same deck
 selection happens at build time, so a slide that is not part of a variant is
 removed from the generated deck rather than rendered empty.
 
-Two variants are currently used:
+Three variants are currently used:
 
 - `full` (default): the complete deck.
 - `short`: a reduced critical-path cut.
+- `workshop`: a guided hands-on journey with a short introduction, setup, a supplied
+  unchanged application baseline, one plan and GO for two independently selected
+  increments, guided observation, pausing agents, stopping the recording and
+  functional verification. The lab remains available for verification and analysis;
+  historical variants are unchanged.
+  See [the 105-minute scenario](docs/scenarios/agile-en-seine-2026.md).
 
 ### Selecting a variant for a talk
 
@@ -164,11 +174,22 @@ variants: [full]
 # This slide only appears in the full variant
 ```
 
+### Marking an element for specific variants
+
+The active variant is available as `$variant` in slide templates. Use Vue's
+`v-if` when only part of a shared slide needs to change:
+
+```html
+<div v-if="$variant !== 'workshop'">
+  This element is hidden in the workshop variant
+</div>
+```
+
 Notes:
 
 - A slide without a `variants` list is part of every variant (the shared core).
-- `variant` selection is also exposed at runtime as `talkConfig.variant`, so
-  in-slide tweaks can use `v-if` when removing a whole slide is not desired.
+- Use slide frontmatter for whole-slide selection and `$variant` with `v-if`
+  for individual elements.
 - Exports keep their `gastown-<route>.<locale>.<ext>` naming; because `route`
   is unique per talk, the variant is already disambiguated.
 
@@ -213,6 +234,63 @@ public/prompts/gastown-demo-prompt.demo-15-min.fr.txt
 
 Keep prompt files as plain text. The copy button writes the fetched `.txt` content
 directly to the clipboard.
+
+## Agent Skills
+
+Repository skills follow the [Agent Skills specification](https://agentskills.io/specification).
+Their single source is `.agents/skills/<name>/SKILL.md`. Each file contains YAML
+frontmatter (`name`, `description`) followed by Markdown instructions.
+
+- Codex discovers `.agents/skills/` directly.
+- Gemini CLI also supports `.agents/skills/`.
+- Claude Code discovers the relative folder symlinks in `.claude/skills/`, which
+  point to the canonical skills. Do not edit or maintain separate copies there.
+- [AGENTS.md](AGENTS.md) provides repository guidance and skill-selection instructions.
+  [CLAUDE.md](CLAUDE.md) imports it for Claude Code.
+
+See the discovery documentation for [Codex](https://learn.chatgpt.com/docs/build-skills),
+[Claude Code](https://code.claude.com/docs/en/skills#where-skills-live), and
+[Gemini CLI](https://geminicli.com/docs/cli/skills/#discovery-tiers).
+Other agents can read the same files, but automatic discovery depends on the agent.
+Git checkouts must preserve symlinks for the Claude Code discovery path to work.
+
+### Choosing a skill
+
+Read the relevant `SKILL.md` before applying its workflow; do not load every skill
+for every task. In Codex, explicitly request `$skill-name`; in Claude Code, use
+`/skill-name`. If skills do not appear after installation, start a new session.
+
+| Task | Skills |
+|---|---|
+| Iterative presentation feedback | [presentation-iteration-workflow](.agents/skills/presentation-iteration-workflow/SKILL.md) |
+| Narrative and slide sequence | [slidev-content-architecture](.agents/skills/slidev-content-architecture/SKILL.md) |
+| Typography, spacing and visual consistency | [slidev-editorial-design](.agents/skills/slidev-editorial-design/SKILL.md) |
+| Reusable layouts and recurring blocks | [slidev-layout-system](.agents/skills/slidev-layout-system/SKILL.md) |
+| Rendering defects and overflow | [slidev-visual-debugging](.agents/skills/slidev-visual-debugging/SKILL.md) |
+| Browser verification | [browser-visual-qa](.agents/skills/browser-visual-qa/SKILL.md) |
+| Build, export and presentation readiness | [slidev-export-readiness](.agents/skills/slidev-export-readiness/SKILL.md) |
+| Live-demo transitions and support | [slidev-live-demo-support](.agents/skills/slidev-live-demo-support/SKILL.md) |
+| Diagrams | [slidev-diagram-design](.agents/skills/slidev-diagram-design/SKILL.md) |
+| Images and other assets | [slidev-assets-management](.agents/skills/slidev-assets-management/SKILL.md) |
+| QR codes | [presentation-qr-code](.agents/skills/presentation-qr-code/SKILL.md) |
+| Speaker slides | [presentation-speaker-slide](.agents/skills/presentation-speaker-slide/SKILL.md) |
+| Theme changes | [slidev-theme-workflow](.agents/skills/slidev-theme-workflow/SKILL.md) |
+| New Slidev project setup | [slidev-project-bootstrap](.agents/skills/slidev-project-bootstrap/SKILL.md) |
+
+### Format validation
+
+With [uv](https://docs.astral.sh/uv/) installed, run the reference validator
+provided by the Agent Skills project (the first run downloads the tool):
+
+```bash
+for skill in .agents/skills/*; do
+  uv tool run --from 'git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref' skills-ref validate "$skill" || exit 1
+done
+```
+
+Format validation does not prove that an agent discovers or applies a skill
+correctly. Check its availability in the target agent and evaluate its behavior
+on a relevant task when changing its instructions.
 
 ## GitHub Pages
 
