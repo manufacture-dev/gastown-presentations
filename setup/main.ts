@@ -31,14 +31,18 @@ function getLatestTalk() {
 }
 
 const latestTalk = getLatestTalk()
+const activeTalk = Object.values(talkModules).find(talk =>
+  talk.id === import.meta.env.VITE_TALK_ID || talk.route === import.meta.env.VITE_TALK_ROUTE,
+) || latestTalk
+const activeVariant = import.meta.env.VITE_TALK_VARIANT || activeTalk.variant || 'full'
 
 const talkConfig: TalkConfig = {
-  id: import.meta.env.VITE_TALK_ID || latestTalk.id,
-  route: import.meta.env.VITE_TALK_ROUTE || latestTalk.route,
-  date: import.meta.env.VITE_TALK_DATE || latestTalk.date,
-  defaultLocale: import.meta.env.VITE_DEFAULT_LOCALE || latestTalk.defaultLocale,
-  variant: import.meta.env.VITE_TALK_VARIANT || latestTalk.variant || 'full',
-  prompt: import.meta.env.VITE_TALK_PROMPT || latestTalk.prompt,
+  id: import.meta.env.VITE_TALK_ID || activeTalk.id,
+  route: import.meta.env.VITE_TALK_ROUTE || activeTalk.route,
+  date: import.meta.env.VITE_TALK_DATE || activeTalk.date,
+  defaultLocale: import.meta.env.VITE_DEFAULT_LOCALE || activeTalk.defaultLocale,
+  variant: activeVariant,
+  prompt: activeVariant === 'workshop' ? undefined : import.meta.env.VITE_TALK_PROMPT || activeTalk.prompt,
 }
 
 function capitalize(value: string) {

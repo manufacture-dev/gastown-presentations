@@ -83,7 +83,7 @@ Configured talks:
 
 | Talk | Date | Locale | Variant | Prompt | Route |
 |---|---:|:---:|:---:|---|---|
-| Agile En Seine & IA | 2026-09-22 | fr | workshop | `all-use-cases` | `agile-en-seine-2026` |
+| Agile En Seine & IA | 2026-09-22 | fr | workshop | N/A | `agile-en-seine-2026` |
 | SACEM - Matinale DSI | 2026-07-10 | fr | short | `demo-15-min` | `sacem-matinale-dsi` |
 | Dev With AI Live #4 | 2026-06-12 | fr | short | `demo-15-min` | `dev-with-ai-live-4` |
 | DiliTrust TechDay | 2026-05-21 | en | full | `all-use-cases` | `dilitrust-techday` |
@@ -196,7 +196,12 @@ Notes:
 ## Demo Prompts
 
 The demo slide has one copy button. Each talk chooses which plain-text prompt that
-button copies through the required `prompt` field in `talks/*.json`.
+button copies through the `prompt` field in `talks/*.json`. This field is required
+for `full` (also the default when `variant` is omitted) and `short`.
+
+For `workshop`, omit `prompt`: the demo slide is excluded and each workshop slide
+declares its own localized prompt source. The talk listing displays **N/A (not
+applicable)**. N/A is a display label, not a configuration value or filename.
 
 Available prompts:
 

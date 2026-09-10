@@ -25,9 +25,9 @@ function readTalks() {
         if (!talk[field])
           throw new Error(`Missing "${field}" in talks/${file}`)
       }
-      if (!talk.prompt)
+      if (variantForTalk(talk) !== 'workshop' && !talk.prompt)
         throw new Error(`Missing "prompt" in talks/${file}`)
-      if (!PROMPTS.has(talk.prompt)) {
+      if (talk.prompt !== undefined && !PROMPTS.has(talk.prompt)) {
         const prompts = [...PROMPTS].join(', ')
         throw new Error(`Invalid "prompt" in talks/${file}: ${talk.prompt}. Expected one of: ${prompts}`)
       }
@@ -59,7 +59,7 @@ function variantForTalk(talk) {
 }
 
 function promptForTalk(talk) {
-  return talk.prompt
+  return variantForTalk(talk) === 'workshop' ? undefined : talk.prompt
 }
 
 function renderTable(rows) {
@@ -83,7 +83,7 @@ function renderTalkList(talks) {
       talk.date,
       talk.defaultLocale,
       variantForTalk(talk),
-      promptForTalk(talk),
+      promptForTalk(talk) ?? 'N/A',
       talk.route,
     ]),
   ])
@@ -98,7 +98,8 @@ function envForTalk(talk) {
     VITE_DEFAULT_LOCALE: talk.defaultLocale,
     VITE_TALK_VARIANT: variantForTalk(talk),
   }
-  env.VITE_TALK_PROMPT = promptForTalk(talk)
+  // An explicit empty value also masks inherited environment/.env values.
+  env.VITE_TALK_PROMPT = promptForTalk(talk) ?? ''
   return env
 }
 
