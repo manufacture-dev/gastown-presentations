@@ -1,9 +1,17 @@
-Functionally verify the local application.
-Read the code, delivered changes and documentation; identify the branch, commit and implemented features. Run relevant checks.
+/agent-browser Use the repository’s Git history and code
+to identify the features added during the workshop.
 
-Using the agent-browser skill, open http://localhost:5173 in a dedicated session, separate from the Langfuse analysis.
-For each delivered feature (library, approvals, generator…), test a happy path and a relevant edge case or validation. Verify outcomes and persistence after reload where applicable.
+Open http://localhost:5173 in visible (headed) mode.
+Reuse the window and tab used to create the contracts.
 
-Use fictional test data without deleting existing contracts. Do not change code or fix bugs.
+Test each added feature through the UI:
+main workflow, validation and persistence after reload
+where relevant.
 
-Report per feature: scenario, expected result, actual result, evidence and verdict (passed, failed, blocked or not delivered). Code and tests alone do not prove that the interface works. Flag every check not executed.
+Preserve existing contracts. Create fictional test data
+if needed, without modifying code or using SQL
+or direct API calls to test the application.
+
+Summarize the identified features, tests performed,
+observed results and any blockers.
+Clearly state anything that could not be verified.

@@ -1,9 +1,17 @@
-Utilise le skill agent-browser sur http://localhost:5173 pour créer 12 contrats fictifs via l’interface.
+/agent-browser Ouvre http://localhost:5173 en mode visible
+(headed), dans une session dédiée. Garde la même fenêtre
+et le même onglet.
 
-Inspecte d’abord les champs, options et contrats existants.
-Varie les types, contreparties, montants et devises disponibles ; les dates passées, présentes et futures ; les statuts et champs facultatifs autorisés.
-Utilise seulement les possibilités actuelles de l’application. Ne force aucun statut inaccessible.
+Inspecte l’application, puis crée 12 contrats fictifs
+réalistes via l’interface. Varie les types, entreprises,
+statuts et clauses pour couvrir différents cas.
+Utilise des titres métier naturels, sans préfixe
+ni nom de client. Garde les données cohérentes.
 
-Ne modifie ni le code ni les données existantes. Ne passe pas par SQL ou une API directe. Évite les doublons, même après une interruption.
+Respecte les champs et validations de l’application.
+Ne modifie ni le code ni les contrats existants ;
+pas de SQL ni d’appel direct à l’API.
 
-Vérifie l’enregistrement de chaque contrat. Résume les 12 contrats et les cas couverts. En cas de blocage, indique ce qui a été créé et ce qui manque, sans contourner les validations.
+Vérifie la persistance après rechargement. En cas
+d’interruption, reprends sans doublons jusqu’à 12 créations.
+Résume les contrats créés et les éventuels blocages.
