@@ -137,8 +137,12 @@ Three variants are currently used:
 
 - `full` (default): the complete deck.
 - `short`: a reduced critical-path cut.
-- `workshop`: the complete deck with the demo moved after supervision, immediately
-  before verification, so practical workshop slides can be inserted there.
+- `workshop`: a guided hands-on journey with a short introduction, setup, a supplied
+  unchanged application baseline, one plan and GO for two independently selected
+  increments, guided observation, pausing agents, stopping the recording and
+  functional verification. The lab remains available for verification and analysis;
+  historical variants are unchanged.
+  See [the 105-minute scenario](docs/scenarios/agile-en-seine-2026.md).
 
 ### Selecting a variant for a talk
 

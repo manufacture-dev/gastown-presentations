@@ -1,115 +1,112 @@
 # Agile En Seine & IA 2026
 
-Ce document cadre la présentation-atelier Gas Town prévue pour Agile En Seine & IA 2026. L'événement officiel se déroule les 22 et 23 septembre 2026 au Palais des Congrès d'Issy-les-Moulineaux. Le programme place l'atelier Gas Town le 22 septembre, premier jour de l'événement.
+Atelier Gas Town du 22 septembre 2026 : 1 h 45 en français, environ 20 participants en 10 binômes. Le présentateur réalise le parcours en live ; chaque binôme le reproduit dans son lab Taxiway. Un second facilitateur accompagne les blocages. Les rôles conducteur/navigateur s'inversent pendant l'observation des agents.
 
-La session dure 1 h 45, se déroule en français et accueille environ 20 participants répartis en 10 binômes. Elle combine la présentation complète de Gas Town, du live coding réalisé par le présentateur et un atelier guidé dans lequel chaque binôme reproduit les étapes dans son propre lab Taxiway.
+Ce conducteur suit le contenu actuel de la variante `workshop`. Les durées sont des repères d’animation, pas une garantie d’exécution pour dix binômes ou une installation à froid. Les retours de répétition restent dans le rapport du projet Agreement Hub, pas dans le déroulé destiné à animer l’atelier.
 
-## État initial du deck
+## Objectif et périmètre
 
-Le talk utilise la variante `workshop`, dérivée de la variante `full` de DiliTrust TechDay et présentée en français. Cette variante conserve les slides conceptuelles du deck complet, puis ouvre une séquence d'atelier dédiée après `Supervision`.
+Faire observer le passage d’une intention à deux évolutions coordonnées, puis à une application vérifiée : un plan, un GO, des beads, des agents, des intégrations et des tests fonctionnels visibles dans le navigateur.
 
-La cible éditoriale du futur deck workshop est la suivante:
+L'application de départ est celle récupérée depuis le dépôt par Taxiway, sans référence Git imposée ni ajout préalable. Aucun starter bibliothèque à préparer ni branche applicative à publier.
 
-1. conserver toutes les slides de la présentation complète en français;
-2. ouvrir l'atelier par le setup complet de Docker, Lima, Taxiway et du lab;
-3. expliquer la navigation entre les sessions tmux imbriquées;
-4. présenter Agreement Hub depuis la copie locale créée par Taxiway;
-5. dérouler le travail par incréments avec des commandes et prompts copiables;
-6. réserver une phase distincte à la vérification de l'application produite;
-7. conserver `Aller plus loin avec les formulas` et `Ce que Gas Town change` après la vérification;
-8. terminer avec `Merci` et dix minutes de questions-réponses.
+Nous reprenons la logique du prompt `demo-15-min` utilisé pour [Dev With AI](dev-with-ai-live-4.md) et [SACEM](sacem-matinale-dsi.md) : le Mayor lit les use cases dans `docs`, inspecte l'application et choisit deux incréments indépendants au maximum. Les conducteurs suggéraient Recherche/Filtre et Risk Reviewer offline, mais ces exemples ne deviennent pas des choix imposés dans cet atelier.
 
-La variante `full` reste inchangée pour les présentations existantes.
+Chaque binôme valide son propre plan : les fonctionnalités peuvent différer entre les dix labs. Elles doivent être visibles, testables et dimensionnées pour moins de 15 minutes après GO, sans dépendre d'un premier use case à réaliser. Si un candidat réclame une fonctionnalité préalable, choisir un périmètre autonome ou un autre candidat. Mode mock/offline si nécessaire, sans service externe ni refonte large. Les tests et la restitution se basent sur les critères du plan de chaque lab.
 
-## Intention générale
+Le GO autorise toutes les tâches du plan approuvé, y compris leurs dépendances lorsqu'elles deviennent prêtes. Une nouvelle fonctionnalité ou extension nécessite un nouvel accord. Le Mayor expose les fichiers partagés, réserve leur modification à un responsable à la fois et explique le parallélisme réellement possible. Ni deux workers simultanés sur toute la durée, ni des noms d'agents fixes, ni deux tâches strictement verticales ne sont garantis.
 
-L'objectif n'est pas seulement de montrer Gas Town. Chaque participant doit pouvoir observer et manipuler le passage d'une intention produit à un delivery distribué:
+## Conducteur de 105 minutes
 
-- préparer un environnement reproductible avec Taxiway;
-- confier un premier incrément au Mayor;
-- observer le plan, les beads et le worker associé;
-- lancer plusieurs incréments indépendants en parallèle;
-- suivre leur progression avec les convoys et les rôles de supervision;
-- stabiliser, intégrer et vérifier le résultat dans Agreement Hub.
+| Temps | Durée | Séquence | Checkpoint |
+|---|---:|---|---|
+| 00:00–00:05 | 5 min | Accueil et binômes | Conducteur/navigateur identifiés |
+| 00:05–00:20 | 15 min | Présentation Gas Town | Toutes les slides conceptuelles conservées |
+| 00:20–00:40 | 20 min | Installation, lab, Claude Code, agent-browser et accès Langfuse | À 00:35, rouge accompagné ; à 00:40, prêt ou secours |
+| 00:40–00:45 | 5 min | Présentation de l'application, clone hôte, lancement et découverte | CRUD initial visible |
+| 00:45–00:50 | 5 min | Données via l'interface | Douze contrats présents après rechargement |
+| 00:50–00:55 | 5 min | Enregistrement, entrée dans le lab, tmux, mission et GO unique | Record lancé ; périmètre, critères et dépendances compris |
+| 00:55–01:10 | 15 min | Delivery et observation guidée | Rapports réguliers, navigation tmux et bilan du Mayor |
+| 01:10–01:15 | 5 min | Bilan, pause des agents et arrêt de l’enregistrement | Bilan conservé, record terminé ; lab disponible |
+| 01:15–01:25 | 10 min | Mise à jour et vérification avec l’agent | Fonctionnalités testées dans le navigateur visible |
+| 01:25–01:30 | 5 min | Analyse interactive du record et Langfuse | Déroulement, traces et coût des appels |
+| 01:30–01:35 | 5 min | Aller plus loin et synthèse | Ce que Gas Town change |
+| 01:35–01:45 | 10 min | Questions et conclusion | Créneau protégé |
 
-Le live coding donne la référence commune et le rythme. Les binômes n'ont pas à présenter leur résultat devant la salle: les checkpoints servent à vérifier leur progression et à déclencher de l'aide, pas à organiser dix restitutions.
+La variante `workshop` conserve toutes les slides conceptuelles de la présentation, y compris Beads, Convoys et Polecats. La théorie précède l’atelier ; pendant l’exécution, les binômes utilisent la fiche tmux et les commandes d’observation, sans nouvelle présentation ni nouveau prompt. Les numéros changent avec les insertions : naviguer par titre et vérifier le titre actif. `Aller plus loin avec les formulas` reste une ouverture sans nouvel exercice.
 
-## Organisation des participants
+### Repères dans le support actuel
 
-Les 20 participants travaillent en 10 binômes. Cette organisation limite le nombre de labs à accompagner et permet à chaque personne de participer activement.
+| Slides | Séquence à animer |
+|---|---|
+| 3 | Remerciement des partenaires, après les intervenants |
+| 14 | À vous de piloter Gas Town : lancement de l’atelier et fonctionnement en binôme |
+| 15–17 | Taxiway, outils de l’application, puis création et diagnostic du lab |
+| 18–19 | Présenter Agreement Hub, récupérer la copie locale, lancer et découvrir l’application |
+| 20 | Générer douze contrats avec Claude Code et agent-browser |
+| 21 | Démarrer le record, entrer dans le lab, expliquer tmux et rejoindre le Mayor |
+| 22–23 | Confier la mission, relire le plan, envoyer GO et observer l’avancement |
+| 24 | Naviguer entre les agents sans leur donner de nouvelles instructions |
+| 25–26 | Lire le bilan, mettre en pause et arrêter l’enregistrement |
+| 27–28 | Mettre à jour la copie locale puis reprendre l’agent pour les tests fonctionnels |
+| 29 | Lancer l’analyse interactive du record et consulter Langfuse |
+| 30 | Bravo : exprimer le besoin, observer les agents et vérifier le résultat |
+| 31–33 | Formulas, synthèse et slide Merci d’origine avec questions-réponses |
+| 34 | Inviter les participants à donner leur avis dans TingEvent |
 
-Chaque binôme utilise deux rôles:
+## Setup et application
 
-- le conducteur saisit les commandes et les prompts;
-- le navigateur lit les consignes, contrôle le résultat attendu et aide au diagnostic.
+Les participants n’ont aucune installation imposée avant de venir. Les vingt minutes couvrent les prérequis Taxiway, Git, Node.js 20+/npm 10+, Claude Code, agent-browser, son navigateur et les accès nécessaires. Windows 11 suit le parcours Linux dans WSL2. Le créneau de données n’inclut aucune installation. Suivre l’ordre des slides : installer Taxiway (15), préparer l’outillage de l’application (16), puis créer le lab (17).
 
-Les rôles s'inversent après le premier incrément, avant la séquence de travail en parallèle.
+### Installer Taxiway — slide 15
 
-Chaque binôme dispose d'un lab Taxiway. Un lab non opérationnel à la fin de la phase de setup ne bloque pas la salle: le binôme rejoint temporairement un binôme voisin pendant qu'un facilitateur intervient sur l'environnement en difficulté.
+Suivre les liens [WSL2](https://learn.microsoft.com/windows/wsl/install), [Docker](https://docs.docker.com/get-started/get-docker/) et [Lima](https://lima-vm.io/docs/installation/) du support selon la machine. La page [Taxiway](https://taxiway.sh/) donne accès à sa documentation d’installation.
 
-Deux facilitateurs constituent la configuration recommandée:
-
-- le présentateur maintient le rythme, explique et réalise le live coding;
-- le second facilitateur accompagne les binômes qui signalent un blocage.
-
-## Conducteur de 1 h 45
-
-### Enregistrement et analyse en parallèle
-
-L’enregistrement fait partie du parcours. Depuis la machine hôte, avant `taxiway shell agile-en-seine`, lancer `taxiway record start agile-en-seine`.
-
-Après la stabilisation et le bilan du Mayor, exécuter `gt estop` dans le shell du lab. Cette commande gèle le travail des agents, mais exempte le Mayor et l’overseer ; elle ne détruit pas le lab et ne garantit pas une consommation globale nulle.
-
-Depuis la machine hôte, arrêter l’enregistrement avec `taxiway record stop agile-en-seine --latest`. Ouvrir ensuite une session Claude Code dédiée à l’analyse et copier le prompt `workshop-analysis` depuis la présentation. L’agent réutilise les consignes de `taxiway record analyze agile-en-seine --prompt-only` et croise les fichiers de l’enregistrement avec les traces du lab dans Langfuse via agent-browser. Il ne lance pas d’autre agent et reste en lecture seule. Si une connexion à Langfuse est nécessaire, le binôme s’authentifie sans exposer ses secrets.
-
-Ne pas attendre le rapport : mettre à jour l’application et essayer les parcours manuellement, puis ouvrir une autre session Claude Code pour la vérification fonctionnelle. Le prompt `workshop-verify` combine inspection du code, checks pertinents et tests de chaque fonctionnalité livrée via agent-browser (parcours nominal, cas limite, persistance lorsque applicable). Le rapport distingue les résultats observés des vérifications bloquées ou non exécutées. Revenir au rapport d’analyse après la vérification et avant la synthèse pour comparer coordination, incidents et résultat observé. L’analyse et la vérification consomment encore des tokens. Ces actions s’insèrent dans les créneaux existants, sans ajouter de durée à la session.
-
-Le replay seul reste optionnel après l’atelier : `taxiway record player agile-en-seine`, depuis la machine hôte.
-
-| Temps | Durée | Séquence | Résultat attendu |
-|---:|---:|---|---|
-| 0:00-0:05 | 5 min | Accueil et constitution des binômes | Dix binômes numérotés, rôles conducteur et navigateur compris |
-| 0:05-0:20 | 15 min | Présentation complète de Gas Town | Modèle mental commun avant de manipuler |
-| 0:20-0:35 | 15 min | Setup complet: installation, Taxiway et création du lab | Lab accessible et diagnostic sans erreur bloquante |
-| 0:35-0:40 | 5 min | Présentation de l'application Agreement Hub | État initial observé depuis la copie locale créée par Taxiway |
-| 0:40-0:45 | 5 min | Transmission du contrat initial au Mayor | Garde-fous acceptés, aucun travail encore dispatché |
-| 0:45-1:00 | 15 min | Premier incrément guidé | Bibliothèque de clauses planifiée, lancée et observable |
-| 1:00-1:15 | 15 min | Fonctionnalités en parallèle | Workflow d'approbation et Générateur de clauses suivis séparément |
-| 1:15-1:20 | 5 min | Supervision, stabilisation et intégration | Nouveaux dispatchs gelés et état de convergence explicite |
-| 1:20-1:30 | 10 min | Vérification de l'application produite | Branche récupérée, checks lancés et produit inspecté |
-| 1:30-1:32 | 2 min | Aller plus loin avec les formulas | Ouverture vers les playbooks réutilisables |
-| 1:32-1:35 | 3 min | Synthèse: ce que Gas Town change | Apprentissages reliés aux concepts du talk |
-| 1:35-1:45 | 10 min | Conclusion et questions-réponses | Discussion finale; ce créneau absorbe aussi un léger retard |
-
-## Rythme de l'atelier
-
-Chaque étape suit la même boucle:
-
-1. la slide expose l'objectif, le contexte d'exécution et le résultat attendu;
-2. le présentateur exécute la séquence en live coding;
-3. les binômes copient les commandes ou le prompt depuis leur propre navigateur;
-4. ils reproduisent la séquence dans leur lab;
-5. le checkpoint vérifie que la salle peut avancer;
-6. les facilitateurs accompagnent les binômes qui en ont besoin.
-
-Les futures slides pratiques doivent distinguer clairement les contextes. Un bouton de copie ne doit pas mélanger des commandes exécutées sur la machine hôte, une entrée dans le shell Taxiway et un prompt destiné à une session interactive du Mayor.
-
-Pour chaque étape, le deck devra proposer:
-
-- un chemin essentiel commun à tous les binômes;
-- une exploration facultative, courte et en lecture seule, pour les binômes en avance;
-- un résultat observable servant de critère de passage au checkpoint.
-
-## Parcours de commandes
-
-Les commandes de setup sont exécutées depuis le terminal de la machine hôte. Sur Windows 11, il faut d'abord installer WSL2, puis exécuter le parcours Linux depuis le terminal WSL2.
-
-Initialiser Taxiway et créer le lab:
+Sur la machine hôte, dans WSL2 sous Windows :
 
 ```bash
+curl -fsSL https://taxiway.run | sh
 taxiway init
 taxiway status
+```
 
+### Préparer les outils de l’application — slide 16
+
+Les commandes suivantes se lancent sur la machine hôte. Une fois Node.js/npm et Claude Code installés via les liens du deck, installer agent-browser :
+
+```bash
+npm install -g agent-browser
+```
+
+Sur macOS :
+
+```bash
+agent-browser install
+```
+
+Sur Linux ou WSL2 :
+
+```bash
+agent-browser install --with-deps
+```
+
+Installer le skill pour Claude Code :
+
+```bash
+npx skills add vercel-labs/agent-browser --global --skill agent-browser --agent claude-code
+```
+
+Ouvrir Claude Code, terminer l'authentification puis saisir `/exit` dans la session interactive :
+
+```bash
+claude
+```
+
+### Créer le lab — slide 17
+
+Le nom `agile-en-seine` désigne le lab local du binôme ; chaque binôme utilise sa propre machine.
+
+```bash
 taxiway up agile-en-seine \
   --type gastown \
   --repo https://github.com/manufacture-dev/agreement-hub.git \
@@ -118,64 +115,29 @@ taxiway up agile-en-seine \
   --set model=claude-opus-4-8
 ```
 
-Vérifier le lab puis y entrer:
-
 ```bash
-taxiway list agile-en-seine
+taxiway status
 taxiway doctor agile-en-seine
 taxiway access
-taxiway shell agile-en-seine
 ```
 
-Vérifier Gas Town depuis le shell du lab:
+Un provisionnement terminé ne suffit pas : `taxiway doctor` doit être acceptable avant le checkpoint. Le contrôle des settings, hooks et `gt doctor` fait aussi partie de la préparation des facilitateurs ; les participants vérifieront Gas Town à l'ouverture du Mayor après les données. À quinze minutes de setup, le facilitateur prend en charge les labs rouges. À vingt minutes, le binôme utilise un lab de secours validé ou rejoint un voisin ; la salle poursuit.
 
-```bash
-gt doctor
-gt status
-```
+Ouvrir [Langfuse](http://langfuse.localhost:4000) avec les accès retournés par `taxiway access`, puis sélectionner le projet du lab. L’analyse du record et la consultation des traces sont deux actions distinctes ; aucun accès via agent-browser à Langfuse n’est nécessaire.
 
-Rejoindre le Mayor:
+### Présenter, récupérer et lancer l’application — slides 18–19
 
-```bash
-gt mayor attach
-```
+Présenter d’abord Agreement Hub à partir de la capture et de ses fonctionnalités existantes (slide 18). Sur la slide suivante, récupérer et lancer l’application, puis l’ouvrir avec l’encadré « Découvrir l’application ».
 
-Observer le premier incrément:
-
-```bash
-bd list --all --flat
-bd ready
-bd show <bead_id>
-gt convoy list --all
-gt convoy status <convoy_id>
-gt status
-```
-
-Observer le parallélisme et la convergence:
-
-```bash
-gt status
-bd list --all --flat
-bd ready
-gt convoy list --all
-gt refinery queue agreement_hub
-gt refinery status agreement_hub
-gt witness status agreement_hub
-gt dolt status
-gt mail inbox
-```
-
-### Lancer l'application avant le premier incrément
-
-Sur la machine hôte (dans WSL2 sous Windows), avec Node.js 20+ et npm 10+, cloner le dépôt bare local créé par Taxiway. Ne pas cloner GitHub directement : cette copie doit suivre les livraisons du lab.
+Sur l'hôte, cloner le dépôt bare local de Taxiway dans un dossier neuf. Cette copie suit les livraisons du lab. Adapter le chemin d'état uniquement si l'installation Taxiway le personnalise.
 
 ```bash
 git clone ~/.taxiway/lab-state/agile-en-seine/git/agreement-hub.git ~/agreement-hub
 ```
 
-Ce chemin correspond à l'installation standard de Taxiway. Adapter le répertoire d'état si celui-ci a été personnalisé. Le dossier de destination doit être nouveau.
+Cette copie locale permettra de récupérer les évolutions produites dans le lab. Ouvrir deux terminaux pour lancer l’application.
 
-Terminal 1 :
+Terminal backend :
 
 ```bash
 cd ~/agreement-hub/backend
@@ -183,7 +145,7 @@ npm install
 npm run dev
 ```
 
-Terminal 2 :
+Terminal frontend :
 
 ```bash
 cd ~/agreement-hub/frontend
@@ -191,156 +153,179 @@ npm install
 npm run dev
 ```
 
-Suivre d'abord la slide pratique pour cloner et lancer l'application, puis présenter Agreement Hub en ouvrant http://localhost:5173 sur la slide suivante. Garder les deux serveurs actifs. Le backend écoute sur le port 3001.
+Attendre que les serveurs soient prêts, puis ouvrir [Agreement Hub](http://localhost:5173) depuis l’encadré en bas de la slide de lancement (slide 19) pour découvrir le CRUD existant. L’ouverture de l’application sert de vérification initiale, sans contrôle Git ni appel /health supplémentaire. Conserver les deux terminaux ouverts.
 
-Récupérer la branche livrée depuis cette même copie de référence, après avoir arrêté les deux serveurs avec Ctrl+C :
+## Données, plan et observation
+
+### Générer les contrats — slide 20
+
+Dans un terminal supplémentaire sur la machine hôte, laisser les serveurs backend et frontend ouverts et lancer l’agent dans la copie locale :
 
 ```bash
 cd ~/agreement-hub
-git fetch origin
-git switch main
-git rebase origin/main
-npm --prefix backend install
-npm --prefix frontend install
+claude
 ```
 
-Relancer `npm run dev` dans chacun des terminaux backend et frontend, puis vérifier l'application.
+Depuis Claude Code sur l'hôte, utiliser le [prompt données](../../public/prompts/workshop-seed.fr.txt), qui commence par `/agent-browser`. L’agent conserve une session dédiée en mode visible (headed), la même fenêtre et le même onglet. Il inspecte l’application puis crée douze contrats fictifs réalistes via l’interface : types, entreprises, statuts et clauses variés, titres métier sans préfixe ni nom de client, données cohérentes. Le modèle choisit les détails, sans quotas de statuts ni catalogue de clauses imposés. Respecter les champs et validations ; ne modifier ni code ni contrats existants, sans SQL ni API directe. Vérifier la persistance et reprendre sans doublons après interruption jusqu’à douze créations, puis résumer les contrats et blocages. Le prompt à droite des commandes de lancement est affiché et copié à l’identique, sans défilement.
 
-Les prompts longs sont volontairement séparés des slides et disponibles dans `public/prompts/workshop-*.{fr,en}.txt`. Ils couvrent le contrat initial, le premier incrément, le parallélisme, la stabilisation et la vérification.
+Conserver cette session Claude Code et son navigateur pour la vérification finale. Le badge « Agent application » désigne le même agent sur les slides 20 et 28 ; la remarque rose sous le terminal rappelle de garder sa session ouverte. Les données générées appartiennent à la copie locale de l’application ; ce n’est pas un transfert de base de données vers le lab.
 
-## Navigation dans les sessions tmux imbriquées
+### Enregistrer et rejoindre le Mayor — slide 21
 
-Taxiway ouvre une session tmux extérieure qui donne accès aux sessions Gas Town. Comme les deux niveaux utilisent le préfixe `Ctrl+b`, il faut transmettre ce préfixe au niveau intérieur:
+Après les données, ouvrir un autre terminal sur l’hôte pour démarrer l’enregistrement et entrer dans le lab :
 
-- `Ctrl+b s`: choisir une session dans le tmux courant;
-- `Ctrl+b Ctrl+b`: transmettre le préfixe `Ctrl+b` au tmux Gas Town intérieur;
-- `Ctrl+b Ctrl+b s`: ouvrir l'arbre de sessions du tmux intérieur;
-- `Ctrl+b Ctrl+b d`: détacher le tmux intérieur et revenir au niveau Taxiway;
-- `Ctrl+b d`: détacher le tmux courant.
+```bash
+taxiway record start agile-en-seine
+taxiway shell agile-en-seine
+```
 
-Les touches sont tapées successivement. Le deck renvoie vers le [guide officiel tmux](https://github.com/tmux/tmux/wiki/Getting-Started) et une [cheat sheet tmux](https://tmuxcheatsheet.com/).
+Dans le shell du lab, vérifier Gas Town puis rejoindre le Mayor :
 
-## Signal de progression
+```bash
+gt doctor
+gt status
+gt mayor attach
+```
 
-À chaque checkpoint, les binômes utilisent un signal simple:
+### Confier la mission et envoyer GO — slides 22–23
 
-- **vert**: résultat attendu atteint;
-- **jaune**: commande en cours ou résultat incertain;
-- **rouge**: aide nécessaire.
+Transmettre **une seule fois le prompt de mission de l’atelier** :
 
-Le présentateur montre d'abord son propre résultat à l'écran, puis demande le signal de la salle. On avance lorsque tous les binômes sont au vert ou déjà accompagnés. Il n'y a ni tour de table ni projection obligatoire des écrans participants.
+- [Français](../../public/prompts/workshop-mission.fr.txt)
+- [English](../../public/prompts/workshop-mission.en.txt)
 
-## Checkpoint 1 - Environnement opérationnel
+Le prompt a été condensé pour l’atelier. La slide affiche et copie exactement le même fichier, dans la langue choisie ; il n’y a ni résumé séparé ni instructions cachées. Il remplace les prompts séparés de contrat, premier incrément, parallélisme et stabilisation. L’application reste le CRUD existant : aucune bibliothèque à réaliser avant de démarrer.
 
-Le binôme doit avoir:
-
-- Docker, Lima et Taxiway installés pendant l'atelier;
-- un lab Taxiway accessible;
-- un diagnostic sans erreur bloquante;
-- un statut Gas Town lisible;
-- une navigation tmux comprise.
-
-Exploration facultative: identifier le Mayor, le Witness et la Refinery dans l'état du système.
-
-## Checkpoint 2 - Premier incrément lancé
-
-Le binôme doit avoir:
-
-- transmis le premier besoin au Mayor;
-- lu et, si nécessaire, recadré le plan proposé;
-- donné son accord pour l'exécution;
-- identifié le bead et le worker associés.
-
-Le premier incrément doit rester simple, visible et démontrable. Le scénario retenu est la `Bibliothèque de clauses`, avec uniquement le travail de fondation strictement nécessaire.
-
-Exploration facultative: retrouver le worktree et observer le statut détaillé du bead.
-
-Après ce checkpoint, conducteur et navigateur inversent leurs rôles.
-
-## Checkpoint 3 - Parallélisme visible
-
-Le binôme lance deux incréments indépendants. Le périmètre recommandé combine:
-
-- `Workflow d'approbation`;
-- `Générateur de clauses`.
-
-Le binôme doit pouvoir observer:
-
-- deux beads correspondant aux deux flux produit;
-- deux Polecats actifs ou terminés;
-- un convoy donnant une vue d'ensemble;
-- des contextes de travail isolés.
-
-L'objectif n'est pas de forcer un parallélisme artificiel, mais de rendre visibles le découpage, les dépendances et la coordination choisis par Gas Town.
-
-Exploration facultative: repérer les fichiers potentiellement partagés ou expliquer pourquoi les deux incréments peuvent avancer indépendamment.
-
-## Checkpoint 4 - Convergence et preuve
-
-Treize minutes avant la synthèse, aucun nouveau travail n'est lancé. Tous les binômes passent en stabilisation:
-
-- état réel des beads et du convoy;
-- workers terminés ou encore actifs;
-- merge queue et éventuels conflits;
-- résultat présent sur la branche de delivery;
-- vérification fonctionnelle dans Agreement Hub.
-
-Trois issues sont acceptables:
-
-- une fonctionnalité intégrée et visible;
-- une fonctionnalité terminée mais encore dans la chaîne d'intégration;
-- un blocage clairement identifié grâce aux objets Gas Town.
-
-Un blocage compris constitue un résultat d'apprentissage. La réussite de l'atelier ne dépend pas de dix démonstrations parfaites.
-
-## Aide et différences de vitesse
-
-Les participants demandent de l'aide dès qu'un signal passe au rouge. Le second facilitateur privilégie un diagnostic court et observable: commande exécutée, message reçu, statut du bead ou état du lab.
-
-Garde-fous recommandés:
-
-- ne pas prolonger indéfiniment le setup d'un seul lab;
-- ne pas lancer un nouvel incrément après le début de la stabilisation;
-- ne pas laisser une réparation locale interrompre le live coding pour toute la salle;
-- permettre à un binôme bloqué de suivre temporairement l'environnement du voisin;
-- réserver les explorations facultatives à des actions en lecture seule.
-
-## Synthèse collective et questions-réponses
-
-Il n'y a pas de restitution formelle des dix binômes. La synthèse démarre directement par quelques questions ouvertes:
-
-- À quel moment Gas Town vous a-t-il aidés à comprendre ce qui se passait?
-- Quel blocage avez-vous pu diagnostiquer grâce aux objets de delivery?
-- Qu'est-ce qui change lorsque le travail est distribué entre plusieurs agents?
-
-Le présentateur relie les réponses spontanées aux concepts du deck:
-
-- intention produit et Mayor;
-- travail explicite avec les beads;
-- parallélisme avec les Polecats;
-- suivi avec les convoys;
-- convergence avec Witness et Refinery;
-- preuve finale dans Agreement Hub.
-
-La discussion se poursuit naturellement en questions-réponses. La slide `Ce que Gas Town change` structure la synthèse, puis la slide `Merci` accueille les dernières questions et clôt la session.
-
-## Préparation attendue
-
-Les participants n'ont aucune installation à réaliser avant de venir. Le setup de quinze minutes couvre Docker, Lima, Taxiway et la création du lab. Les liens d'installation restent dans le deck et pourront être mis à jour lorsque la nouvelle documentation Taxiway sera publiée.
-
-Avant l'atelier, les facilitateurs vérifient:
-
-- que les liens Docker, Lima, Taxiway et WSL2 sont accessibles depuis le réseau de l'événement;
-- que le provisionnement du repository Agreement Hub fonctionne sur macOS, Linux et Windows 11 via WSL2;
-- que le téléchargement des dépendances tient dans le créneau prévu;
-- la route publique de cette présentation;
-- le fonctionnement des boutons de copie dans le deck web;
-- l'accès local à Agreement Hub;
-- le mécanisme de signal vert, jaune ou rouge;
-- la présence du second facilitateur.
-
-Le QR code de la première slide devra pointer vers la route publique du talk:
+Le Mayor inspecte les use cases, propose les incréments indépendants, les résultats visibles, les dépendances, les fichiers partagés et les checks. Relire le plan ; recadrer seulement s’il dépasse le temps ou impose une fonctionnalité préalable. Les choix peuvent différer entre les binômes. Envoyer ensuite dans le Mayor :
 
 ```text
-https://manufacture.dev/gastown-presentations/agile-en-seine-2026/#/1
+GO
 ```
+
+Le prompt vise moins de quinze minutes d’exécution : réduction de scope à huit minutes si nécessaire, stabilisation à douze minutes. La navigation et l’observation ont lieu pendant ce travail. Dès le bilan reçu, passer à la suite sans prolonger le monitoring. Il n’y a pas de marge séparée : les dix minutes de questions-réponses absorbent les petits décalages.
+
+### Observer les sessions, sans piloter les workers
+
+1. Dans la session du Mayor, `Ctrl+b Ctrl+b s` ouvre la liste des sessions Gas Town. Sélectionner une session Polecat lorsqu’elle apparaît et observer son activité sans lui saisir d’instructions.
+2. `Ctrl+b Ctrl+b d` détache la session Gas Town et revient au shell Taxiway.
+3. Les commandes GT et beads ci-dessous se lancent dans ce shell, jamais dans le prompt de l’agent.
+4. `gt mayor attach` permet de retrouver le Mayor et ses rapports.
+5. Depuis le tmux Taxiway, `Ctrl+b s` liste les sessions Taxiway ; `Ctrl+b d` revient à la machine hôte.
+
+Pour chaque préfixe, appuyer sur Ctrl+b puis relâcher ; le répéter pour le tmux imbriqué, puis taper la commande s ou d. Réutiliser la fiche tmux du deck.
+
+### Commandes d’observation à disposition des binômes
+
+La slide 23 regroupe le suivi du travail : état global et messages à gauche ; tâches, convoys et file d’intégration à droite. La slide 24 se concentre sur l’observation des agents : depuis le shell Taxiway, rejoindre le Mayor avec `gt mayor attach`, puis utiliser `Ctrl+b Ctrl+b s` pour choisir une session et valider avec Entrée. Le Mayor présente le bilan, un Polecat montre l’implémentation et les tests, le Witness surveille les Polecats, la Refinery intègre les changements et le Deacon surveille la santé de Gas Town. `Ctrl+b Ctrl+b d` revient au shell Taxiway.
+
+Chaque commande est copiée séparément. Remplacer les identifiants entre chevrons, chevrons compris, par ceux affichés.
+
+```bash
+gt status
+gt mail inbox
+bd list --all --flat
+bd ready
+bd show <bead_id>
+gt convoy list --all
+gt convoy status <convoy_id>
+gt refinery queue agreement_hub
+gt mayor attach
+```
+
+Repérer les Polecats créés, le travail prêt ou bloqué, la progression du convoy et la queue d’intégration. Les binômes échangent les rôles pendant l’observation. Ne pas forcer deux workers simultanés si le scope réel ne le permet pas.
+
+Le Mayor fait un point **toutes les trois minutes ou en cas de blocage**, comme demandé dans le prompt initial : résultat fonctionnel, objets Gas Town, blocages et décision humaine éventuelle. Pas de nouveau prompt entre deux incréments. Consulter les états au fil du parcours, sans polling serré ni relance automatique de la Refinery. En cas de blocage, demander au facilitateur.
+
+Dès le bilan final, arrêter l’observation et passer à la pause des agents et à l’arrêt de l’enregistrement.
+
+## Lire le bilan, mettre en pause et arrêter l’enregistrement — slides 25–26
+
+Lire le bilan du Mayor : fonctionnalités réalisées, vérifications effectuées et ce qui reste à faire. Conserver ce bilan pour le comparer au résultat observé lorsque l’agent testera l’application.
+
+Le prompt de mission demande aussi au Mayor une branche et un SHA dans son bilan : ce sont des informations de traçabilité, pas des valeurs à recopier dans le prompt de vérification.
+
+Après le bilan, utiliser `Ctrl+b Ctrl+b d` pour revenir dans le shell du lab, hors de la session du Mayor :
+
+```bash
+gt estop
+```
+
+Utiliser ensuite `Ctrl+b d` pour revenir sur la machine hôte et arrêter l’enregistrement :
+
+```bash
+taxiway record stop agile-en-seine
+```
+
+Conserver le bilan du Mayor et la référence de l’enregistrement pour la vérification et l’analyse. Le lab reste disponible : pas de `down` à cette étape et pas de récupération Git en double. Le fetch est réalisé une seule fois, lors de la mise à jour de la copie hôte ci-dessous.
+
+`gt estop` exempte certaines sessions et ne garantit pas l’arrêt de tous les appels ni un coût nul. Ne pas confondre pause du travail, arrêt du record et arrêt du lab.
+
+## Mettre à jour l’application et vérifier avec l’agent — slides 27–28
+
+Dans la copie locale sur la machine hôte :
+
+```bash
+cd ~/agreement-hub
+git fetch
+git rebase
+```
+
+Réutiliser les terminaux backend et frontend conservés depuis le lancement de l’application. Si de nouvelles dépendances ont été ajoutées, arrêter le serveur concerné avec Ctrl+C, puis exécuter dans son terminal, déjà placé dans le bon dossier :
+
+```bash
+npm install
+npm run dev
+```
+
+Sinon, laisser les serveurs tourner : aucune réinstallation systématique des deux côtés. En cas de conflit de rebase, demander de l’aide sans forcer.
+
+Reprendre la session Claude Code utilisée pour créer les contrats et envoyer le [prompt de vérification](../../public/prompts/workshop-verify.fr.txt) ([anglais](../../public/prompts/workshop-verify.en.txt)). Aucun SHA ni plan à renseigner : l’agent utilise l’historique Git et le code pour identifier les fonctionnalités ajoutées, puis les teste via agent-browser en mode visible. Il réutilise la fenêtre et l’onglet de création des contrats, préserve les données existantes et ne modifie pas le code.
+
+Les binômes suivent les actions dans le navigateur ; il n’y a pas de tests manuels en parallèle. Lire le compte rendu : fonctionnalités identifiées, scénarios exécutés, résultats et éventuels blocages. Ce qui n’a pas été testé reste non vérifié.
+
+## Analyser le déroulement et consulter Langfuse — slide 29
+
+Sur la machine hôte, ouvrir l’analyse interactive du dernier enregistrement avec Claude Code :
+
+```bash
+taxiway record analyse agile-en-seine --interactive --runner claude-code
+```
+
+Taxiway prépare le contexte et lance l’agent. Aucun prompt supplémentaire n’est demandé. Cette commande analyse l’enregistrement ; les traces Langfuse se consultent séparément.
+
+Ouvrir [Langfuse](http://langfuse.localhost:4000), sélectionner le projet du lab et consulter les traces et le coût des appels. Revenir à cet onglet pendant la première question sur le coût, si utile. La slide Merci reste celle d’origine, sans lien ajouté. Il n’y a ni slide dédiée aux coûts, ni comparaison entre tableaux de bord.
+
+Marquer la fin de la pratique avec la slide 30 « Bravo ! — Vous avez piloté votre premier lab Gas Town ». Reprendre les trois gestes : exprimer le besoin au Mayor et valider son plan, observer les agents, vérifier le résultat et analyser le déroulement. Valoriser le parcours de chaque binôme sans garantir que tous ont livré deux fonctionnalités. Ne pas lancer de tour de table supplémentaire.
+
+Faire la transition vers les formulas à l’oral : « Comment rendre ce fonctionnement réutilisable ? » Cette ouverture ne figure pas dans le contenu affiché. La clôture s’inscrit dans le créneau d’analyse et de transition existant ; elle n’ajoute pas de durée au conducteur.
+
+Poursuivre avec les formulas (31), la synthèse « Ce que Gas Town change » (32), puis les questions-réponses sur la slide Merci d’origine (33). Terminer par TingEvent (34) pour recueillir les avis. Les durées des séquences restent dans le conducteur ; seuls les repères d’exécution du prompt Mayor et ses rapports réguliers restent indiqués dans les slides 22 et 24.
+
+## Préparation des facilitateurs
+
+Cette liste concerne la préparation de l’animation, pas des étapes supplémentaires à faire exécuter aux participants. La revue du support ne valide pas le fonctionnement réel du lab.
+
+- [ ] Répéter l’installation à froid sur macOS, Linux et Windows 11/WSL2 : prérequis Taxiway, Git, Node.js/npm, Claude Code, agent-browser, navigateur visible et authentifications.
+- [ ] Vérifier la création et le diagnostic du lab avec les versions affichées, puis l’ouverture du Mayor et les raccourcis tmux.
+- [ ] Vérifier le chemin du dépôt bare local, le nom du rig `agreement_hub`, le contexte des commandes `bd` depuis le shell Taxiway et le lancement backend/frontend sur un clone neuf.
+- [ ] Répéter le prompt de sélection ouverte de deux fonctionnalités, le GO unique et les rapports réguliers, sans ajout de fonctionnalité préalable à l’application.
+- [ ] Vérifier que les changements intégrés sont récupérables par `git fetch` puis `git rebase`, que les contrats locaux sont conservés et que l’application redémarre si nécessaire.
+- [ ] Vérifier la création des douze contrats puis la reprise de la même session Claude Code et du même navigateur pour tester les fonctionnalités livrées.
+- [ ] Vérifier l’enregistrement, sa fin après `gt estop` et l’analyse interactive avec `--runner claude-code`. Confirmer le comportement de pause sans le confondre avec un arrêt du lab.
+- [ ] Vérifier les accès à Langfuse et l’ouverture du projet du lab pour consulter les traces et les coûts.
+- [ ] Préparer l’accompagnement des blocages avec le second facilitateur, le réseau de l’événement et une solution de secours. Dimensionner dix labs plus celui du présentateur et prévoir le budget des sessions du lab comme de celles sur l’hôte.
+- [ ] Vérifier les versions FR/EN, les prompts réellement copiés, les liens, les exports et le QR code public : `https://manufacture.dev/gastown-presentations/agile-en-seine-2026/#/1`.
+
+Repères de répétition, conformes au tableau : setup terminé à 00:40, application ouverte à 00:45, données à 00:50, GO à 00:55, bilan autour de 01:10, record terminé à 01:15, vérification à 01:25, analyse à 01:30 et questions à 01:35. Aucune marge séparée des dix minutes de questions-réponses. Le créneau 00:50–00:55 inclut aussi l’enregistrement et l’explication de tmux : sa faisabilité doit être vérifiée en répétition.
+
+Aux checkpoints, vert signifie résultat atteint, jaune en cours/incertain et rouge aide nécessaire. Le présentateur montre son résultat, puis demande le signal ; aucun tour de table ni restitution des dix binômes. Une fonctionnalité intégrée, un travail encore dans la chaîne d'intégration ou un blocage expliqué constituent des résultats pédagogiques distincts. Le support doit toujours annoncer ce qui a été effectivement vérifié.
+
+## Après l’atelier : arrêt facultatif du lab
+
+Une fois la vérification terminée et les éléments utiles à l’analyse conservés, le binôme peut arrêter son lab depuis la machine hôte :
+
+```bash
+taxiway down agile-en-seine
+```
+
+Cet arrêt conserve l’état du lab. Il n’est pas demandé pendant la phase de vérification ; ne pas utiliser `destroy` ni arrêter les services globaux.
