@@ -10,7 +10,7 @@ Faire observer le passage d’une intention à deux évolutions coordonnées, pu
 
 L'application de départ est celle récupérée depuis le dépôt par Taxiway, sans référence Git imposée ni ajout préalable. Aucun starter bibliothèque à préparer ni branche applicative à publier.
 
-Nous reprenons la logique du prompt `demo-15-min` utilisé pour [Dev With AI](dev-with-ai-live-4.md) et [SACEM](sacem-matinale-dsi.md) : le Mayor lit les use cases dans `docs`, inspecte l'application et choisit deux incréments indépendants au maximum. Les conducteurs suggéraient Recherche/Filtre et Risk Reviewer offline, mais ces exemples ne deviennent pas des choix imposés dans cet atelier.
+Nous reprenons la logique du prompt `demo-15-min` utilisé pour [Dev With AI](dev-with-ai-live-4.md) et [SACEM](sacem-matinale-dsi.md), avec une sélection désormais stricte : le Mayor lit `docs/use-cases/README.md`, inspecte l'application et choisit exactement deux des cinq use cases listés. Les conducteurs suggéraient Recherche/Filtre et Risk Reviewer offline, mais ces exemples ne deviennent pas des choix imposés dans cet atelier.
 
 Chaque binôme valide son propre plan : les fonctionnalités peuvent différer entre les dix labs. Elles doivent être visibles, testables et dimensionnées pour moins de 15 minutes après GO, sans dépendre d'un premier use case à réaliser. Si un candidat réclame une fonctionnalité préalable, choisir un périmètre autonome ou un autre candidat. Mode mock/offline si nécessaire, sans service externe ni refonte large. Les tests et la restitution se basent sur les critères du plan de chaque lab.
 
@@ -45,8 +45,8 @@ La variante `workshop` conserve toutes les slides conceptuelles de la présentat
 | 18–19 | Présenter Agreement Hub, récupérer la copie locale, lancer et découvrir l’application |
 | 20 | Générer douze contrats avec Claude Code et agent-browser |
 | 21 | Démarrer le record, entrer dans le lab, expliquer tmux et rejoindre le Mayor |
-| 22–23 | Confier la mission, relire le plan, envoyer GO et observer l’avancement |
-| 24 | Naviguer entre les agents sans leur donner de nouvelles instructions |
+| 22–23 | Confier la mission, relire le plan, envoyer GO et observer les agents au travail |
+| 24 | Se détacher de la session Gas Town et suivre la réalisation avec les commandes gt et bd |
 | 25–26 | Lire le bilan, mettre en pause et arrêter l’enregistrement |
 | 27–28 | Mettre à jour la copie locale puis reprendre l’agent pour les tests fonctionnels |
 | 29 | Lancer l’analyse interactive du record et consulter Langfuse |
@@ -60,7 +60,7 @@ Les participants n’ont aucune installation imposée avant de venir. Les vingt 
 
 ### Installer Taxiway — slide 15
 
-Suivre les liens [WSL2](https://learn.microsoft.com/windows/wsl/install), [Docker](https://docs.docker.com/get-started/get-docker/) et [Lima](https://lima-vm.io/docs/installation/) du support selon la machine. La page [Taxiway](https://taxiway.sh/) donne accès à sa documentation d’installation.
+Sous Windows 11, installer [WSL2](https://learn.microsoft.com/windows/wsl/install), puis utiliser son terminal Linux. Installer [Docker](https://docs.docker.com/get-started/get-docker/) Desktop sur macOS ou Docker Engine avec le plugin Compose sous Linux ou WSL2. Installer [Lima](https://lima-vm.io/docs/installation/), que Taxiway utilisera comme driver. La page [Taxiway](https://taxiway.sh/) donne accès à sa documentation d’installation.
 
 Sur la machine hôte, dans WSL2 sous Windows :
 
@@ -124,6 +124,8 @@ taxiway access
 Un provisionnement terminé ne suffit pas : `taxiway doctor` doit être acceptable avant le checkpoint. Le contrôle des settings, hooks et `gt doctor` fait aussi partie de la préparation des facilitateurs ; les participants vérifieront Gas Town à l'ouverture du Mayor après les données. À quinze minutes de setup, le facilitateur prend en charge les labs rouges. À vingt minutes, le binôme utilise un lab de secours validé ou rejoint un voisin ; la salle poursuit.
 
 Ouvrir [Langfuse](http://langfuse.localhost:4000) avec les accès retournés par `taxiway access`, puis sélectionner le projet du lab. L’analyse du record et la consultation des traces sont deux actions distinctes ; aucun accès via agent-browser à Langfuse n’est nécessaire.
+
+En cas d’erreur du diagnostic, relancer `taxiway doctor agile-en-seine --fix`. Quelques warnings non bloquants peuvent rester ; demander de l’aide si un blocage persiste.
 
 ### Présenter, récupérer et lancer l’application — slides 18–19
 
@@ -189,6 +191,8 @@ gt mayor attach
 
 ### Confier la mission et envoyer GO — slides 22–23
 
+Chaque tranche doit rester fidèle au besoin documenté et testable dans l’interface. Le plan précise les numéros et noms exacts des deux use cases, ainsi que ce qui est couvert ou exclu. Un endpoint technique hors liste ne constitue pas un second use case. Les use cases IA n° 1 et 2 restent éligibles : simuler le LLM sans service externe, sans les écarter pour ce motif. Ajuster les choix et le périmètre pour tenir dans les 15 minutes après GO.
+
 Transmettre **une seule fois le prompt de mission de l’atelier** :
 
 - [Français](../../public/prompts/workshop-mission.fr.txt)
@@ -196,7 +200,7 @@ Transmettre **une seule fois le prompt de mission de l’atelier** :
 
 Le prompt a été condensé pour l’atelier. La slide affiche et copie exactement le même fichier, dans la langue choisie ; il n’y a ni résumé séparé ni instructions cachées. Il remplace les prompts séparés de contrat, premier incrément, parallélisme et stabilisation. L’application reste le CRUD existant : aucune bibliothèque à réaliser avant de démarrer.
 
-Le Mayor inspecte les use cases, propose les incréments indépendants, les résultats visibles, les dépendances, les fichiers partagés et les checks. Relire le plan ; recadrer seulement s’il dépasse le temps ou impose une fonctionnalité préalable. Les choix peuvent différer entre les binômes. Envoyer ensuite dans le Mayor :
+Le Mayor lit `docs/use-cases/README.md` et choisit exactement deux des cinq use cases listés, sans en inventer d’autres. Le plan cite leurs intitulés exacts et propose pour chacun un périmètre indépendant, les résultats visibles, les dépendances, les fichiers partagés et les checks. Le Mayor adapte le choix et le périmètre au minimum démontrable en 15 minutes, plutôt que de viser deux use cases exhaustifs. Relire le plan et vérifier l’appartenance à la liste, le temps et l’absence de fonctionnalité préalable imposée. Les choix peuvent différer entre les binômes. Envoyer ensuite dans le Mayor :
 
 ```text
 GO
@@ -216,13 +220,13 @@ Pour chaque préfixe, appuyer sur Ctrl+b puis relâcher ; le répéter pour le t
 
 ### Commandes d’observation à disposition des binômes
 
-La slide 23 regroupe le suivi du travail : état global et messages à gauche ; tâches, convoys et file d’intégration à droite. La slide 24 se concentre sur l’observation des agents : depuis le shell Taxiway, rejoindre le Mayor avec `gt mayor attach`, puis utiliser `Ctrl+b Ctrl+b s` pour choisir une session et valider avec Entrée. Le Mayor présente le bilan, un Polecat montre l’implémentation et les tests, le Witness surveille les Polecats, la Refinery intègre les changements et le Deacon surveille la santé de Gas Town. `Ctrl+b Ctrl+b d` revient au shell Taxiway.
+La slide 23 commence par le GO dans la session du Mayor, puis propose d’observer les agents avec `Ctrl+b Ctrl+b s` pour choisir une session et valider avec Entrée. Le Mayor présente le bilan, un Polecat montre l’implémentation et les tests, le Witness surveille les Polecats, la Refinery intègre les changements et le Deacon surveille la santé de Gas Town. Sur la slide 24, `Ctrl+b Ctrl+b d` permet de se détacher de la session Gas Town et de retrouver le shell Taxiway pour suivre la réalisation : état global et messages à gauche ; tâches, convoys et file d’intégration à droite. À tout moment, `gt mayor attach` permet de revenir aux agents, puis de choisir une session ; se détacher à nouveau permet de reprendre les commandes de suivi.
 
 Chaque commande est copiée séparément. Remplacer les identifiants entre chevrons, chevrons compris, par ceux affichés.
 
 ```bash
 gt status
-gt mail inbox
+gt mail inbox mayor/
 bd list --all --flat
 bd ready
 bd show <bead_id>
@@ -270,14 +274,14 @@ git fetch
 git rebase
 ```
 
-Réutiliser les terminaux backend et frontend conservés depuis le lancement de l’application. Si de nouvelles dépendances ont été ajoutées, arrêter le serveur concerné avec Ctrl+C, puis exécuter dans son terminal, déjà placé dans le bon dossier :
+Réutiliser les terminaux backend et frontend conservés depuis le lancement de l’application. Si une erreur apparaît dans l’un de ces terminaux, arrêter le serveur concerné avec Ctrl+C, puis exécuter dans son terminal, déjà placé dans le bon dossier :
 
 ```bash
 npm install
 npm run dev
 ```
 
-Sinon, laisser les serveurs tourner : aucune réinstallation systématique des deux côtés. En cas de conflit de rebase, demander de l’aide sans forcer.
+Si tout fonctionne, laisser les serveurs tourner. Si l’erreur persiste ou en cas de conflit de rebase, demander de l’aide sans forcer. Ouvrir l’application avec le bouton « Ouvrir l’app » de la slide 27 pour voir le résultat. Le checkpoint « Application à jour » confirme que les changements sont récupérés et que l’application est accessible, sans prétendre que les fonctionnalités ont déjà été vérifiées.
 
 Reprendre la session Claude Code utilisée pour créer les contrats et envoyer le [prompt de vérification](../../public/prompts/workshop-verify.fr.txt) ([anglais](../../public/prompts/workshop-verify.en.txt)). Aucun SHA ni plan à renseigner : l’agent utilise l’historique Git et le code pour identifier les fonctionnalités ajoutées, puis les teste via agent-browser en mode visible. Il réutilise la fenêtre et l’onglet de création des contrats, préserve les données existantes et ne modifie pas le code.
 
@@ -288,10 +292,12 @@ Les binômes suivent les actions dans le navigateur ; il n’y a pas de tests ma
 Sur la machine hôte, ouvrir l’analyse interactive du dernier enregistrement avec Claude Code :
 
 ```bash
-taxiway record analyse agile-en-seine --interactive --runner claude-code
+taxiway record analyse agile-en-seine \
+  --interactive --runner claude-code \
+  --language fr
 ```
 
-Taxiway prépare le contexte et lance l’agent. Aucun prompt supplémentaire n’est demandé. Cette commande analyse l’enregistrement ; les traces Langfuse se consultent séparément.
+La commande affichée et copiée adapte automatiquement `--language` à la langue active de la présentation : `fr` ou `en`. Taxiway prépare le contexte et lance l’agent en mode interactif : poser des questions pour approfondir l’analyse et comprendre ce qui s’est passé. Cette commande analyse l’enregistrement ; les traces Langfuse se consultent séparément.
 
 Ouvrir [Langfuse](http://langfuse.localhost:4000), sélectionner le projet du lab et consulter les traces et le coût des appels. Revenir à cet onglet pendant la première question sur le coût, si utile. La slide Merci reste celle d’origine, sans lien ajouté. Il n’y a ni slide dédiée aux coûts, ni comparaison entre tableaux de bord.
 
@@ -299,7 +305,7 @@ Marquer la fin de la pratique avec la slide 30 « Bravo ! — Vous avez piloté 
 
 Faire la transition vers les formulas à l’oral : « Comment rendre ce fonctionnement réutilisable ? » Cette ouverture ne figure pas dans le contenu affiché. La clôture s’inscrit dans le créneau d’analyse et de transition existant ; elle n’ajoute pas de durée au conducteur.
 
-Poursuivre avec les formulas (31), la synthèse « Ce que Gas Town change » (32), puis les questions-réponses sur la slide Merci d’origine (33). Terminer par TingEvent (34) pour recueillir les avis. Les durées des séquences restent dans le conducteur ; seuls les repères d’exécution du prompt Mayor et ses rapports réguliers restent indiqués dans les slides 22 et 24.
+Poursuivre avec les formulas (31), la synthèse « Ce que Gas Town change » (32), puis les questions-réponses sur la slide Merci d’origine (33). Terminer par TingEvent (34) pour recueillir les avis. Les durées des séquences restent dans le conducteur ; seuls les repères d’exécution du prompt Mayor et ses rapports réguliers restent indiqués dans les slides 22 et 23.
 
 ## Préparation des facilitateurs
 
@@ -308,7 +314,7 @@ Cette liste concerne la préparation de l’animation, pas des étapes suppléme
 - [ ] Répéter l’installation à froid sur macOS, Linux et Windows 11/WSL2 : prérequis Taxiway, Git, Node.js/npm, Claude Code, agent-browser, navigateur visible et authentifications.
 - [ ] Vérifier la création et le diagnostic du lab avec les versions affichées, puis l’ouverture du Mayor et les raccourcis tmux.
 - [ ] Vérifier le chemin du dépôt bare local, le nom du rig `agreement_hub`, le contexte des commandes `bd` depuis le shell Taxiway et le lancement backend/frontend sur un clone neuf.
-- [ ] Répéter le prompt de sélection ouverte de deux fonctionnalités, le GO unique et les rapports réguliers, sans ajout de fonctionnalité préalable à l’application.
+- [ ] Répéter la sélection de deux use cases parmi les cinq documentés, vérifier leurs numéros et noms dans le plan, le GO unique et les rapports réguliers, sans fonctionnalité préalable imposée.
 - [ ] Vérifier que les changements intégrés sont récupérables par `git fetch` puis `git rebase`, que les contrats locaux sont conservés et que l’application redémarre si nécessaire.
 - [ ] Vérifier la création des douze contrats puis la reprise de la même session Claude Code et du même navigateur pour tester les fonctionnalités livrées.
 - [ ] Vérifier l’enregistrement, sa fin après `gt estop` et l’analyse interactive avec `--runner claude-code`. Confirmer le comportement de pause sans le confondre avec un arrêt du lab.
