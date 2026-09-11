@@ -2051,8 +2051,18 @@
   margin-top: 0;
 }
 
+.workshop-command-grid__intro {
+  grid-column: 1 / -1;
+  max-width: none;
+}
+
+.workshop-agent-grid > .workshop-tmux-tip {
+  align-self: start;
+  margin: 0;
+}
+
 .workshop-agent-grid__mayor {
-  align-self: end;
+  grid-column: 1;
 }
 
 .workshop-command-grid--three {
@@ -2356,6 +2366,12 @@
   margin: 0;
   color: var(--gt-card-muted);
   font-size: 0.62rem;
+}
+
+.workshop-resource-row--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
 }
 
 .workshop-resource-row div {

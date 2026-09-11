@@ -340,11 +340,12 @@ workshop_setup:
   lede: Taxiway lets you create an isolated local environment for the workshop.
   install_context: Install Taxiway
   init_context: Initialize and check the environment
-  prerequisites_heading: Taxiway prerequisites
-  runtime_desc: Install both tools, then start Docker before continuing.
+  prerequisites_heading: Prerequisites
+  docker_desc: Install Docker Desktop on macOS or Docker Engine with the Compose plugin on Linux or WSL2.
+  lima_desc: Install Lima, which Taxiway will use as its driver.
   windows:
-    title: Windows 11
-    desc: Install WSL2 first, then follow the Linux steps in its terminal.
+    title: WSL2
+    desc: On Windows 11, install WSL2, then use its Linux terminal.
 
 
 workshop_lab:
@@ -352,6 +353,8 @@ workshop_lab:
   intro: "From the host machine (WSL2 on Windows), create a lab with the current application."
   create_context: Create the lab
   check_context: Check that the lab is ready
+  doctor_tip_start: "If an error occurs, rerun the command with"
+  doctor_tip_end: "Some non-blocking warnings may remain."
   access_context: Retrieve service access details
   observability_note: "Sign into Langfuse and open the lab project."
   open_langfuse: Open Langfuse ↗
@@ -375,8 +378,8 @@ workshop_tmux:
   detach_current: Leave Taxiway
   guide: Official tmux guide ↗
   cheatsheet: tmux cheat sheet ↗
-  tip: Press Ctrl+b, release the keys, then type the command.
-  tip_nested: Press Ctrl+b twice, release the keys, then type the command.
+  tip: "Press {keys}, release the keys, then type the command."
+  tip_nested: "Press {keys} twice, release the keys, then type the command."
 
 aes_partners:
   heading: Our partners
@@ -394,7 +397,7 @@ aes_feedback:
   rate: Rate
 
 workshop_app_setup:
-  prerequisites_heading: Application prerequisites
+  prerequisites_heading: Prerequisites
   git_desc: Retrieve the repository and its changes.
   node_desc: Node.js 24 LTS and npm 11+ to run the application.
   claude_desc: Generate data and verify the application.
@@ -442,8 +445,10 @@ workshop_contract:
   wait_go: "The Mayor waits for your GO."
 
 workshop_observe:
-  heading: "Give the GO and observe"
-  intro: "Send GO to the Mayor. Then detach to the Taxiway shell to run the commands."
+  heading: "Track implementation"
+  intro: "Send GO to the Mayor."
+  detach: "Detach from the Gas Town session with {keys}."
+  navigation_note: "Return to the agents at any time with {attach}, then choose a session. Detach again to return to the tracking commands."
   go_context: "Authorize execution"
   observe_context: "Observe delivery"
   status_context: "Observe Gas Town’s status"
@@ -454,12 +459,11 @@ workshop_observe:
   tasks_context: "Explore tasks"
   convoys_context: "Track progress"
   ids_note: "Replace {bead} and {convoy} with the displayed IDs."
-  checkpoint_label: "Delivery checkpoint"
-  checkpoint: "Find the plan’s beads, the spawned Polecats and the convoy tracking delivery."
-  switch_roles: "Swap roles while observing. No additional prompt is needed to advance through the tasks."
+  checkpoint_label: "Implementation checkpoint"
+  checkpoint: "Swap roles and track tasks, Polecats and convoys: no new prompt needed."
 
 workshop_stabilize:
-  heading: "Read the Mayor’s final report"
+  heading: "Time to take stock"
   commands_context: "Return to the Mayor’s session for the report"
   checkpoint_label: "Delivery checkpoint"
   checkpoint: "Identify the delivered features and any points to check in the application."
@@ -474,9 +478,9 @@ workshop_record:
 workshop_stop:
   heading: "Pause work and stop recording"
   intro: "Once you have retrieved the Mayor’s report, pause the agents and stop recording."
-  lab_note: In the lab shell, outside the Mayor’s session.
+  lab_note: "Detach from the Mayor with {keys} to return to the lab shell."
   agents: Freeze agent work
-  host_note: "On the host machine, once the agents are paused."
+  host_note: "Once the agents are paused, return to the host machine with {keys}."
   recording: "Stop recording"
   later: Optional — after the workshop
   later_note: On the host machine, not inside the lab. We will start analysis on the next slide.
@@ -488,9 +492,9 @@ workshop_stop:
 
 workshop_analysis:
   heading: "Analyze the workshop run"
-  intro: "On your machine, start an interactive recording analysis with Claude Code."
+  intro: "On the host machine, start an interactive recording analysis with Claude Code."
   launch: "Analyze the latest recording"
-  session_note: "Taxiway prepares the context and opens the agent: no additional prompt to copy."
+  session_note: "The session is interactive: ask the agent questions to explore the analysis further and understand what happened."
   traces_note: "In Langfuse, open the lab project to inspect traces and the cost of calls."
 
 
@@ -498,13 +502,14 @@ workshop_verify:
   heading: "Update the application"
   intro: "On your machine, retrieve the delivered changes in the local application copy."
   update_context: "Retrieve the changes"
-  run_context: "Install dependencies and restart the server"
-  dependencies_note: "If new dependencies were added, stop the relevant server with {keys}, then run these commands in its existing backend or frontend terminal."
-  restart_note: "Otherwise, leave the servers running: no routine reinstall is needed."
+  open_note: "Open the application to see the result."
+  run_context: "Reinstall dependencies and restart the server"
+  dependencies_note: "If an error appears in the backend or frontend terminal, stop the affected server with {keys}, then run the commands below."
+  restart_note: "If everything works, leave the servers running. If the error persists, ask for help."
   recipient: Application agent
   agent_context: Verify the application
-  checkpoint_label: "Ready for verification"
-  checkpoint: "The agent will now test the features in the visible browser."
+  checkpoint_label: "Application up to date"
+  checkpoint: "The changes have been retrieved and the application is accessible in the browser."
 
 
 workshop_functional:
@@ -605,8 +610,8 @@ thanks:
     crew: When should we use the Crew instead of only the Mayor?
 
 workshop_parallel_observe:
-  heading: "Watch the agents at work"
-  intro: "Join the Mayor from the Taxiway shell, then use {keys} to choose a session."
+  heading: "Launch and watch the agents at work"
+  intro: "Send GO to the Mayor, then use {keys} to choose a session."
   commands_context: "Join the Mayor"
   checkpoint_label: "Which session should you watch?"
   beads: "Follow a feature’s implementation and tests."

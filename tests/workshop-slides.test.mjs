@@ -19,8 +19,8 @@ const workshopSequence = [
   'workshop_seed',
   'workshop_tmux',
   'workshop_contract',
-  'workshop_observe',
   'workshop_parallel_observe',
+  'workshop_observe',
   'workshop_stabilize',
   'workshop_stop',
   'workshop_verify',
@@ -254,6 +254,31 @@ test('applies the rehearsal safety and scope decisions', async () => {
   assert.doesNotMatch(analysis, /source="workshop-analysis"/);
 });
 
+test('selects the recording analysis language from the active locale', () => {
+  const analysis = slides[slideIndex('workshop_analysis')].content
+  const expression = analysis.match(/:content="(`taxiway record analyse[\s\S]*?`)"/)[1]
+  for (const [locale, language] of [['fr-FR', 'fr'], ['en-US', 'en']]) {
+    const command = new Function('$t', `return ${expression}`)(key => {
+      assert.equal(key, 'common.locale')
+      return locale
+    })
+    assert.equal(command, `taxiway record analyse agile-en-seine \\\n  --interactive --runner claude-code \\\n  --language ${language}`)
+  }
+})
+
+test('keeps the mission within two documented use cases and allows simulated AI', async () => {
+  for (const lang of ['fr', 'en']) {
+    const prompt = await readFile(new URL(`../public/prompts/workshop-mission.${lang}.txt`, import.meta.url), 'utf8')
+    assert.match(prompt, /docs\/use-cases\/README\.md/)
+    assert.match(prompt, lang === 'fr' ? /exactement 2 des 5/ : /exactly 2 of the 5/)
+    assert.match(prompt, lang === 'fr' ? /aucun hors liste/ : /none outside the list/)
+    assert.match(prompt, lang === 'fr' ? /numéros et noms exacts/ : /exact numbers and names/)
+    assert.match(prompt, /#1\/#2/)
+    assert.match(prompt, lang === 'fr' ? /simule le LLM sans service externe/ : /mock the LLM, no external service/)
+    assert.ok(prompt.trim().split('\n').length <= 22, 'keep the prompt concise')
+  }
+})
+
 test('displays and copies one workshop mission prompt without an alternate summary', async () => {
   const mission = slides[slideIndex('workshop_contract')].content
   assert.match(mission, /<CopyCodeBlock[^>]*source="workshop-mission"/)
@@ -268,7 +293,8 @@ test('displays and copies one workshop mission prompt without an alternate summa
     const workshop = locale.match(/^workshop_contract:\n[\s\S]*?(?=^\w+:)/m)[0]
     assert.doesNotMatch(workshop, /SACEM|summary:|copy_note:/i)
   }
-  assert.match(slides[slideIndex('workshop_observe')].content, /content="GO"/)
+  assert.match(slides[slideIndex('workshop_parallel_observe')].content, /content="GO"/)
+  assert.doesNotMatch(slides[slideIndex('workshop_observe')].content, /content="GO"/)
   assert.doesNotMatch(source, /source="workshop-(contract|plan|go|stabilize|first-increment|parallel)"/)
   assert.doesNotMatch(slides[slideIndex('workshop_stabilize')].content, /language="prompt"/)
   assert.match(slides[slideIndex('workshop_tmux')].frontmatter.class, /workshop-tmux-slide/)

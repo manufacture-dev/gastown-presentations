@@ -340,11 +340,12 @@ workshop_setup:
   lede: Taxiway permet de créer un environnement local isolé pour l’atelier.
   install_context: Installer Taxiway
   init_context: Initialiser et vérifier l'environnement
-  prerequisites_heading: Prérequis Taxiway
-  runtime_desc: Installer les deux outils, puis démarrer Docker avant de continuer.
+  prerequisites_heading: Prérequis
+  docker_desc: Installez Docker Desktop sur macOS ou Docker Engine avec le plugin Compose sous Linux ou WSL2.
+  lima_desc: Installez Lima, que Taxiway utilisera comme driver.
   windows:
-    title: Windows 11
-    desc: Installer WSL2 d'abord, puis suivre les étapes Linux dans son terminal.
+    title: WSL2
+    desc: Sous Windows 11, installez WSL2, puis utilisez son terminal Linux.
 
 
 workshop_lab:
@@ -352,6 +353,8 @@ workshop_lab:
   intro: "Depuis la machine hôte (WSL2 sous Windows), créez un lab sur l’application actuelle."
   create_context: Créer le lab
   check_context: Vérifier que le lab est prêt
+  doctor_tip_start: "En cas d’erreur, relancez la commande avec"
+  doctor_tip_end: "Quelques warnings non bloquants peuvent rester."
   access_context: Récupérer les accès aux services
   observability_note: "Connectez-vous à Langfuse et ouvrez le projet du lab."
   open_langfuse: Ouvrir Langfuse ↗
@@ -375,8 +378,8 @@ workshop_tmux:
   detach_current: Sortir de Taxiway
   guide: Guide officiel tmux ↗
   cheatsheet: Cheat sheet tmux ↗
-  tip: Ctrl+b, relâchez les touches, puis tapez la commande.
-  tip_nested: Ctrl+b deux fois, relâchez les touches, puis tapez la commande.
+  tip: "{keys}, relâchez les touches, puis tapez la commande."
+  tip_nested: "{keys} deux fois, relâchez les touches, puis tapez la commande."
 
 aes_partners:
   heading: Nos partenaires
@@ -394,7 +397,7 @@ aes_feedback:
   rate: Évaluer
 
 workshop_app_setup:
-  prerequisites_heading: Prérequis application
+  prerequisites_heading: Prérequis
   git_desc: Récupérer le dépôt et ses changements.
   node_desc: Node.js 24 LTS et npm 11+ pour lancer l’application.
   claude_desc: Générer les données et vérifier l’application.
@@ -442,8 +445,10 @@ workshop_contract:
   wait_go: "Le Mayor attend votre GO."
 
 workshop_observe:
-  heading: "Donner le GO et observer"
-  intro: "Envoyez le GO au Mayor. Détachez-vous ensuite vers le shell Taxiway pour lancer les commandes."
+  heading: "Suivre la réalisation"
+  intro: "Envoyez le GO au Mayor."
+  detach: "Détachez-vous de la session Gas Town avec {keys}."
+  navigation_note: "À tout moment, revenez aux agents avec {attach}, puis choisissez une session. Détachez-vous à nouveau pour retrouver les commandes de suivi."
   go_context: "Autoriser l’exécution"
   observe_context: "Observer le delivery"
   status_context: "Observer l’état de Gas Town"
@@ -454,12 +459,11 @@ workshop_observe:
   tasks_context: "Explorer les tâches"
   convoys_context: "Suivre l’avancement"
   ids_note: "Remplacez {bead} et {convoy} par les identifiants affichés."
-  checkpoint_label: "Checkpoint delivery"
-  checkpoint: "Repérez les beads du plan, les Polecats créés et le convoy qui suit la livraison."
-  switch_roles: "Échangez les rôles pendant l’observation. Aucun nouveau prompt nécessaire pour enchaîner les tâches."
+  checkpoint_label: "Checkpoint réalisation"
+  checkpoint: "Alternez les rôles et suivez les tâches, les Polecats et les convoys : aucun nouveau prompt nécessaire."
 
 workshop_stabilize:
-  heading: "Lire le bilan du Mayor"
+  heading: "C’est l’heure du bilan"
   commands_context: "Retrouver le bilan dans la session du Mayor"
   checkpoint_label: "Checkpoint livraison"
   checkpoint: "Identifiez les fonctionnalités livrées et les éventuels points à vérifier dans l’application."
@@ -474,9 +478,9 @@ workshop_record:
 workshop_stop:
   heading: "Mettre en pause et arrêter l’enregistrement"
   intro: "Après avoir récupéré le bilan du Mayor, mettez les agents en pause et arrêtez l’enregistrement."
-  lab_note: Dans le shell du lab, hors de la session du Mayor.
+  lab_note: "Détachez-vous du Mayor avec {keys} pour retrouver le shell du lab."
   agents: Geler le travail des agents
-  host_note: "Sur la machine hôte, une fois les agents en pause."
+  host_note: "Une fois les agents en pause, revenez sur la machine hôte avec {keys}."
   recording: "Arrêter l’enregistrement"
   later: Optionnel — après l’atelier
   later_note: Sur la machine hôte, pas dans le lab. L’analyse sera lancée à la slide suivante.
@@ -488,9 +492,9 @@ workshop_stop:
 
 workshop_analysis:
   heading: "Analyser le déroulement de l’atelier"
-  intro: "Sur votre machine, lancez l’analyse interactive de l’enregistrement avec Claude Code."
+  intro: "Sur la machine hôte, lancez l’analyse interactive de l’enregistrement avec Claude Code."
   launch: "Analyser le dernier enregistrement"
-  session_note: "Taxiway prépare le contexte et ouvre l’agent : aucun prompt supplémentaire à copier."
+  session_note: "La session est interactive : posez vos questions à l’agent pour approfondir l’analyse et comprendre ce qui s’est passé."
   traces_note: "Dans Langfuse, ouvrez le projet du lab pour consulter les traces et le coût des appels."
 
 
@@ -498,13 +502,14 @@ workshop_verify:
   heading: "Mettre à jour l’application"
   intro: "Sur votre machine, récupérez les changements livrés dans la copie locale de l’application."
   update_context: "Récupérer les changements"
-  run_context: "Installer les dépendances et relancer le serveur"
-  dependencies_note: "Si de nouvelles dépendances ont été ajoutées, arrêtez le serveur concerné avec {keys}, puis lancez ces commandes dans son terminal backend ou frontend."
-  restart_note: "Sinon, laissez les serveurs tourner : aucune réinstallation systématique."
+  open_note: "Ouvrez l’application pour voir le résultat."
+  run_context: "Réinstaller les dépendances et relancer le serveur"
+  dependencies_note: "Si une erreur apparaît dans le terminal backend ou frontend, arrêtez le serveur concerné avec {keys}, puis exécutez les commandes ci-dessous."
+  restart_note: "Si tout fonctionne, laissez les serveurs tourner. Si l’erreur persiste, demandez de l’aide."
   recipient: Agent application
   agent_context: Vérifier l'application
-  checkpoint_label: "Prêt pour la vérification"
-  checkpoint: "L’agent va maintenant tester les fonctionnalités dans le navigateur visible."
+  checkpoint_label: "Application à jour"
+  checkpoint: "Les changements sont récupérés et l’application est accessible dans le navigateur."
 
 
 workshop_functional:
@@ -605,8 +610,8 @@ thanks:
     crew: Quand faut-il utiliser le Crew plutôt que seulement le Mayor?
 
 workshop_parallel_observe:
-  heading: "Observer les agents au travail"
-  intro: "Rejoignez le Mayor depuis le shell Taxiway, puis utilisez {keys} pour choisir une session."
+  heading: "Lancer et observer les agents au travail"
+  intro: "Envoyez le GO au Mayor, puis utilisez {keys} pour choisir une session."
   commands_context: "Rejoindre le Mayor"
   checkpoint_label: "Quelle session observer ?"
   beads: "Suivez l’implémentation et les tests d’une fonctionnalité."

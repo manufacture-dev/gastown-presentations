@@ -776,12 +776,14 @@ class: workshop-slide
     <a href="https://learn.microsoft.com/windows/wsl/install" target="_blank" rel="noopener noreferrer">WSL2 ↗</a>
   </div>
   <div class="workshop-prerequisite-row">
-    <strong>Docker + Lima</strong>
-    <p>{{ $t("workshop_setup.runtime_desc") }}</p>
-    <div class="workshop-prerequisite-links">
-      <a href="https://docs.docker.com/get-started/get-docker/" target="_blank" rel="noopener noreferrer">Docker ↗</a>
-      <a href="https://lima-vm.io/docs/installation/" target="_blank" rel="noopener noreferrer">Lima ↗</a>
-    </div>
+    <strong>Docker</strong>
+    <p>{{ $t("workshop_setup.docker_desc") }}</p>
+    <a href="https://docs.docker.com/get-started/get-docker/" target="_blank" rel="noopener noreferrer">Docker ↗</a>
+  </div>
+  <div class="workshop-prerequisite-row">
+    <strong>Lima</strong>
+    <p>{{ $t("workshop_setup.lima_desc") }}</p>
+    <a href="https://lima-vm.io/docs/installation/" target="_blank" rel="noopener noreferrer">Lima ↗</a>
   </div>
 </div>
 
@@ -866,6 +868,7 @@ class: workshop-slide workshop-lab-slide
     <CopyCodeBlock row :context="$t('workshop_lab.check_context')" content="taxiway status" />
     <CopyCodeBlock row :context="$t('workshop_lab.check_context')" content="taxiway doctor agile-en-seine" />
   </section>
+  <aside class="workshop-tmux-tip"><p class="workshop-command-hint">{{ $t('workshop_lab.doctor_tip_start') }} <code>--fix</code>. {{ $t('workshop_lab.doctor_tip_end') }}</p></aside>
 </div>
 <div class="workshop-lab-services">
 <div class="workshop-lab-commands">
@@ -1018,7 +1021,7 @@ class: workshop-slide workshop-tmux-slide
     <div><span class="tmux-keys" aria-label="Ctrl+b s"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>s</kbd></span><p>{{ $t("workshop_tmux.select_current") }}</p></div>
     <div><span class="tmux-keys" aria-label="Ctrl+b d"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>d</kbd></span><p>{{ $t("workshop_tmux.detach_current") }}</p></div>
   </section>
-  <aside class="workshop-tmux-tip"><p>{{ $t("workshop_tmux.tip") }}</p></aside>
+  <aside class="workshop-tmux-tip"><i18n-t keypath="workshop_tmux.tip" scope="global" tag="p" class="workshop-command-hint"><template #keys><code>Ctrl+b</code></template></i18n-t></aside>
 </div>
 
 <div class="tmux-levels">
@@ -1027,7 +1030,7 @@ class: workshop-slide workshop-tmux-slide
     <div><span class="tmux-keys" aria-label="Ctrl+b Ctrl+b s"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>s</kbd></span><p>{{ $t("workshop_tmux.select_nested") }}</p></div>
     <div><span class="tmux-keys" aria-label="Ctrl+b Ctrl+b d"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>d</kbd></span><p>{{ $t("workshop_tmux.detach_nested") }}</p></div>
   </section>
-  <aside class="workshop-tmux-tip"><p>{{ $t("workshop_tmux.tip_nested") }}</p></aside>
+  <aside class="workshop-tmux-tip"><i18n-t keypath="workshop_tmux.tip_nested" scope="global" tag="p" class="workshop-command-hint"><template #keys><code>Ctrl+b</code></template></i18n-t></aside>
 </div>
 <div class="workshop-tmux-help">
 <div class="workshop-resource-row workshop-tmux-links">
@@ -1066,17 +1069,38 @@ variants: [workshop]
 class: workshop-slide
 ---
 
+# {{ $t("workshop_parallel_observe.heading") }}
+
+<i18n-t keypath="workshop_parallel_observe.intro" scope="global" tag="p" class="workshop-lede">
+  <template #keys><span class="tmux-keys tmux-keys--inline" aria-label="Ctrl+b Ctrl+b s"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>s</kbd></span></template>
+</i18n-t>
+
+<div class="workshop-command-grid workshop-agent-grid">
+  <CopyCodeBlock language="prompt" :context="$t('workshop_observe.go_context')" recipient="Mayor" content="GO" />
+  <div class="workshop-checkpoint workshop-agent-grid__mayor">
+    <span>Mayor</span>
+    <p>{{ $t("workshop_parallel_observe.convoys") }}</p>
+  </div>
+  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Polecat</span><p>{{ $t("workshop_parallel_observe.beads") }}</p></div>
+  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Witness</span><p>{{ $t("workshop_parallel_observe.witness") }}</p></div>
+  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Refinery</span><p>{{ $t("workshop_parallel_observe.refinery") }}</p></div>
+  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Deacon</span><p>{{ $t("workshop_parallel_observe.deacon") }}</p></div>
+  <aside class="workshop-tmux-tip"><p>{{ $t("workshop_parallel_observe.polecats") }}</p></aside>
+</div>
+
+---
+variants: [workshop]
+class: workshop-slide
+---
+
 # {{ $t("workshop_observe.heading") }}
 
 <div class="workshop-command-grid">
+<i18n-t keypath="workshop_observe.detach" scope="global" tag="p" class="workshop-command-hint workshop-command-grid__intro">
+      <template #keys><span class="tmux-keys tmux-keys--inline" aria-label="Ctrl+b Ctrl+b d"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>d</kbd></span></template>
+</i18n-t>
+
   <div class="workshop-lab-commands">
-  <p class="workshop-lede">{{ $t("workshop_observe.intro") }}</p>
-  <CopyCodeBlock
-    language="prompt"
-    :context="$t('workshop_observe.go_context')"
-    recipient="Mayor"
-    content="GO"
-  />
     <section>
       <strong>{{ $t('workshop_observe.status_context') }}</strong>
       <CopyCodeBlock row :context="$t('workshop_observe.status_context')" content="gt status" />
@@ -1084,8 +1108,13 @@ class: workshop-slide
     <p class="workshop-command-hint">{{ $t('workshop_observe.status_help') }}</p>
     <section>
       <strong>{{ $t('workshop_observe.mail_context') }}</strong>
-      <CopyCodeBlock row :context="$t('workshop_observe.mail_context')" content="gt mail inbox" />
+      <CopyCodeBlock row :context="$t('workshop_observe.mail_context')" content="gt mail inbox mayor/" />
     </section>
+    <aside class="workshop-tmux-tip">
+      <i18n-t keypath="workshop_observe.navigation_note" scope="global" tag="p" class="workshop-command-hint">
+        <template #attach><code>gt mayor attach</code></template>
+      </i18n-t>
+    </aside>
   </div>
   <div class="workshop-lab-commands">
     <section>
@@ -1114,37 +1143,8 @@ class: workshop-slide
 <div class="demo-flow">
   <div class="demo-flow-copy">
     <span>{{ $t("workshop_observe.checkpoint_label") }}</span>
-    <p>{{ $t("workshop_observe.checkpoint") }}<br />{{ $t("workshop_observe.switch_roles") }}</p>
+    <p>{{ $t("workshop_observe.checkpoint") }}</p>
   </div>
-</div>
-
----
-variants: [workshop]
-class: workshop-slide
----
-
-# {{ $t("workshop_parallel_observe.heading") }}
-
-<i18n-t keypath="workshop_parallel_observe.intro" scope="global" tag="p" class="workshop-lede">
-  <template #keys><span class="tmux-keys tmux-keys--inline" aria-label="Ctrl+b Ctrl+b s"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>s</kbd></span></template>
-</i18n-t>
-
-<div class="workshop-command-grid workshop-agent-grid">
-  <div>
-    <div class="workshop-lab-commands"><section>
-      <strong>{{ $t('workshop_parallel_observe.commands_context') }}</strong>
-      <CopyCodeBlock row :context="$t('workshop_parallel_observe.commands_context')" content="gt mayor attach" />
-    </section></div>
-    <aside class="workshop-tmux-tip"><p>{{ $t("workshop_parallel_observe.polecats") }}</p></aside>
-  </div>
-  <div class="workshop-checkpoint workshop-agent-grid__mayor">
-    <span>Mayor</span>
-    <p>{{ $t("workshop_parallel_observe.convoys") }}</p>
-  </div>
-  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Polecat</span><p>{{ $t("workshop_parallel_observe.beads") }}</p></div>
-  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Witness</span><p>{{ $t("workshop_parallel_observe.witness") }}</p></div>
-  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Refinery</span><p>{{ $t("workshop_parallel_observe.refinery") }}</p></div>
-  <div class="workshop-checkpoint workshop-checkpoint--compact"><span>Deacon</span><p>{{ $t("workshop_parallel_observe.deacon") }}</p></div>
 </div>
 
 ---
@@ -1155,19 +1155,15 @@ class: workshop-slide
 # {{ $t("workshop_stabilize.heading") }}
 
 <div class="workshop-command-grid">
-  <div class="workshop-step-copy">
-    <div class="workshop-checkpoint workshop-checkpoint--inline">
-    <span>{{ $t("workshop_stabilize.report_label") }}</span>
-    <p>{{ $t("workshop_stabilize.report") }}</p>
-    </div>
-    <aside class="workshop-tmux-tip"><p>{{ $t("workshop_stabilize.no_prompt") }}</p></aside>
-  </div>
-  <div class="workshop-lab-commands">
+  <p class="workshop-lede workshop-command-grid__intro">{{ $t("workshop_stabilize.report") }}</p>
+  <div>
+    <div class="workshop-lab-commands">
     <section>
       <strong>{{ $t('workshop_stabilize.commands_context') }}</strong>
       <CopyCodeBlock row :context="$t('workshop_stabilize.commands_context')" content="gt mayor attach" />
     </section>
-
+    </div>
+    <aside class="workshop-tmux-tip"><p>{{ $t("workshop_stabilize.no_prompt") }}</p></aside>
   </div>
 </div>
 
@@ -1185,10 +1181,14 @@ class: workshop-slide
 
 <p class="workshop-lede">{{ $t("workshop_stop.intro") }}</p>
 <div class="workshop-app-terminals">
-<div><p class="workshop-lede">{{ $t("workshop_stop.lab_note") }}</p>
+<div><i18n-t keypath="workshop_stop.lab_note" scope="global" tag="p" class="workshop-lede">
+  <template #keys><span class="tmux-keys tmux-keys--inline" aria-label="Ctrl+b Ctrl+b d"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>d</kbd></span></template>
+</i18n-t>
 <div class="workshop-lab-commands"><section><strong>{{ $t("workshop_stop.agents") }}</strong><CopyCodeBlock row :context="$t('workshop_stop.agents')" content="gt estop" /></section></div>
 <aside class="workshop-tmux-tip"><p>{{ $t("workshop_stop.preserve") }}</p></aside></div>
-<div><p class="workshop-lede">{{ $t("workshop_stop.host_note") }}</p>
+<div><i18n-t keypath="workshop_stop.host_note" scope="global" tag="p" class="workshop-lede">
+  <template #keys><span class="tmux-keys tmux-keys--inline" aria-label="Ctrl+b d"><kbd>Ctrl</kbd><span>+</span><kbd>b</kbd><span>→</span><kbd>d</kbd></span></template>
+</i18n-t>
 <div class="workshop-lab-commands">
 <section><strong>{{ $t("workshop_stop.recording") }}</strong>
 <CopyCodeBlock row :context="$t('workshop_stop.recording')" content="taxiway record stop agile-en-seine" />
@@ -1214,6 +1214,10 @@ class: workshop-slide
         <CopyCodeBlock row :context="$t('workshop_verify.update_context')" content="git fetch" />
         <CopyCodeBlock row :context="$t('workshop_verify.update_context')" content="git rebase" />
       </section>
+    </div>
+    <div class="workshop-resource-row workshop-resource-row--stacked">
+      <p>{{ $t('workshop_verify.open_note') }}</p>
+      <a class="app-open-link" href="http://localhost:5173/" target="_blank" rel="noopener noreferrer">{{ $t('workshop_app.open_app') }}</a>
     </div>
   </div>
   <div>
@@ -1241,15 +1245,14 @@ class: workshop-slide
 
 # {{ $t("workshop_functional.heading") }}
 
-<p class="workshop-lede">{{ $t("workshop_functional.resume") }}</p>
-
-<div class="workshop-verify-grid workshop-seed-layout">
-  <div>
-    <p class="workshop-lede">{{ $t('workshop_functional.intro') }}</p>
+<div class="workshop-step-layout">
+  <div class="workshop-step-copy">
+    <p>{{ $t('workshop_functional.resume') }}</p>
     <div class="workshop-checkpoint workshop-checkpoint--inline">
       <span>{{ $t('workshop_functional.expected') }}</span>
       <p>{{ $t('workshop_functional.report') }}</p>
     </div>
+    <div class="workshop-step-note">{{ $t('workshop_functional.intro') }}</div>
   </div>
   <CopyCodeBlock language="prompt" :context="$t('workshop_verify.agent_context')" :recipient="$t('workshop_verify.recipient')" source="workshop-verify" />
 </div>
@@ -1304,16 +1307,19 @@ class: workshop-slide
 <p class="workshop-lede">{{ $t("workshop_analysis.intro") }}</p>
 
 <div class="workshop-command-grid">
+  <div>
   <div class="workshop-lab-commands">
     <section>
       <strong>{{ $t('workshop_analysis.launch') }}</strong>
-      <CopyCodeBlock row :context="$t('workshop_analysis.launch')" content="taxiway record analyse agile-en-seine \
-  --interactive --runner claude-code" />
+      <CopyCodeBlock row :context="$t('workshop_analysis.launch')" :content="`taxiway record analyse agile-en-seine \\
+  --interactive --runner claude-code \\
+  --language ${$t('common.locale').split('-')[0]}`" />
     </section>
     <p class="workshop-step-note">{{ $t('workshop_analysis.session_note') }}</p>
   </div>
-  <div>
-    <p class="workshop-lede">{{ $t('workshop_analysis.traces_note') }}</p>
+  </div>
+  <div class="workshop-command-grid__intro">
+    <p class="workshop-lede workshop-command-grid__intro">{{ $t('workshop_analysis.traces_note') }}</p>
     <a class="app-open-link" href="http://langfuse.localhost:4000" target="_blank" rel="noopener noreferrer">{{ $t('workshop_lab.open_langfuse') }}</a>
   </div>
 </div>
