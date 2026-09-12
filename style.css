@@ -2737,16 +2737,22 @@
 }
 
 .workshop-slide.workshop-app-presentation {
-  --workshop-body-size: 1rem;
+  --workshop-body-size: 1.1rem;
   --workshop-line-height: 1.18;
 }
 
+.slidev-layout.workshop-app-presentation .app-copy > p {
+  line-height: 1.5rem;
+}
+
 .workshop-slide.workshop-app-presentation .app-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   padding-top: 0;
 }
 
 .workshop-slide.workshop-app-presentation .app-copy > span {
   font-size: 0.72rem;
+  line-height: 1.5;
 }
 
 .app-shot img {
