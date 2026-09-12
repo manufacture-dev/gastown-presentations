@@ -412,6 +412,8 @@ workshop_app_setup:
 
 
 workshop_app:
+  repository_label: Use cases to explore
+  repository_note: "Find the five use cases through the repository {readme}."
   heading: Workshop application
   desc: Agreement Hub is a Contract Lifecycle Management application. It lets you create, view and manage contracts.
   bullets:

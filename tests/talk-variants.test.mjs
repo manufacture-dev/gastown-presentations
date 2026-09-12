@@ -52,7 +52,7 @@ test('keeps the demo slide for talks and uses a dedicated workshop application s
   assert.deepEqual(workshopAppSlides[0].frontmatter.variants, ['workshop'])
 })
 
-test('starts the workshop with setup before presenting Agreement Hub', () => {
+test('presents Agreement Hub after organization and keeps setup in the workshop', () => {
   const setupIndex = slideIndex('workshop_setup')
   const labIndex = slideIndex('workshop_lab')
   const tmuxIndex = slideIndex('workshop_tmux')
@@ -62,10 +62,13 @@ test('starts the workshop with setup before presenting Agreement Hub', () => {
   assert.equal(setupIndex, slideIndex('workshop_transition') + 1)
   assert.equal(slideIndex('workshop_tools'), setupIndex + 1)
   assert.equal(labIndex, slideIndex('workshop_tools') + 1)
-  assert.equal(workshopAppIndex, labIndex + 1)
-  assert.equal(slideIndex('workshop_app_setup'), workshopAppIndex + 1)
+  assert.equal(workshopAppIndex, slideIndex('organization') + 1)
+  assert.equal(slideIndex('beads'), workshopAppIndex + 1)
+  assert.equal(slideIndex('workshop_app_setup'), labIndex + 1)
   assert.equal(slideIndex('workshop_seed'), slideIndex('workshop_app_setup') + 1)
-  assert.doesNotMatch(slides[workshopAppIndex].content, /demo-flow|localhost:5173/)
+  assert.doesNotMatch(slides[workshopAppIndex].content, /localhost:5173/)
+  assert.match(slides[workshopAppIndex].content, /demo-flow/)
+  assert.match(slides[workshopAppIndex].content, /href="https:\/\/github.com\/manufacture-dev\/agreement-hub"/)
   assert.match(slides[slideIndex('workshop_app_setup')].content, /workshop_app.flow_label/)
   assert.match(slides[slideIndex('workshop_app_setup')].content, /localhost:5173/)
   assert.equal(tmuxIndex, slideIndex('workshop_seed') + 1)

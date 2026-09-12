@@ -2430,11 +2430,14 @@
   line-height: var(--workshop-line-height);
 }
 
+.workshop-inline-code,
 .workshop-command-hint code {
   font-family: var(--gt-font-mono);
   font-size: inherit;
 }
 
+.slidev-layout.workshop-slide .workshop-inline-code::before,
+.slidev-layout.workshop-slide .workshop-inline-code::after,
 .slidev-layout.workshop-slide .workshop-command-hint code::before,
 .slidev-layout.workshop-slide .workshop-command-hint code::after {
   content: none;
@@ -2731,6 +2734,19 @@
 
 .workshop-slide .app-layout {
   padding-top: 3rem;
+}
+
+.workshop-slide.workshop-app-presentation {
+  --workshop-body-size: 1rem;
+  --workshop-line-height: 1.18;
+}
+
+.workshop-slide.workshop-app-presentation .app-layout {
+  padding-top: 0;
+}
+
+.workshop-slide.workshop-app-presentation .app-copy > span {
+  font-size: 0.72rem;
 }
 
 .app-shot img {

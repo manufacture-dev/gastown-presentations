@@ -11,10 +11,10 @@ const scenario = await readFile(new URL('../docs/scenarios/agile-en-seine-2026.m
 const slides = parseSync(source, 'slides.md').slides
 
 const workshopSequence = [
+  'workshop_app',
   'workshop_setup',
   'workshop_tools',
   'workshop_lab',
-  'workshop_app',
   'workshop_app_setup',
   'workshop_seed',
   'workshop_tmux',

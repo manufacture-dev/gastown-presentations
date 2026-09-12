@@ -454,6 +454,39 @@ The Mayor coordinates work. Polecats execute it.
 -->
 
 ---
+variants: [workshop]
+class: workshop-slide workshop-app-presentation
+---
+
+# {{ $t("workshop_app.heading") }}
+
+<div class="app-layout">
+  <div class="app-copy">
+    <span>Agreement Hub</span>
+    <p>{{ $t("workshop_app.desc") }}</p>
+    <ul>
+      <li>{{ $t("workshop_app.bullets.clean") }}</li>
+      <li>{{ $t("workshop_app.bullets.local") }}</li>
+      <li>{{ $t("workshop_app.bullets.update") }}</li>
+    </ul>
+    <aside class="workshop-checkpoint workshop-checkpoint--compact"><p>{{ $t("workshop_app.bullets.stack") }}</p></aside>
+  </div>
+  <div class="app-shot">
+    <div class="app-window">
+      <img :src="'images/screenshots/agreement-hub-initial.png'" :alt="$t('workshop_app.image_alt')" />
+    </div>
+  </div>
+</div>
+
+<div class="demo-flow">
+  <div class="demo-flow-copy">
+    <span>{{ $t("workshop_app.repository_label") }}</span>
+    <i18n-t keypath="workshop_app.repository_note" scope="global" tag="p"><template #readme><code class="workshop-inline-code">README</code></template></i18n-t>
+  </div>
+  <a class="app-open-link" href="https://github.com/manufacture-dev/agreement-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</div>
+
+---
 
 # {{ $t("beads.heading") }}
 
@@ -891,30 +924,6 @@ class: workshop-slide workshop-lab-slide
     <p>{{ $t("workshop_lab.checkpoint") }}<br />{{ $t("workshop_lab.recovery") }}</p>
   </div>
 </div>
----
-variants: [workshop]
-class: workshop-slide
----
-
-# {{ $t("workshop_app.heading") }}
-
-<div class="app-layout">
-  <div class="app-copy">
-    <p>{{ $t("workshop_app.desc") }}</p>
-    <ul>
-      <li>{{ $t("workshop_app.bullets.clean") }}</li>
-      <li>{{ $t("workshop_app.bullets.local") }}</li>
-      <li>{{ $t("workshop_app.bullets.update") }}</li>
-    </ul>
-    <aside class="workshop-checkpoint workshop-checkpoint--compact"><p>{{ $t("workshop_app.bullets.stack") }}</p></aside>
-  </div>
-  <div class="app-shot">
-    <div class="app-window">
-      <img :src="'images/screenshots/agreement-hub-initial.png'" :alt="$t('workshop_app.image_alt')" />
-    </div>
-  </div>
-</div>
-
 ---
 variants: [workshop]
 class: workshop-slide
