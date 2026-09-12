@@ -21,9 +21,9 @@ Le GO autorise toutes les tâches du plan approuvé, y compris leurs dépendance
 | Temps | Durée | Séquence | Checkpoint |
 |---|---:|---|---|
 | 00:00–00:05 | 5 min | Accueil et binômes | Conducteur/navigateur identifiés |
-| 00:05–00:20 | 15 min | Présentation Gas Town | Toutes les slides conceptuelles conservées |
+| 00:05–00:20 | 15 min | Présentation Gas Town et application de l’atelier | Concepts et use cases accessibles depuis le dépôt |
 | 00:20–00:40 | 20 min | Installation, lab, Claude Code, agent-browser et accès Langfuse | À 00:35, rouge accompagné ; à 00:40, prêt ou secours |
-| 00:40–00:45 | 5 min | Présentation de l'application, clone hôte, lancement et découverte | CRUD initial visible |
+| 00:40–00:45 | 5 min | Clone hôte, lancement et découverte de l’application | CRUD initial visible |
 | 00:45–00:50 | 5 min | Données via l'interface | Douze contrats présents après rechargement |
 | 00:50–00:55 | 5 min | Enregistrement, entrée dans le lab, tmux, mission et GO unique | Record lancé ; périmètre, critères et dépendances compris |
 | 00:55–01:10 | 15 min | Delivery et observation guidée | Rapports réguliers, navigation tmux et bilan du Mayor |
@@ -40,9 +40,10 @@ La variante `workshop` conserve toutes les slides conceptuelles de la présentat
 | Slides | Séquence à animer |
 |---|---|
 | 3 | Remerciement des partenaires, après les intervenants |
-| 14 | À vous de piloter Gas Town : lancement de l’atelier et fonctionnement en binôme |
-| 15–17 | Taxiway, outils de l’application, puis création et diagnostic du lab |
-| 18–19 | Présenter Agreement Hub, récupérer la copie locale, lancer et découvrir l’application |
+| 10 | Application de l’atelier : présenter Agreement Hub et les use cases via le README GitHub |
+| 15 | À vous de piloter Gas Town : lancement de l’atelier et fonctionnement en binôme |
+| 16–18 | Taxiway, outils de l’application, puis création et diagnostic du lab |
+| 19 | Récupérer la copie locale, lancer et découvrir l’application |
 | 20 | Générer douze contrats avec Claude Code et agent-browser |
 | 21 | Démarrer le record, entrer dans le lab, expliquer tmux et rejoindre le Mayor |
 | 22–23 | Confier la mission, relire le plan, envoyer GO et observer les agents au travail |
@@ -56,9 +57,9 @@ La variante `workshop` conserve toutes les slides conceptuelles de la présentat
 
 ## Setup et application
 
-Les participants n’ont aucune installation imposée avant de venir. Les vingt minutes couvrent les prérequis Taxiway, Git, Node.js 24 LTS (24.x)/npm 11+, Claude Code, agent-browser, son navigateur et les accès nécessaires. Windows 11 suit le parcours Linux dans WSL2. Le créneau de données n’inclut aucune installation. Suivre l’ordre des slides : installer Taxiway (15), préparer l’outillage de l’application (16), puis créer le lab (17).
+Les participants n’ont aucune installation imposée avant de venir. Les vingt minutes couvrent les prérequis Taxiway, Git, Node.js 24 LTS (24.x)/npm 11+, Claude Code, agent-browser, son navigateur et les accès nécessaires. Windows 11 suit le parcours Linux dans WSL2. Le créneau de données n’inclut aucune installation. Suivre l’ordre des slides : installer Taxiway (16), préparer l’outillage de l’application (17), puis créer le lab (18).
 
-### Installer Taxiway — slide 15
+### Installer Taxiway — slide 16
 
 Sous Windows 11, installer [WSL2](https://learn.microsoft.com/windows/wsl/install), puis utiliser son terminal Linux. Installer [Docker](https://docs.docker.com/get-started/get-docker/) Desktop sur macOS ou Docker Engine avec le plugin Compose sous Linux ou WSL2. Installer [Lima](https://lima-vm.io/docs/installation/), que Taxiway utilisera comme driver. La page [Taxiway](https://taxiway.sh/) donne accès à sa documentation d’installation.
 
@@ -70,7 +71,7 @@ taxiway init
 taxiway status
 ```
 
-### Préparer les outils de l’application — slide 16
+### Préparer les outils de l’application — slide 17
 
 Les commandes suivantes se lancent sur la machine hôte. Une fois Node.js/npm et Claude Code installés via les liens du deck, installer agent-browser :
 
@@ -102,7 +103,7 @@ Ouvrir Claude Code, terminer l'authentification puis saisir `/exit` dans la sess
 claude
 ```
 
-### Créer le lab — slide 17
+### Créer le lab — slide 18
 
 Le nom `agile-en-seine` désigne le lab local du binôme ; chaque binôme utilise sa propre machine.
 
@@ -127,9 +128,9 @@ Ouvrir [Langfuse](http://langfuse.localhost:4000) avec les accès retournés par
 
 En cas d’erreur du diagnostic, relancer `taxiway doctor agile-en-seine --fix`. Quelques warnings non bloquants peuvent rester ; demander de l’aide si un blocage persiste.
 
-### Présenter, récupérer et lancer l’application — slides 18–19
+### Récupérer et lancer l’application — slide 19
 
-Présenter d’abord Agreement Hub à partir de la capture et de ses fonctionnalités existantes (slide 18). Sur la slide suivante, récupérer et lancer l’application, puis l’ouvrir avec l’encadré « Découvrir l’application ».
+Agreement Hub a déjà été présenté sur la slide 10, juste après l’organisation de Gas Town et avant les beads. Le bouton « GitHub » ouvre la racine du dépôt ; montrer depuis son README le lien vers les cinq use cases. Sur la slide 19, récupérer et lancer l’application, puis l’ouvrir avec l’encadré « Découvrir l’application ».
 
 Sur l'hôte, cloner le dépôt bare local de Taxiway dans un dossier neuf. Cette copie suit les livraisons du lab. Adapter le chemin d'état uniquement si l'installation Taxiway le personnalise.
 
