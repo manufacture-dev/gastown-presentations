@@ -1342,7 +1342,7 @@ class: workshop-slide workshop-transition
 
 <p class="workshop-transition-intro">{{ $t("workshop_complete.intro") }}</p>
 
-<div class="workshop-mission-layout">
+<div class="workshop-mission-layout workshop-mission-layout--complete">
   <div class="workshop-mission-objectives">
     <article>
       <strong>{{ $t("workshop_complete.delegate.title") }}</strong>
@@ -1357,7 +1357,7 @@ class: workshop-slide workshop-transition
       <p>{{ $t("workshop_complete.verify.desc") }}</p>
     </article>
   </div>
-  <img class="workshop-mission-illustration" :src="'images/workshop-pair-blend.png'" :alt="$t('workshop_transition.image_alt')" />
+  <img class="workshop-mission-illustration workshop-mission-illustration--success" :src="'images/workshop-pair-success.png'" :alt="$t('workshop_complete.image_alt')" />
 </div>
 
 <!--

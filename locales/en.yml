@@ -324,6 +324,7 @@ workshop_transition:
 
 workshop_complete:
   heading: Well done!
+  image_alt: The two participants raise their arms and celebrate completing their workshop.
   intro: You have steered your first Gas Town lab.
   delegate:
     title: Express the need

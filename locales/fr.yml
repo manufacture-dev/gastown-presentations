@@ -324,6 +324,7 @@ workshop_transition:
 
 workshop_complete:
   heading: Bravo !
+  image_alt: Les deux participants lèvent les bras et célèbrent la réussite de leur atelier.
   intro: Vous avez piloté votre premier lab Gas Town.
   delegate:
     title: Exprimer le besoin

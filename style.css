@@ -1869,6 +1869,18 @@
   filter: brightness(1.2);
 }
 
+.workshop-mission-illustration--success {
+  height: auto;
+  object-fit: contain;
+  align-self: end;
+  /* Align the visible table, excluding the asset's 117px bottom padding (1254px high). */
+  transform: translateY(9.33%);
+}
+
+.workshop-mission-layout--complete {
+  grid-template-rows: 18rem;
+}
+
 .workshop-transition .workshop-mission-tip {
   grid-column: 1;
   margin-top: 0;
