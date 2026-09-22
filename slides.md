@@ -112,6 +112,7 @@ class: workshop-slide aes-partners-slide
     <img :src="'images/agile-en-seine/mindz-up.png'" alt="Mindz Up" />
     <img :src="'images/agile-en-seine/we-love-agility.jpeg'" alt="WeLoveAgility.coach" />
     <img :src="'images/agile-en-seine/coachissime.jpeg'" alt="Coachissime" />
+    <img class="aes-partner-aubay" :src="'images/agile-en-seine/aubay.jpg'" alt="Aubay" />
   </div>
 </div>
 
@@ -121,6 +122,7 @@ class: workshop-slide aes-partners-slide
 Source: Template_AESIA_2026_erratum.pptx, slide 3, provided by the organizers.
 https://docs.google.com/presentation/d/1B-g804N3BMTrr-1yCUjOD-iK_Gu7SZoQ/edit
 Original logos extracted without modification; original order and size hierarchy preserved.
+Aubay added from Partenaires.pptx sent by the organizers on 2026-09-22, below Fariance.
 Briefly thank the event partners before continuing.
 -->
 
