@@ -93,36 +93,34 @@ class: workshop-slide aes-partners-slide
 
 <div class="aes-partners-board">
   <div class="aes-partners-primary">
-<img :src="'images/agile-en-seine/flow-analytics-pro.png'" alt="Flow Analytics Pro" />
     <img :src="'images/agile-en-seine/aqoba.png'" alt="aqoba" />
     <img :src="'images/agile-en-seine/digital-tango.png'" alt="digital tango" />
+    <img :src="'images/agile-en-seine/flow-analytics-pro.png'" alt="Flow Analytics Pro" />
   </div>
   <div class="aes-partners-secondary">
-    <img :src="'images/agile-en-seine/zenika.jpeg'" alt="Zenika" />
+    <img :src="'images/agile-en-seine/aet-consulting.jpeg'" alt="AET Consulting" />
+    <img :src="'images/agile-en-seine/agile4me.jpeg'" alt="agile4me" />
+    <img :src="'images/agile-en-seine/aubay.jpg'" alt="Aubay" />
+    <img :src="'images/agile-en-seine/coachissime.jpeg'" alt="Coachissime" />
+    <img :src="'images/agile-en-seine/fariance.jpeg'" alt="Fariance" />
+    <img :src="'images/agile-en-seine/hymaia.png'" alt="hymaïa" />
     <img :src="'images/agile-en-seine/inspearit.jpeg'" alt="inspearit" />
-    <img :src="'images/agile-en-seine/mc2i.png'" alt="mc2i" />
     <img :src="'images/agile-en-seine/jfo-conseil.jpeg'" alt="JFO Conseil" />
+    <img :src="'images/agile-en-seine/mc2i.png'" alt="mc2i" />
+    <img :src="'images/agile-en-seine/mindz-up.png'" alt="Mindz Up" />
+    <img :src="'images/agile-en-seine/opteamus.jpeg'" alt="opteamus" />
     <img :src="'images/agile-en-seine/tuleap-dassault-systemes.png'" alt="Tuleap joins Dassault Systèmes" />
     <img :src="'images/agile-en-seine/wakilee.jpeg'" alt="Wakilee" />
-    <img :src="'images/agile-en-seine/hymaia.png'" alt="hymaïa" />
-    <img :src="'images/agile-en-seine/opteamus.jpeg'" alt="opteamus" />
-    <img :src="'images/agile-en-seine/aet-consulting.jpeg'" alt="AET Consulting" />
-    <img :src="'images/agile-en-seine/fariance.jpeg'" alt="Fariance" />
-    <img :src="'images/agile-en-seine/agile4me.jpeg'" alt="agile4me" />
-    <img :src="'images/agile-en-seine/mindz-up.png'" alt="Mindz Up" />
     <img :src="'images/agile-en-seine/we-love-agility.jpeg'" alt="WeLoveAgility.coach" />
-    <img :src="'images/agile-en-seine/coachissime.jpeg'" alt="Coachissime" />
-    <img class="aes-partner-aubay" :src="'images/agile-en-seine/aubay.jpg'" alt="Aubay" />
+    <img :src="'images/agile-en-seine/zenika.jpeg'" alt="Zenika" />
   </div>
 </div>
 
 <img class="aes-event-logo" :src="'images/agile-en-seine/event-logo-white.png'" alt="Agile en Seine & IA" />
 
 <!--
-Source: Template_AESIA_2026_erratum.pptx, slide 3, provided by the organizers.
-https://docs.google.com/presentation/d/1B-g804N3BMTrr-1yCUjOD-iK_Gu7SZoQ/edit
-Original logos extracted without modification; original order and size hierarchy preserved.
-Aubay added from Partenaires.pptx sent by the organizers on 2026-09-22, below Fariance.
+Source: initial presentation file provided by the organizers.
+Original logos extracted without modification; size hierarchy preserved and logos sorted alphabetically within each sponsorship level.
 Briefly thank the event partners before continuing.
 -->
 
